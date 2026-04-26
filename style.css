@@ -1,0 +1,13 @@
+
+.header-identidade
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+.header-identidade img
+{
+    width: 85px;
+    height: auto;
+}
