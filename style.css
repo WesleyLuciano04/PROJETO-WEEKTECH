@@ -1,4 +1,4 @@
-
+/*  HEADER */
 .header-identidade
 {
     display: flex;
@@ -10,4 +10,20 @@
 {
     width: 85px;
     height: auto;
+}
+
+/* ==  BOTÃO DIAS PROGRAMAÇÃO  == */
+
+.grade-dia
+{
+    display: none;
+    background-color: #fcfcfc;
+    color: white;
+    padding: 20px;
+    border-top: 1px solid white;
+}
+
+.dia-programacao:hover .grade-dia
+{
+    display: block !important;
 }
