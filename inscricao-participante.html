@@ -51,22 +51,24 @@
                     <div class="campo">
                         <label>
                             Nome completo *
-                            <input type="text" id="participante-nome" name="nome" required>
+                            <input type="text" id="participante-nome" 
+                            placeholder="Digite seu nome completo" required>
                         </label>
                     </div>
 
                     <div class="campo">
                         <label>
                             RA *
-                            <input type="text" id="participante-ra" name="ra" required>
+                            <input type="text" id="participante-ra" 
+                            placeholder="Ex: 00000000-2"required>
                         </label>
                     </div>
 
                     <div class="campo">
                         <label>
                             Curso *
-                            <select id="participante-curso" name="curso" required>
-                                <option value="">Selecione</option>
+                            <select id="participante-curso" required>
+                                <option>Selecione</option>
                                 <option>ADS</option>
                                 <option>Engenharia de Software</option>
                             </select>
@@ -76,8 +78,8 @@
                     <div class="campo">
                         <label>
                             Semestre *
-                            <select id="participante-serie" name="semestre" required>
-                                <option value="">Selecione</option>
+                            <select id="participante-serie" required>
+                                <option>Selecione</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -95,7 +97,7 @@
 
                     <div class="campo">
                         <label>
-                            <input type="checkbox" id="tem-projeto" name="tem_projeto">
+                            <input type="checkbox" id="tem-projeto">
                             Quero apresentar um projeto
                         </label>
                     </div>
@@ -105,14 +107,14 @@
                         <div class="campo">
                             <label>
                                 Nome do Projeto
-                                <input type="text" id="projeto-nome" name="projeto_nome">
+                                <input type="text" placeholder="Ex: IA na pratica"id="projeto-nome">
                             </label>
                         </div>
 
                         <div class="campo">
                             <label>
                                 Descrição
-                                <textarea id="projeto-descricao" name="projeto_descricao"></textarea>
+                                <textarea id="projeto-descricao" placeholder="Pequena descrição do projeto"></textarea>
                             </label>
                         </div>
 
@@ -124,7 +126,7 @@
 
                     <div class="campo">
                         <label>
-                            <input type="checkbox" id="coffee-break" name="coffee">
+                            <input type="checkbox" id="coffee-break">
                             Participar do coffee break
                         </label>
                     </div>

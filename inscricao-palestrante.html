@@ -2,32 +2,32 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscrição Palestrante — II Tech Week 2026</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Palestrante — Tech Week 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header role="banner">
-        <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
 
+    <header>
         <div class="header-inner">
             <div class="header-identidade">
                 <a href="index.html">
-                    <img src="imgs/logoUnicesumar/logo.jpg" alt="Logotipo da Faculdade" />
+                    <img src="imgs/logoUnicesumar/logo.jpg" alt="Logo">
                 </a>
+
                 <div class="header-titulos">
-                    <strong class="header-evento-titulo">II Tech Week 2026</strong>
-                    <span class="header-evento-subtitulo">Inteligência Artificial em Ação</span>
+                    <h1 class="header-evento-titulo">II Tech Week 2026</h1>
+                    <p class="header-evento-subtitulo">Inteligência Artificial em Ação</p>
                 </div>
             </div>
 
-            <nav aria-label="Navegação principal">
-                <ul role="list">
+            <nav>
+                <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="inscricao-participante.html">Inscrição Participante</a></li>
-                    <li><a href="inscricao-palestrante.html" aria-current="page">Inscrição Palestrante</a></li>
+                    <li><a href="inscricao-participante.html">Participante</a></li>
+                    <li><a href="inscricao-palestrante.html">Palestrante</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,71 +35,41 @@
 
     <main id="conteudo-principal">
 
-        <section aria-labelledby="titulo-pagina-palestrante" id="introducao-palestrante">
-            <h1 id="titulo-pagina-palestrante">Inscrição para Palestrante</h1>
-
-            <p>
-                Atua com tecnologia, dados ou Inteligência Artificial e deseja compartilhar sua experiência
-                com estudantes e profissionais da região?
-            </p>
-
-            <p>
-                A <strong>II Tech Week — Inteligência Artificial em Ação</strong> busca profissionais
-                que aplicam soluções inovadoras em contextos reais, nas áreas de saúde, educação,
-                negócios, comunicação e gestão pública.
-            </p>
-
-            <p>
-                Envie sua proposta de palestra e contribua com discussões práticas sobre como a IA
-                está transformando organizações, mercados e a sociedade.
-            </p>
-
-            <section aria-labelledby="titulo-processo-selecao">
-                <h2 id="titulo-processo-selecao">Processo de Seleção</h2>
-                <ol>
-                    <li>Preencha e envie o formulário abaixo com sua proposta.</li>
-                    <li>A comissão organizadora avaliará todas as propostas recebidas.</li>
-                    <li>Você receberá um retorno pelo e-mail cadastrado em até <strong>7 dias úteis</strong>.</li>
-                    <li>Em caso de aprovação, entraremos em contato para definir data, horário e logística.</li>
-                </ol>
-            </section>
-
-            <p>
-                Campos marcados com <abbr title="obrigatório">*</abbr> são de preenchimento obrigatório.
-            </p>
+        <section id="introducao-palestrante">
+            <h2>Inscrição para Palestrante</h2>
+            <p>Envie sua proposta de palestra para a Tech Week 2026.</p>
         </section>
 
-        <section aria-labelledby="titulo-form-palestrante" id="form-palestrante">
-            <h2 id="titulo-form-palestrante">Formulário de Proposta de Palestra</h2>
+        <section id="form-palestrante">
+            <h2>Formulário de Palestra</h2>
 
-            <form method="POST" id="form-inscricao-palestrante"
-                aria-label="Formulário de inscrição e proposta de palestra para a II Tech Week 2026">
+            <form method="POST" id="form-inscricao-palestrante">
+
                 <fieldset>
                     <legend>Dados Pessoais</legend>
 
                     <div class="campo">
-                        <label for="palestrante-nome">
-                            Nome completo <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Nome completo *
+                            <input type="text" id="palestrante-nome" 
+                             placeholder="Digite seu nome completo"  required>
                         </label>
-                        <input type="text" id="palestrante-nome" name="nome" autocomplete="name" required minlength="3"
-                            maxlength="120" placeholder="Digite seu nome completo" aria-required="true" />
                     </div>
 
                     <div class="campo">
-                        <label for="palestrante-telefone">
-                            Telefone / WhatsApp <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Telefone *
+                            <input type="tel" id="palestrante-telefone" 
+                             placeholder="(43 99999-9999)" required>
                         </label>
-                        <input type="tel" id="palestrante-telefone" name="telefone" autocomplete="tel" required
-                            pattern="[\d\s\(\)\-\+]{10,20}" placeholder="(43) 99999-9999" inputmode="tel"
-                            aria-required="true" />
                     </div>
 
                     <div class="campo">
-                        <label for="palestrante-email">
-                            E-mail <abbr title="obrigatório">*</abbr>
+                        <label>
+                            E-mail *
+                            <input type="email" id="palestrante-email" 
+                             placeholder="seuemail@gmail.com"  required>
                         </label>
-                        <input type="email" id="palestrante-email" name="email" autocomplete="email" required
-                            maxlength="150" placeholder="seuemail@exemplo.com" aria-required="true" />
                     </div>
 
                 </fieldset>
@@ -108,94 +78,72 @@
                     <legend>Dados da Palestra</legend>
 
                     <div class="campo">
-                        <label for="palestrante-tema">
-                            Tema da Palestra <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Tema da Palestra *
+                            <input type="text" id="palestrante-tema" placeholder="Ex: IA na pratica" required>
                         </label>
-                        <input type="text" id="palestrante-tema" name="tema_palestra" required maxlength="200"
-                            placeholder="Ex: IA aplicada à tomada de decisão em empresas"
-                            aria-describedby="palestrante-tema-dica" aria-required="true" />
-                        <small id="palestrante-tema-dica">
-                            Informe o título ou tema central da sua palestra de forma clara e objetiva.
-                        </small>
                     </div>
 
                     <div class="campo">
-                        <label for="palestrante-briefing">
-                            Briefing — O que será apresentado <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Briefing *
+                            <textarea id="palestrante-briefing" 
+                             placeholder="Escreva os objetivos da palestra" required></textarea>
                         </label>
-                        <textarea id="palestrante-briefing" name="briefing" required rows="7" maxlength="2000"
-                            placeholder="Descreva os objetivos da palestra, as aplicações práticas da IA que serão abordadas, o público-alvo e os principais resultados ou aprendizados esperados pelo público..."
-                            aria-describedby="palestrante-briefing-dica" aria-required="true"></textarea>
-                        <small id="palestrante-briefing-dica">
-                            Máximo de 2000 caracteres.
-                        </small>
                     </div>
 
                     <div class="campo">
-                        <label for="palestrante-duracao">
-                            Tempo necessário para a palestra <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Duração *
+                            <select id="palestrante-duracao" 
+                                 placeholder="Selecione a duração desejada" required>
+                                <option >Selecione</option>
+                                <option >40 minutos</option>
+                                <option >45 minutos</option>
+                                <option >50 minutos</option>
+                                <option >60 minutos</option>
+                            </select>
                         </label>
-                        <select id="palestrante-duracao" name="duracao_minutos" required
-                            aria-describedby="palestrante-duracao-dica" aria-required="true">
-                            <option value="" disabled selected>Selecione a duração desejada</option>
-                            <option value="40">40 minutos</option>
-                            <option value="45">45 minutos</option>
-                            <option value="50">50 minutos</option>
-                            <option value="55">55 minutos</option>
-                            <option value="60">60 minutos</option>
-                        </select>
                     </div>
 
                 </fieldset>
 
                 <fieldset>
-                    <legend>Currículo e Perfil Profissional</legend>
-
-                    <p>
-                        As informações abaixo serão utilizadas para avaliação do perfil profissional e,
-                        em caso de aprovação, poderão ser divulgadas no site oficial do evento e nos materiais
-                        de comunicação da Tech Week 2026.
-                    </p>
+                    <legend>Currículo</legend>
 
                     <div class="campo">
-                        <label for="palestrante-curriculo-resumo">
-                            Mini Currículo — Resumo Profissional <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Mini Currículo *
+                            <textarea id="palestrante-curriculo-resumo" 
+                             placeholder="Descreve brevemente sua trajetória" 
+                             ="curriculo_resumo" required></textarea>
                         </label>
-                        <textarea id="palestrante-curriculo-resumo" name="curriculo_resumo" required rows="5"
-                            maxlength="1500"
-                            placeholder="Descreva brevemente sua trajetória profissional, formação acadêmica e as experiências mais relevantes na área de tecnologia e/ou Inteligência Artificial..."
-                            aria-required="true"></textarea>
                     </div>
 
                     <div class="campo">
-                        <label for="palestrante-curriculo-arquivo">
-                            Arquivo do Currículo <span>(opcional)</span>
+                        <label>
+                            Arquivo (opcional)
+                            <input type="file" id="palestrante-curriculo-arquivo">
                         </label>
-                        <input type="file" id="palestrante-curriculo-arquivo" name="curriculo_arquivo"
-                            accept=".pdf,.doc,.docx" aria-describedby="curriculo-arquivo-dica" />
-                        <small id="curriculo-arquivo-dica">
-                            Tamanho máximo: 5 MB.
-                        </small>
                     </div>
+
                 </fieldset>
-
 
                 <fieldset>
-                    <legend>Confirmação da Proposta</legend>
+                    <legend>Confirmação</legend>
 
                     <div class="campo">
-                        <input type="checkbox" id="palestrante-autoriza-divulgacao" name="autoriza_divulgacao" required
-                            value="autorizado" />
-                        <label for="palestrante-autoriza-divulgacao">
-                            Autorizo a divulgação do meu nome, foto e mini currículo nas peças de comunicação
-                            e no site oficial da II Tech Week 2026, em caso de aprovação da proposta.
+                        <label>
+                            <input type="checkbox" id="palestrante-autoriza-divulgacao" required>
+                            Autorizo a divulgação dos meus dados
                         </label>
                     </div>
-                    <div class="acoes-formulario">
-                        <button type="submit">Enviar Proposta de Palestra</button>
-                        <button type="reset">Limpar Formulário</button>
-                    </div>
                 </fieldset>
+
+                <div class="acoes-formulario">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                </div>
 
             </form>
         </section>
@@ -208,16 +156,9 @@
             <p>
                 Contato:
                 <a href="https://api.whatsapp.com/send?phone=554491399006&amp;text=Ol%C3%A1!%20Acessei%20o%20site%20da%20UniCesumar%20e%20quero%20saber%20mais%20informa%C3%A7%C3%B5es.%20Voc%C3%AA%20pode%20ajudar?"
-                    target="_blank"><i>WhatsApp</i></a>
+                    target="_blank" ><i>WhatsApp</i></a>
             </p>
         </address>
-
-        <p>
-            <small>
-                &copy; <time datetime="2026">2026</time> II Tech Week — Faculdade.
-                Todos os direitos reservados.
-            </small>
-        </p>
     </footer>
 
 </body>
