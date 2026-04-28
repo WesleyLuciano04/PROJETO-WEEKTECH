@@ -2,31 +2,32 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>II Tech Week 2026 — Inteligência Artificial em Ação</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>II Tech Week 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header role="banner">
-        <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
 
+<body>
+
+    <header>
         <div class="header-inner">
             <div class="header-identidade">
-                <a href="https://www.unicesumar.edu.br/" target="_blank">
-                    <img src="imgs/logoUnicesumar/logo.jpg" alt="Logotipo da Faculdade" />
+                <a href="index.html">
+                    <img src="imgs/logoUnicesumar/logo.jpg" alt="Logo UniCesumar">
                 </a>
+
                 <div class="header-titulos">
                     <strong class="header-evento-titulo">II Tech Week 2026</strong>
                     <span class="header-evento-subtitulo">Inteligência Artificial em Ação</span>
                 </div>
             </div>
 
-            <nav aria-label="Navegação principal">
-                <ul role="list">
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="inscricao-participante.html">Inscrição Participante</a></li>
-                    <li><a href="inscricao-palestrante.html">Inscrição Palestrante</a></li>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="inscricao-participante.html">Participante</a></li>
+                    <li><a href="inscricao-palestrante.html">Palestrante</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,679 +35,107 @@
 
     <main id="conteudo-principal">
 
-        <section aria-labelledby="titulo-sobre" id="sobre">
+        <section id="sobre">
             <h1 id="titulo-sobre">Sobre o Evento</h1>
 
-            <p>
-                A <strong>Tech Week</strong> é a semana de tecnologia organizada pelo curso de
-                Análise e Desenvolvimento de Sistemas e Engenharia de Software, reunindo alunos,
-                professores e profissionais do mercado em torno da discussão sobre inovação e tecnologia.
-            </p>
+            <p>A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia.</p>
 
-            <p>
-                Nesta segunda edição, o foco está na <strong>Inteligência Artificial em Ação</strong>:
-                como algoritmos inteligentes, modelos de linguagem e análise de dados estão sendo
-                aplicados de forma concreta por empresas e profissionais de diferentes setores.
-            </p>
-
-            <p>
-                O evento conta com <strong>palestras</strong> de especialistas do mercado,
-                <strong>apresentação de projetos</strong> desenvolvidos pelos próprios alunos
-                e momentos de networking que aproximam estudantes das oportunidades reais do mercado.
-            </p>
+            <p>O foco desta edição é Inteligência Artificial aplicada na prática.</p>
 
             <dl class="evento-info">
                 <dt>Datas</dt>
-                <dd>
-                    <time datetime="2026-10-20">20</time> a
-                    <time datetime="2026-10-24">24 de outubro de 2026</time>
-                </dd>
+                <dd>20 a 24 de outubro de 2026</dd>
+
                 <dt>Local</dt>
-                <dd>Faculdade — Bloco X, Auditório Central</dd>
+                <dd>Bloco X — Auditório Central</dd>
+
                 <dt>Formato</dt>
-                <dd>Presencial — entrada gratuita mediante inscrição</dd>
+                <dd>Presencial</dd>
             </dl>
 
-            <p>
-                <a href="inscricao-participante.html" role="button"
-                    aria-label="Faça sua inscrição gratuita na Tech Week 2026">
-                    Faça sua inscrição
-                </a>
-            </p>
+            <a href="inscricao-participante.html">Faça sua inscrição</a>
         </section>
 
-        <!-- ===================== PROGRAMAÇÃO ===================== -->
-        <section aria-labelledby="titulo-programacao" id="programacao">
-            <h2 id="titulo-programacao">Programação — Inteligência Artificial em Ação</h2>
-            <p>
-                Confira a grade completa de palestras e apresentações de projetos para cada dia da Tech Week 2026.
-                Passe o cursor sobre o dia para ver os detalhes da programação.
-            </p>
+        <section id="programacao">
+            <h2>Programação</h2>
 
-            <p>
-                <small>
-                    <strong>Dica:</strong> Clique ou passe o cursor sobre cada dia para visualizar os horários e palestras.
-                </small>
-            </p>
+            <div id="grade-semana">
 
-            <!-- GRADE DA SEMANA -->
-            <!-- SEGUNDA -->
-            <div id="grade-semana" role="list" aria-label="Dias da programação">
-
-                <article class="dia-programacao" role="listitem" aria-labelledby="titulo-dia-1">
-                    <button class="dia-toggle" aria-expanded="false" aria-controls="grade-dia-1" id="titulo-dia-1"type="button">
-                        <h3>
-                            <time datetime="2026-10-20">Segunda-feira — 20 de outubro de 2026</time>
-                        </h3>
+                <article class="dia-programacao">
+                    <button class="dia-toggle" id="titulo-dia-1">
+                        <h3>Segunda-feira — 20/10</h3>
                         <span aria-hidden="true">▼</span>
                     </button>
-                
+
                     <div id="grade-dia-1" class="grade-dia">
-                        <section aria-labelledby="palestras-dia-1">
-                            <h4 id="palestras-dia-1">Palestras do Dia </h4>
-                            <ol aria-label="Grade de palestras de segunda-feira">
-                                <li>
-                                    <article id="palestra-d1-1">
-                                        <h5>Cofffe break da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-20T19:00">18h30</time> —
-                                                <time datetime="2026-10-20T19:30">19h00</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Sala 1 - 1º Andar</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
+                        <ol>
+                            <li>
+                                <article id="palestra-d1-1">
+                                    <h5>Coffee Break</h5>
+                                    <dl>
+                                        <dt>Horário</dt>
+                                        <dd>18h30 — 19h00</dd>
 
-                                <li>
-                                    <article id="palestra-d1-2">
-                                        <h5 >Abertura Oficial da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-20T19:00">19h00</time> —
-                                                <time datetime="2026-10-20T19:30">19h30</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
+                                        <dt>Local</dt>
+                                        <dd>Sala 1</dd>
+                                    </dl>
+                                </article>
+                            </li>
 
-                                <li>
-                                    <article aria-labelledby="palestra-d1-2">
-                                        <h5 id="palestra-d1-2">Palestra 1 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-20T19:30">19h30</time> —
-                                                <time datetime="2026-10-20T20:30">20h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
+                            <li>
+                                <article id="palestra-d1-2">
+                                    <h5>Abertura</h5>
+                                    <dl>
+                                        <dt>Horário</dt>
+                                        <dd>19h00 — 19h30</dd>
 
-                                <li>
-                                    <article arialabelledby="palestra-d1-2">
-                                        <h5 id="palestra-d1-2">Palestra 2 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-20T20:30">20h30</time> —
-                                                <time datetime="2026-10-20T21:30">21h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-
-                                    </article>
-                                </li>
-                                
-                                <li>
-                                    <article aria-labelledby="palestra-d1-3">
-                                        <h5 id="palestra-d1-3">Ultima palestra do Dia 1</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-20T21:30">21h30</time> —
-                                                <time datetime="2026-10-20T22:00">22h00</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-
-                            </ol>
-                        </section>
+                                        <dt>Local</dt>
+                                        <dd>Auditório</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                        </ol>
                     </div>
                 </article>
 
-            </div>
 
-            <!-- TERÇA -->
-            <div id="grade-semana" role="list" aria-label="Dias da programação">
-
-                <article class="dia-programacao" role="listitem" aria-labelledby="titulo-dia-2">
-                    <button class="dia-toggle" aria-expanded="false" aria-controls="grade-dia-2" id="titulo-dia-2"type="button">
-                        <h3>
-                            <time datetime="2026-10-21">Terça-feira — 21 de outubro de 2026</time>
-                        </h3>
+                <article class="dia-programacao">
+                    <button class="dia-toggle" id="titulo-dia-2">
+                        <h3>Terça-feira — 21/10</h3>
                         <span aria-hidden="true">▼</span>
                     </button>
-                
+
                     <div id="grade-dia-2" class="grade-dia">
-                        <section aria-labelledby="palestras-dia-2">
-                            <h4 id="palestras-dia-2">Palestras do Dia 2</h4>
-                            <ol aria-label="Grade de palestras de terça-feira">
-                                <li>
-                                    <article id="palestra-d2-1">
-                                        <h5>Cofffe break da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-21T19:00">19h00</time> —
-                                                <time datetime="2026-10-21T19:30">19h30</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Sala 1 - 1º Andar</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article id="palestra-d2-2">
-                                        <h5 >Abertura Oficial da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-21T19:00">19h00</time> —
-                                                <time datetime="2026-10-21T19:30">19h30</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article aria-labelledby="palestra-d2-3">
-                                        <h5 id="palestra-d2-3">Palestra 1 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-21T19:30">19h30</time> —
-                                                <time datetime="2026-10-21T20:30">20h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article arialabelledby="palestra-d2-4">
-                                        <h5 id="palestra-d2-4">Palestra 2 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-21T20:30">20h30</time> —
-                                                <time datetime="2026-10-21T21:30">21h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-
-                                    </article>
-                                </li>
-                                
-                                <li>
-                                    <article aria-labelledby="palestra-d2-5">
-                                        <h5 id="palestra-d2-5">Ultima palestra do Dia 2</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-21T21:30">21h30</time> —
-                                                <time datetime="2026-10-21T22:00">22h00</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-
-                            </ol>
-                        </section>
+                        <p>Programação semelhante ao dia anterior</p>
                     </div>
                 </article>
 
-            </div>
 
-            <!-- QUARTA -->
-             <div id="grade-semana" role="list" aria-label="Dias da programação">
-
-                <article class="dia-programacao" role="listitem" aria-labelledby="titulo-dia-3">
-                    <button class="dia-toggle" aria-expanded="false" aria-controls="grade-dia-3" id="titulo-dia-3" type="button">
-                        <h3>
-                            <time datetime="2026-10-22">Quarta-feira — 22 de outubro de 2026</time>
-                        </h3>
+                <article class="dia-programacao">
+                    <button class="dia-toggle" id="titulo-dia-3">
+                        <h3>Quarta-feira — 22/10</h3>
                         <span aria-hidden="true">▼</span>
                     </button>
-                
+
                     <div id="grade-dia-3" class="grade-dia">
-                        <section aria-labelledby="palestras-dia-3">
-                            <h4 id="palestras-dia-3">Palestras do Dia 3</h4>
-                            <ol aria-label="Grade de palestras de quarta-feira">
-                                <li>
-                                    <article id="palestra-d3-1">
-                                        <h5>Cofffe break da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-22T19:00">18h30</time> —
-                                                <time datetime="2026-10-22T19:30">19h00</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Sala 1 - 1º Andar</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article id="palestra-d3-2">
-                                        <h5 >Abertura Oficial da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-22T19:00">19h00</time> —
-                                                <time datetime="2026-10-22T19:30">19h30</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article aria-labelledby="palestra-d3-3">
-                                        <h5 id="palestra-d3-3">Palestra 1 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-22T19:30">19h30</time> —
-                                                <time datetime="2026-10-22T20:30">20h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article aria-labelledby="palestra-d3-4">
-                                        <h5 id="palestra-d3-4">Palestra 2 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-22T20:30">20h30</time> —
-                                                <time datetime="2026-10-22T21:30">21h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-
-                                    </article>
-                                </li>
-                                
-                                <li>
-                                    <article aria-labelledby="palestra-d3-5">
-                                        <h5 id="palestra-d3-5">Ultima palestra do Dia 3</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-22T21:30">21h30</time> —
-                                                <time datetime="2026-10-22T22:00">22h00</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-
-                            </ol>
-                        </section>
+                        <p>Programação semelhante</p>
                     </div>
                 </article>
 
             </div>
-
-                <!-- QUINTA -->
-            <div id="grade-semana" role="list" aria-label="Dias da programação">
-
-                <article class="dia-programacao" role="listitem" aria-labelledby="titulo-dia-4">
-                    <button class="dia-toggle" aria-expanded="false" aria-controls="grade-dia-4" id="titulo-dia-4" type="button">
-                        <h3>
-                            <time datetime="2026-10-20">Quinta-feira — 24 de outubro de 2026</time>
-                        </h3>
-                        <span aria-hidden="true">▼</span>
-                    </button>
-                
-                    <div id="grade-dia-4" class="grade-dia">
-                        <section aria-labelledby="palestras-dia-4">
-                            <h4 id="palestras-dia-4">Palestras do Dia 4</h4>
-                            <ol aria-label="Grade de palestras de quinta-feira">
-                                <li>
-                                    <article id="palestra-d1-1">
-                                        <h5>Cofffe break da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-24T19:00">18h30</time> —
-                                                <time datetime="2026-10-24T19:30">19h00</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Sala 1 - 1º Andar</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article id="palestra-d4-2">
-                                        <h5 >Abertura Oficial da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-24T19:00">19h00</time> —
-                                                <time datetime="2026-10-24T19:30">19h30</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article aria-labelledby="palestra-d4-2">
-                                        <h5 id="palestra-d4-2">Palestra 1 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-24T19:30">19h30</time> —
-                                                <time datetime="2026-10-24T20:30">20h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article arialabelledby="palestra-d4-3">
-                                        <h5 id="palestra-d4-3">Palestra 2 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-24T20:30">20h30</time> —
-                                                <time datetime="2026-10-24T21:30">21h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-
-                                    </article>
-                                </li>
-                                
-                                <li>
-                                    <article aria-labelledby="palestra-d4-3">
-                                        <h5 id="palestra-d4-3">Ultima palestra do Dia 4</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-24T21:30">21h30</time> —
-                                                <time datetime="2026-10-24T22:00">22h00</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-
-                            </ol>
-                        </section>
-                    </div>
-                </article>
-
-            </div>
-
-            <!-- SEXTA -->
-             <div id="grade-semana" role="list" aria-label="Dias da programação">
-
-                <article class="dia-programacao" role="listitem" aria-labelledby="titulo-dia-5">
-                    <button class="dia-toggle" aria-expanded="false" aria-controls="grade-dia-5" id="titulo-dia-5" type="button">
-                        <h3>
-                            <time datetime="2026-10-25">Sexta-feira — 25 de outubro de 2026</time>
-                        </h3>
-                        <span aria-hidden="true">▼</span>
-                    </button>
-                
-                    <div id="grade-dia-5" class="grade-dia">
-                        <section aria-labelledby="palestras-dia-5">
-                            <h4 id="palestras-dia-5">Palestras do Dia 5</h4>
-                            <ol aria-label="Grade de palestras de sexta-feira">
-                                <li>
-                                    <article id="palestra-d5-1">
-                                        <h5>Cofffe break da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-25T19:00">19h00</time> —
-                                                <time datetime="2026-10-25T19:30">19h30</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Sala 1 - 1º Andar</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article id="palestra-d5-2">
-                                        <h5 >Abertura Oficial da II Tech Week</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-25T19:00">19h00</time> —
-                                                <time datetime="2026-10-25T19:30">19h30</time>
-                                            </dd>
-                                            <dt>Responsável</dt>
-                                            <dd>Coordenação do Curso</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article aria-labelledby="palestra-d5-3">
-                                        <h5 id="palestra-d5-3">Palestra 1 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-25T19:30">19h30</time> —
-                                                <time datetime="2026-10-25T20:30">20h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-                                <li>
-                                    <article arialabelledby="palestra-d5-2">
-                                        <h5 id="palestra-d5-2">Palestra 2 — A definir</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-25T20:30">20h30</time> —
-                                                <time datetime="2026-10-25T21:30">21h30</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>60 minutos</dd>
-                                        </dl>
-
-                                    </article>
-                                </li>
-                                
-                                <li>
-                                    <article aria-labelledby="palestra-d5-3">
-                                        <h5 id="palestra-d5-3">Ultima palestra do Dia 5</h5>
-                                        <dl>
-                                            <dt>Horário</dt>
-                                            <dd>
-                                                <time datetime="2026-10-25T21:30">21h30</time> —
-                                                <time datetime="2026-10-25T22:00">22h00</time>
-                                            </dd>
-                                            <dt>Palestrante</dt>
-                                            <dd>A definir</dd>
-                                            <dt>Local</dt>
-                                            <dd>Auditório Central</dd>
-                                            <dt>Duração</dt>
-                                            <dd>30 minutos</dd>
-                                        </dl>
-                                    </article>
-                                </li>
-
-
-                            </ol>
-                        </section>
-                    </div>
-                </article>
-
-            </div>
-
         </section>
-        <!-- ===================== PALESTRANTES ===================== -->
-        <section aria-labelledby="titulo-palestrantes" id="palestrantes">
-            <h2 id="titulo-palestrantes">Palestrantes</h2>
-            <p>
-                Conheça os profissionais que trarão experiências práticas sobre Inteligência Artificial,
-                dados e inovação tecnológica para a II Tech Week 2026.
-            </p>
 
-            <ul role="list" aria-label="Lista de palestrantes confirmados">
+
+        <section id="palestrantes">
+            <h2 id="titulo-palestrantes">Palestrantes</h2>
+            <ul>
                 <li>
-                    <article aria-labelledby="palestrante-1">
-                        <h3 id="palestrante-1">Nome do Palestrante</h3>
-                        <img src="imgs/palestrantes/palestranteGenerico.jpg" alt="Foto de Nome do Palestrante" width="120" height="120"
-                            loading="lazy" />
+                    <article id="palestrante-1">
+                        <h3>Nome do Palestrante</h3>
+                        <img src="imgs/palestrantes/palestranteGenerico.jpg" alt="Foto de Nome do Palestrante">
+
                         <dl>
-                            <dt>Tema da Palestra</dt>
-                            <dd>A definir</dd>
-                            <dt>Mini Currículo</dt>
-                            <dd>Breve descrição da trajetória profissional do palestrante e suas principais
-                                experiências.</dd>
-                            <dt>Data e Horário</dt>
+                            <dt>Tema</dt>
                             <dd>A definir</dd>
                         </dl>
                     </article>
@@ -714,16 +143,13 @@
             </ul>
 
             <p>
-                Você é um profissional de tecnologia ou IA e quer compartilhar sua experiência?
+                Você é um profissional de tecnologia e quer compartilhar sua experiência?
                 <a href="inscricao-palestrante.html">Envie sua proposta de palestra aqui</a>.
             </p>
         </section>
 
-        <!-- LOCALIZAÇÃO DO EVENTO -->
-        <section aria-labelledby="titulo-localizacao" id="localizacao">
-            <h2 id="titulo-localizacao">Localização do Evento</h2>
-
-            <p>O evento acontece nas dependências da nossa faculdade. Veja abaixo como chegar.</p>
+        <section id="localizacao">
+            <h2>Localização</h2>
 
             <address>
                 <p><strong>UniCesumar — Londrina</strong></p>
@@ -734,53 +160,14 @@
                 </p>
             </address>
 
-            <section aria-labelledby="titulo-mapa">
-                <h3 id="titulo-mapa">Mapa Interativo</h3>
-                <iframe title="Mapa de localização da UniCesumar Londrina"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.3325707007275!2d-51.14333442588464!3d-23.30368937897764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb437a3d1d44af%3A0x9c9f46adfc62d1eb!2sUniCesumar%20-%20Londrina!5e0!3m2!1spt-BR!2sbr!4v1777140525663!5m2!1spt-BR!2sbr"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    aria-label="Mapa do Google Maps mostrando a localização da UniCesumar em Londrina">
-                </iframe>
+            <section id="mapa-faculdade">
+                <h2>Mapa</h2>
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.3327064248447!2d-51.143334425498196!3d-23.303684452174586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb437a3d1d44af%3A0x9c9f46adfc62d1eb!2sUniCesumar%20-%20Londrina!5e0!3m2!1spt-BR!2sbr!4v1777407683775!5m2!1spt-BR!2sbr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
 
-            <section aria-labelledby="titulo-como-chegar">
-                <h3 id="titulo-como-chegar">Como Chegar</h3>
-                <dl>
-                    <dt>De ônibus</dt>
-                    <dd>
-                        A linha 102 possui parada em frente à faculdade. Consulte os horários atualizados
-                        no portal do transporte coletivo de Londrina.
-                    </dd>
-                </dl>
-            </section>
-        </section>
-
-        <section aria-labelledby="titulo-patrocinadores" id="patrocinadores">
-            <h2 id="titulo-patrocinadores">Patrocinadores</h2>
-            <p>
-                A II Tech Week conta com o apoio de empresas e instituições que incentivam a inovação,
-                a tecnologia e o desenvolvimento de profissionais preparados para o futuro digital.
-            </p>
-
-            <section aria-labelledby="titulo-patrocinio">
-                <h3 id="titulo-patrocinio">Dentalclean</h3>
-                <ul role="list">
-                    <li>
-                        <a href="https://dentalclean.com/br/" target="_blank">
-                            <img src="imgs/patrocinadores/dentalcleanLogo.jpg" alt="Logotipo do patrocinador: Nome da Empresa" width="200"
-                                height="80" loading="lazy" />
-                        </a>
-                    </li>
-                </ul>                
-            </section>
-
-            <p>
-                Interessado em patrocinar a Tech Week 2026?
-                <a
-                    href="https://venhaparaunicesumar.com.br/graduacao?utm_content=&utm_term=unicesumar&utm_campaign=&utm_source=google&utm_medium=cpc&hsa_acc=7334726990&hsa_cam=17615048567&hsa_grp=146743516308&hsa_ad=606964757971&hsa_src=g&hsa_tgt=kwd-299188850815&hsa_kw=unicesumar&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=17615048567&gbraid=0AAAAAogmMDy4-IFtjJlWPcsPTGyRt3fDK&gclid=CjwKCAjwzLHPBhBTEiwABaLsSvXTdNx0wKKQCimnGa_hAMBIw6wjI1888B1wG_FbwIU7mId5_hbSyBoC3usQAvD_BwE" target="_blank" >Entre
-                    em contato com a organização</a>.
-            </p>
         </section>
 
     </main>
@@ -794,14 +181,8 @@
                     target="_blank" ><i>WhatsApp</i></a>
             </p>
         </address>
-
-        <p>
-            <small>
-                &copy; <time datetime="2026">2026</time> II Tech Week — Faculdade.
-                Todos os direitos reservados.
-            </small>
-        </p>
     </footer>
+
 </body>
 
 </html>
