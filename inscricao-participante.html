@@ -2,33 +2,32 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Inscrição Participante — II Tech Week 2026</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Participante — Tech Week 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header role="banner">
-        <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
 
+    <header>
         <div class="header-inner">
             <div class="header-identidade">
                 <a href="index.html">
-                    <img src="imgs/logoUnicesumar/logo.jpg" alt="Logotipo da Faculdade" />
+                    <img src="imgs/logoUnicesumar/logo.jpg" alt="Logo">
                 </a>
+
                 <div class="header-titulos">
-                    <strong class="header-evento-titulo">II Tech Week 2026</strong>
-                    <span class="header-evento-subtitulo">Inteligência Artificial em Ação</span>
+                    <h1>II Tech Week 2026</h1>
+                    <p>Inteligência Artificial em Ação</p>
                 </div>
             </div>
 
-            <nav aria-label="Navegação principal">
-                <ul role="list">
+            <nav class="navegacao-principal">
+                <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="inscricao-participante.html" aria-current="page">Inscrição Participante</a></li>
-                    <li><a href="inscricao-palestrante.html">Inscrição Palestrante</a></li>
+                    <li><a href="inscricao-participante.html">Participante</a></li>
+                    <li><a href="inscricao-palestrante.html">Palestrante</a></li>
                 </ul>
             </nav>
         </div>
@@ -36,181 +35,107 @@
 
     <main id="conteudo-principal">
 
-        <section aria-labelledby="titulo-pagina-Participante" id="introducao-Participante">
-            <h1 id="titulo-pagina-Participante">Inscrição de Participantes</h1>
-            <p>
-                Garanta sua participação na <strong>II Tech Week — Inteligência Artificial em Ação</strong>.
-                O evento proporcionará uma experiência prática sobre o uso da IA em diferentes contextos,
-                como negócios, educação, saúde e inovação tecnológica.
-            </p>
-            <p>
-                A inscrição é <strong>gratuita</strong> e obrigatória para participação nas atividades.
-                Após o preenchimento, você receberá uma confirmação por e-mail.
-            </p>
-            <p>
-                Campos marcados com <abbr title="obrigatório">*</abbr> são de preenchimento obrigatório.
-            </p>
+        <section id="introducao-Participante">
+            <h2>Inscrição de Participantes</h2>
+            <p>Preencha o formulário para participar da Tech Week 2026.</p>
         </section>
 
-        <section aria-labelledby="titulo-form-Participante" id="form-Participante">
-            <h2 id="titulo-form-Participante">Formulário de Inscrição</h2>
+        <section id="form-Participante">
+            <h2>Formulário</h2>
 
-            <form method="POST" id="form-inscricao-participante"
-                aria-label="Formulário de inscrição para participante ou Participante da II Tech Week 2026">
+            <form method="POST" id="form-inscricao-participante">
 
                 <fieldset>
                     <legend>Dados Pessoais</legend>
 
                     <div class="campo">
-                        <label for="Participante-nome">
-                            Nome completo <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Nome completo *
+                            <input type="text" id="participante-nome" name="nome" required>
                         </label>
-                        <input type="text" id="participante-nome" name="nome" autocomplete="name" required minlength="3"
-                            maxlength="120" placeholder="Digite seu nome completo"
-                            aria-describedby="participante-nome-dica" aria-required="true" />
                     </div>
 
                     <div class="campo">
-                        <label for="participante-ra">
-                            RA — Registro Acadêmico <abbr title="obrigatório">*</abbr>
+                        <label>
+                            RA *
+                            <input type="text" id="participante-ra" name="ra" required>
                         </label>
-                        <input type="text" id="participante-ra" name="ra" required
-                            maxlength="12" placeholder="Ex: 00000000-2" 
-                            aria-required="true" />
                     </div>
 
                     <div class="campo">
-                        <label for="participante-curso">
-                            Curso <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Curso *
+                            <select id="participante-curso" name="curso" required>
+                                <option value="">Selecione</option>
+                                <option>ADS</option>
+                                <option>Engenharia de Software</option>
+                            </select>
                         </label>
-                        <select id="participante-curso" name="curso" required 
-                            aria-required="true">
-                            <option value="" disabled selected>Selecione seu curso</option>
-                            <option value="ads">Análise e Desenvolvimento de Sistemas</option>
-                            <option value="es">Engenharia de Software</option>
-                        </select>
                     </div>
 
                     <div class="campo">
-                        <label for="participante-serie">
-                            Série / Semestre <abbr title="obrigatório">*</abbr>
+                        <label>
+                            Semestre *
+                            <select id="participante-serie" name="semestre" required>
+                                <option value="">Selecione</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
                         </label>
-                        <select id="participante-serie" name="serie" required aria-required="true">
-                            <option value="" disabled selected>Selecione sua série</option>
-                            <option value="1">1º Semestre</option>
-                            <option value="2">2º Semestre</option>
-                            <option value="3">3º Semestre</option>
-                            <option value="4">4º Semestre</option>
-                            <option value="5">5º Semestre</option>
-                            <option value="6">6º Semestre</option>
-                        </select>
                     </div>
 
                 </fieldset>
-                <fieldset id="secao-projeto">
-                    <legend>Apresentação de Projeto</legend>
 
-                    <p>
-                        Desenvolveu um projeto relacionado a tecnologia ou Inteligência Artificial?
-                        Inscreva-se para apresentá-lo durante a Tech Week 2026 e ganhe visibilidade
-                        para o seu trabalho perante profissionais e colegas.
-                    </p>
+                <fieldset id="secao-projeto">
+                    <legend>Projeto</legend>
 
                     <div class="campo">
-                        <input type="checkbox" id="tem-projeto" name="tem_projeto" value="sim"
-                            aria-controls="dados-projeto" aria-expanded="false" />
-                        <label for="tem-projeto">
-                            <strong>Quero apresentar um projeto na Tech Week</strong>
-                            (preferencialmente relacionado à tecnologia ou Inteligência Artificial)
+                        <label>
+                            <input type="checkbox" id="tem-projeto" name="tem_projeto">
+                            Quero apresentar um projeto
                         </label>
                     </div>
 
                     <div id="dados-projeto">
-                        <fieldset>
-                            <legend>Dados do Projeto</legend>
 
-                            <p>
-                                <small>
-                                    Preencha as informações do projeto que será apresentado.
-                                    Os projetos serão avaliados pela organização e sujeitos à aprovação.
-                                </small>
-                            </p>
+                        <div class="campo">
+                            <label>
+                                Nome do Projeto
+                                <input type="text" id="projeto-nome" name="projeto_nome">
+                            </label>
+                        </div>
 
-                            <div class="campo">
-                                <label for="projeto-nome">
-                                    Nome do Projeto <abbr title="obrigatório">*</abbr>
-                                </label>
-                                <input type="text" id="projeto-nome" name="projeto_nome" maxlength="100"
-                                    placeholder="Ex: Sistema de Triagem com IA para Saúde"
-                                    aria-describedby="projeto-nome-dica" />
-                            </div>
+                        <div class="campo">
+                            <label>
+                                Descrição
+                                <textarea id="projeto-descricao" name="projeto_descricao"></textarea>
+                            </label>
+                        </div>
 
-                            <div class="campo">
-                                <label for="projeto-descricao">
-                                    Descrição do Projeto <abbr title="obrigatório">*</abbr>
-                                </label>
-                                <textarea id="projeto-descricao" name="projeto_descricao" rows="5" maxlength="1000"
-                                    placeholder="Descreva o objetivo do projeto, as tecnologias utilizadas (ex: IA, APIs, banco de dados), o problema que resolve e os resultados esperados..."
-                                    aria-describedby="projeto-descricao-dica"></textarea>
-                                <small id="projeto-descricao-dica">
-                                    Máximo de 1000 caracteres. Seja objetivo e destaque o diferencial do projeto.
-                                </small>
-                            </div>
-
-                        </fieldset>
                     </div>
                 </fieldset>
 
                 <fieldset id="secao-coffee-break">
                     <legend>Coffee Break</legend>
 
-                    <p>
-                        Durante a Tech Week haverá um momento de Coffee Break entre as atividades.
-                        Confirme sua participação para auxiliar na organização logística do evento.
-                    </p>
-
-                    <p>
-                        <strong>Atenção:</strong> A confirmação do Coffee Break implica no pagamento de uma
-                        taxa simbólica que será cobrada presencialmente no dia do evento.
-                    </p>
-
                     <div class="campo">
-                        <input type="checkbox" id="coffee-break" name="coffee_break" value="sim"
-                            aria-controls="info-coffee-break" aria-expanded="false" />
-                        <label for="coffee-break">
-                            <strong>Quero participar do Coffee Break</strong>
+                        <label>
+                            <input type="checkbox" id="coffee-break" name="coffee">
+                            Participar do coffee break
                         </label>
                     </div>
 
-                    <div id="info-coffee-break">
-                        <section aria-labelledby="titulo-info-coffee">
-                            <h3 id="titulo-info-coffee">Detalhes do Coffee Break</h3>
-                            <dl>
-                                <dt>Data e Horário</dt>
-                                <dd>A definir — durante o intervalo entre palestras</dd>
-                                <dt>Local</dt>
-                                <dd>Área de convivência do Bloco X</dd>
-                                <dt>Taxa de participação</dt>
-                                <dd>Valor simbólico a ser informado pela organização — pago presencialmente</dd>
-                                <dt>Itens incluídos</dt>
-                                <dd>Café, chá, sucos, lanches variados (sujeito a confirmação)</dd>
-                            </dl>
-                            <p>
-                                <small>
-                                    Ao marcar esta opção, você confirma que está ciente da taxa e deseja participar.
-                                    Caso não compareça, avise a organização com antecedência.
-                                </small>
-                            </p>
-                        </section>
-                    </div>
+                    <div id="info-coffee-break"></div>
                 </fieldset>
 
-                <section>
-                    <div class="acoes-formulario">
-                        <button type="submit">Confirmar Inscrição</button>
-                        <button type="reset">Limpar Formulário</button>
-                    </div>
-                </section>
+                <div class="acoes-formulario">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Limpar</button>
+                </div>
 
             </form>
         </section>
@@ -223,17 +148,11 @@
             <p>
                 Contato:
                 <a href="https://api.whatsapp.com/send?phone=554491399006&amp;text=Ol%C3%A1!%20Acessei%20o%20site%20da%20UniCesumar%20e%20quero%20saber%20mais%20informa%C3%A7%C3%B5es.%20Voc%C3%AA%20pode%20ajudar?"
-                    target="_blank"><i>WhatsApp</i></a>
+                    target="_blank" ><i>WhatsApp</i></a>
             </p>
         </address>
-
-        <p>
-            <small>
-                &copy; <time datetime="2026">2026</time> II Tech Week — Faculdade.
-                Todos os direitos reservados.
-            </small>
-        </p>
     </footer>
+
 </body>
 
 </html>
