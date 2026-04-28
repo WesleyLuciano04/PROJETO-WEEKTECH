@@ -1,4 +1,29 @@
+body
+{
+    font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    background-color: #f9f9f9;
+}
+
+#palestra-d1-1
+{
+    
+}
+
 /*  HEADER */
+.skip-link
+{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.header-evento-titulo
+{
+    font-size: 1rem;
+}
+
 .header-identidade
 {
     display: flex;
@@ -6,19 +31,73 @@
     gap: 20px;
     padding: 10px;
 }
+
 .header-identidade img
 {
     width: 85px;
     height: auto;
 }
 
-/* ==  BOTÃO DIAS PROGRAMAÇÃO  == */
+/* == BOTÃO DIAS PROGRAMAÇÃO == */
+
+#grade-semana
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin: 20px auto;
+    padding: 0 15px;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100px;
+}
+
+.dia-programacao
+{
+    flex: 0 0 350px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    min-width: 300px;
+}
+
+.dia-toggle
+{
+    width: 20%;
+    background-color: #3bacd8;
+    border: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    cursor: pointer;
+    margin: 0;
+    transition: background 0.3s ease;
+}
+
+.palestras-dia-1
+{
+    color: black;
+}
+
+.dia-toggle h3
+{
+    margin: 0;
+    font-size: 1.1rem;
+    color:#333;
+}
 
 .grade-dia
 {
     display: none;
     background-color: #fcfcfc;
-    color: white;
+    color: black;
     padding: 20px;
     border-top: 1px solid white;
 }
@@ -26,4 +105,45 @@
 .dia-programacao:hover .grade-dia
 {
     display: block !important;
+}
+
+.grade-dia ol
+{
+    list-style: none;
+    padding: 0;
+}
+
+.grade-dia li
+{
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.grade-dia li:last-child
+{
+    border-bottom: none;
+}
+
+dl {
+    display: grid;                
+    grid-template-columns: 100px 1fr; 
+    gap: 5px;                      
+    margin-top: 10px;             
+}
+
+dt {
+    font-weight: bold;
+    color: #666;
+    font-size: 0.9rem;     
+}
+
+dd {
+    margin: 0;    
+    color: #333;              
+}
+
+.dia-programacao:hover span[aria-hidden="true"] {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
 }
