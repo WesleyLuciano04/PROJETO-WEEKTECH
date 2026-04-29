@@ -8,12 +8,40 @@ body
 
 
 
-#palestra-d1-1
+/*  HEADER */
+
+.header-inner
 {
-    
+    display: flex;
+    gap: 30px;
 }
 
-/*  HEADER */
+.navegacao
+{
+    display: flex;
+    gap: 15px;
+
+}
+
+.navegacao a
+{
+    
+    text-decoration: none;
+}
+
+.header-logo
+{
+    display: flex;
+    align-items: left;
+}
+#programacao
+{
+    background-color: black;
+    color: rgb(73, 75, 168);
+    padding: 20px 0;
+    text-align: center;
+}
+
 .skip-link
 {
     text-decoration: none;
@@ -36,7 +64,13 @@ body
 
 .header-identidade img
 {
-    width: 85px;
+    width: 50px;
+    height: auto;
+}
+
+.header-identidade img #tech
+{
+    width: 100px;
     height: auto;
 }
 
@@ -45,33 +79,43 @@ body
 #grade-semana
 {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px !important;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 800px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin: 20px auto;
     padding: 0 15px;
-    align-items: stretch;
+    align-items: flex-start;
     width: 100%;
     max-width: 100px;
 }
 
 .dia-programacao
 {
-    flex: 0 0 350px;
+    flex: 1;
     border: 1px solid #333;
     border-radius: 5px;
     overflow: hidden;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     width: 100%;
-    min-width: 300px;
+    min-width: 220px;
+}
+
+.dia-programacao:hover .grade-dia
+{
+    display: block !important;
+}
+
+.dia-programacao:hover span[aria-hidden="true"] {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
 }
 
 .dia-toggle
 {
     width: 20%;
-    background-color: #3bacd8;
+    background-color: #2e7b99;
     border: none;
     padding: 20px;
     display: flex;
@@ -102,11 +146,6 @@ body
     color: black;
     padding: 20px;
     border-top: 1px solid white;
-}
-
-.dia-programacao:hover .grade-dia
-{
-    display: block !important;
 }
 
 .grade-dia ol
@@ -145,16 +184,11 @@ dd {
     color: #333;              
 }
 
-.dia-programacao:hover span[aria-hidden="true"] {
-    transform: rotate(180deg);
-    transition: transform 0.3s;
-}
-
-
 #patrocinadores img {
     width: 200px;
     height: 80px;
 }
+
 #patrocinadores ul {
     list-style: none;
     padding: 0;
