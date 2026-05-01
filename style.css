@@ -194,3 +194,153 @@ dd {
     padding: 0;
     margin: 0;
 }
+
+
+/* CHATBOT AQUI */
+
+
+/* FAQ COMEÇA AQUI */
+#faq {
+
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#faq > hr {
+
+    width: 40px;
+    border: none;
+    border-top: 2px solid #1a1a1a;;
+    margin: 0 0 40px 0;
+
+}
+
+#faq > h2 {
+
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+    margin: 0 0 56px 0;
+    text-align: center;
+
+}
+
+#faq > div {
+
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+}
+
+#faq details {
+  
+  border-bottom: 1px solid #e5e5e5;
+  overflow: hidden;
+
+}
+
+#faq details:first-child {
+
+  border-top: 1px solid #e5e5e5;
+
+}
+
+#faq summary {
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  padding: 22px 36px 22px 0;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  transition: color 200ms ease;
+  user-select: none;
+
+}
+
+#faq summary::-webkit-details-marker { display: none; }
+#faq summary::marker { display: none; }
+
+#faq summary::after {
+
+  content: '+';
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #888;
+  transition: transform 200ms ease, color 200ms ease, content 200ms ease;
+  line-height: 1;
+
+}
+
+#faq details[open] > summary::after {
+
+  content: '−';
+  color: #1a1a1a;
+
+}
+
+#faq summary:hover {
+
+  color: #888;
+
+}
+
+#faq details > p {
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #555;
+  margin: 0;
+  padding: 0 48px 24px 0;
+  max-width: 580px;
+  animation: faq-reveal 220ms ease forwards;
+
+}
+
+@keyframes faq-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVIDADE FAQ */
+@media (max-width: 480px) {
+  #faq {
+    padding: 56px 20px;
+  }
+ 
+  #faq summary {
+    font-size: 0.9rem;
+    padding-right: 28px;
+  }
+ 
+  #faq details > p {
+    font-size: 0.85rem;
+    padding-right: 0;
+  }
+}
+/* FAQ TERMINA AQUI */
+
