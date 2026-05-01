@@ -15,50 +15,54 @@
         <div class="header-inner">
             <div class="header-identidade">
                 <a href="https://www.unicesumar.edu.br/" target="_blank">
-                    <img src="imgs/logoUnicesumar/logo.jpg" alt="Logo UniCesumar">
+                    <img src="imgs/unicesumar-logo.png" alt="Logo UniCesumar">
                 </a>   
                 
-                <a href="index.html">
-                    <img id="tech" src="imgs/logo tech week.jpeg" alt="Logo do evento: Tech Week 2026">
-                </a>
             </div>
 
-
-            <!-- Navegação -->
-            <nav class="navegacao">
-                    <a href="index.html">Home</a>
-                    <a href="inscricao-participante.html">Participante</a>
-                    <a href="inscricao-palestrante.html">Palestrante</a>
-            </nav>
+            <div>
+                <!-- Navegação -->
+                <nav class="navegacao">
+                        <a href="index.html">Home</a>
+                        <a href="inscricao-participante.html">Participante</a>
+                        <a href="inscricao-palestrante.html">Palestrante</a>
+                </nav>
+            </div>
         </div>
-
-        <div class="header-titulos">
-                    <strong class="header-evento-titulo">II Tech Week 2026</strong>
-                    <span class="header-evento-subtitulo">Inteligência Artificial em Ação</span>
-                </div>
     </header>
 
     <main id="conteudo-principal">
 
         <section id="sobre">
-            <h1 id="titulo-sobre">Sobre o Evento</h1>
+            <div>
+                <h1 id="titulo-sobre">Sobre o Evento</h1>
 
-            <p>A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia.</p>
+                <p>A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia.</p>
 
-            <p>O foco desta edição é Inteligência Artificial aplicada na prática.</p>
+                <p>O foco desta edição é Inteligência Artificial aplicada na prática.</p>
 
-            <dl class="evento-info">
-                <dt>Datas</dt>
-                <dd>20 a 24 de outubro de 2026</dd>
+                <dl class="evento-info">
+                    <dt>Datas</dt>
+                    <dd>20 a 24 de outubro de 2026</dd>
 
-                <dt>Local</dt>
-                <dd>Bloco X — Auditório Central</dd>
+                    <dt>Local</dt>
+                    <dd>Bloco X — Auditório Central</dd>
 
-                <dt>Formato</dt>
-                <dd>Presencial</dd>
-            </dl>
+                    <dt>Formato</dt>
+                    <dd>Presencial</dd>
+                </dl>
 
-            <a href="inscricao-participante.html">Faça sua inscrição</a>
+                <a href="inscricao-participante.html">Faça sua inscrição</a>
+            </div>
+
+            <div class="apresentacaoTechWeek">
+                <strong class="header-evento-titulo">II Tech Week 2026</strong><br>
+                <span class="header-evento-subtitulo">Inteligência Artificial em Ação</span>
+
+                <a href="index.html">
+                    <img id="tech" src="imgs/logotw.png" alt="Logo do evento: Tech Week 2026">
+                </a>
+            </div>
         </section>
 
         <section id="programacao">
@@ -192,25 +196,27 @@
         </section>
 
         <!--SEÇÃO CHATBOT-->
-        <div id="chat">
-            <button id="btnChat" aria-label="Abrir chat">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </svg>
-            </button>
-        </div>
+        <section>
+            <div id="chat">
+                <button id="btnChat" aria-label="Abrir chat">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                    </svg>
+                </button>
+            </div>
 
-        <div id="window-chat" class="hidden">
-            <div class="header-chat">
-                <span>Atendimento Virtual</span>
-                <i style="cursor: pointer" onclick="closeChat('btnChat')">❌</i>
+            <div id="window-chat" class="hidden">
+                <div class="header-chat">
+                    <span>Atendimento Virtual</span>
+                    <i style="cursor: pointer" onclick="closeChat('btnChat')">❌</i>
+                </div>
+                <div id="box-chat"></div>
+                <div class="input-chat">
+                    <input type="text" id="user-input" placeholder="Digite sua dúvida...">
+                    <button class="btnSendChat" onclick="sendMessage()">Enviar</button>
+                </div>
             </div>
-            <div id="box-chat"></div>
-            <div class="input-chat">
-                <input type="text" id="user-input" placeholder="Digite sua dúvida...">
-                <button class="btnSendChat" onclick="sendMessage()">Enviar</button>
-            </div>
-        </div>
+        </section>
 
 
         <!-- FAQ com perguntas frequentes -->

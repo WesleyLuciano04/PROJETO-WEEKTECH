@@ -1,3 +1,11 @@
+:root
+{
+    --blue-1: #005387;
+    --blue-2: #00243B;
+    --yellow-1: #FFD621;
+    --yellow-dark: #B39617;
+}
+
 body
 {
     font-family:Arial, Helvetica, sans-serif;
@@ -6,34 +14,28 @@ body
     background-color: #f9f9f9;
 }
 
-
-
 /*  HEADER */
 
 .header-inner
 {
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
 .navegacao
 {
     display: flex;
     gap: 15px;
-
 }
 
 .navegacao a
 {
-    
     text-decoration: none;
+    color: var(--blue-1);
 }
 
-.header-logo
-{
-    display: flex;
-    align-items: left;
-}
 #programacao
 {
     background-color: black;
@@ -58,19 +60,29 @@ body
 {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 10px;
+    justify-content: center;
 }
 
 .header-identidade img
 {
-    width: 50px;
+    width: 200px;
     height: auto;
 }
 
-.header-identidade img #tech
+#sobre
 {
-    width: 100px;
+    background-color: #9c9a9a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.apresentacaoTechWeek #tech
+{
+    width: 25rem;
     height: auto;
 }
 
