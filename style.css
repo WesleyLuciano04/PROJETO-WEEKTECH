@@ -51,11 +51,6 @@ body
     justify-content: center;
 }
 
-.header-evento-titulo
-{
-    font-size: 1rem;
-}
-
 .header-identidade
 {
     display: flex;
@@ -71,13 +66,56 @@ body
 
 #sobre
 {
-    background-color: #9c9a9a;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
+}
+
+#titulo-sobre
+{
+    font-size: 1.5rem;
+    color: var(--blue-1);
+
+}
+
+.sobre-evento button
+{
+    text-decoration: none;
+    background-color: var(--yellow-1);
+    padding: 10px;
+    color: var(--blue-2);
+    border-style: outset;
+    border-color: var(--yellow-1);
+    cursor: pointer;
+}
+
+.sobre-evento button:hover
+{
+    background-color: var(--yellow-dark);
+}
+
+.apresentacaoTechWeek
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.evento-titulo
+{
+    color: var(--yellow-1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    margin-right: 3rem;
+}
+
+.evento-subtitulo
+{
+    color: var(--blue-1);
+    font-size: 1.2rem;
+    margin-right: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .apresentacaoTechWeek #tech
