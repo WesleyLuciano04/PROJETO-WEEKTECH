@@ -1,65 +1,56 @@
-:root
-{
+:root {
     --blue-1: #005387;
     --blue-2: #00243B;
     --yellow-1: #FFD621;
     --yellow-dark: #B39617;
 }
 
-body
-{
-    font-family:Arial, Helvetica, sans-serif;
-    margin:0;
-    padding:0;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f9f9f9;
 }
 
 /*  HEADER */
 
-.header-inner
-{
+.header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
 }
 
-.navegacao
-{
+.navegacao {
     display: flex;
     gap: 15px;
 }
 
-.navegacao a
-{
+.navegacao a {
     text-decoration: none;
     color: var(--blue-1);
 }
 
 
 
-.skip-link
-{
+.skip-link {
     text-decoration: none;
     display: flex;
     justify-content: center;
 }
 
-.header-identidade
-{
+.header-identidade {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header-identidade img
-{
+.header-identidade img {
     width: 200px;
     height: auto;
 }
 
-#sobre
-{
+#sobre {
     background-image: url(imgs/fundo_tech_week.png);
     background-size: cover;
     background-position: center;
@@ -69,108 +60,273 @@ body
     justify-content: space-between;
     padding: 20px;
     min-height: 100vh;
+    position: relative;
+}
+
+#grid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /*  TÍTULO*/
-#titulo-tech
-{
-    font-size: 4.5rem;
+#titulo-tech {
+    font-size: 7rem;
     color: white;
 
 }
 
-#titulo-week
-{
-    font-size: 4.5rem;
+#titulo-week {
+    font-size: 7rem;
     color: var(--yellow-1);
     margin-top: -55px;
+    margin-bottom: 40px;
 }
 
-#sub-titulo
-{
+#sub-titulo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.55rem;
+    font-size: 2rem;
     color: white;
     margin-top: -35px;
 }
 
-.destaque1
-{
+.destaque1 {
     color: var(--yellow-1);
     font-family: serif, italic;
 }
-.destaque2
-{
+
+.destaque2 {
     color: var(--yellow-1);
     font-family: serif, italic;
 }
 
 /* logo */
 
-#tech
-{
+#tech {
     margin-right: 70px;
 
 }
 
-.sobre-evento button
-{
-    font-size: 20px;
-    text-decoration: none;
+.capa-evento button {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     background-color: var(--yellow-1);
-    padding: 10px;
     color: var(--blue-2);
-    border-style: solid;
-    border-radius: 5%;
-    border-color: var(--yellow-1);
+    padding: 14px 36px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.sobre-evento button:hover
-{
+.capa-evento button:hover {
     background-color: var(--yellow-dark);
+    transform: translateY(-2px);
 }
 
-.apresentacaoTechWeek
-{
+.capa-evento button:active {
+    transform: translateY(0);
+}
+
+/* Cards de info: Datas, Local, Formato */
+.evento-info {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin: 24px 0 40px 0;
+    flex-wrap: wrap;
+}
+
+.evento-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+.evento-info-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.evento-info-item small {
+    color: var(--yellow-1);
+    font-size: 0.90rem;
+    /* label DATAS, LOCAL, FORMATO */
+}
+
+.evento-info-item span {
+    font-size: 0.90rem;
+    /* valor ex: 20 a 24 / Out / 2026 */
+}
+
+.evento-info-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: rgba(252, 252, 252, 0.15);
+    border-radius: 8px;
+    color: var(--yellow-1);
+    flex-shrink: 0;
+}
+
+.evento-info-icone svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+.apresentacaoTechWeek {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.evento-titulo
-{
+.apresentacaoTechWeek #tech {
+    width: 25rem;
+    height: auto;
+    margin-right: 70px;
+    filter: drop-shadow(0 0 20px rgba(255, 214, 33, 0.6));
+    transition: filter 0.3s ease;
+}
+
+.apresentacaoTechWeek #tech:hover {
+    filter: drop-shadow(0 0 40px rgba(255, 214, 33, 0.9));
+}
+
+
+.evento-titulo {
     color: var(--yellow-1);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 2rem;
     margin-right: 3rem;
 }
 
-.evento-subtitulo
-{
+.evento-subtitulo {
     color: var(--blue-1);
     font-size: 1.2rem;
     margin-right: 3.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.apresentacaoTechWeek #tech
-{
+.apresentacaoTechWeek #tech {
     width: 25rem;
     height: auto;
 }
 
+/*Sobre o evento*/
+
+#sobre-evento {
+    background: #f0f4f8;
+    padding: 60px 80px;
+    text-align: center;
+}
+
+#sobre-evento>h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--blue-2);
+    margin: 0 0 16px 0;
+}
+
+#sobre-evento>p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto 40px auto;
+}
+
+/* Grid de cards */
+.sobre-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sobre-card {
+    background: #ffffff;
+    border: 1px solid #e0e8f0;
+    border-radius: 12px;
+    padding: 28px 24px;
+    flex: 1;
+    min-width: 240px;
+    max-width: 340px;
+    text-align: left;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.sobre-card:hover {
+    border: 2px solid var(--yellow-1);
+    background: rgba(255, 214, 33, 0.05);
+    box-shadow: 0 4px 20px rgba(255, 214, 33, 0.2);
+}
+
+.sobre-card:hover .sobre-card-icone {
+    background: var(--yellow-1);
+    color: var(--blue-2);
+}
+
+.sobre-card:hover h3 {
+    color: var(--yellow-dark);
+}
+
+/* Ícone */
+.sobre-card-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 214, 33, 0.2);
+    border-radius: 10px;
+    color: var(--yellow-dark);
+    margin-bottom: 16px;
+}
+
+
+
+.sobre-card-icone svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Texto */
+.sobre-card h3 {
+    font-size: 1rem;
+    color: var(--blue-1);
+    margin: 0 0 10px 0;
+}
+
+.sobre-card p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
 /* ==PROGRAMAÇÃO == */
 
-#programacao
-{
+#programacao {
     color: rgb(73, 75, 168);
     padding: 20px 0;
     text-align: center;
 }
 
-#grade-semana
-{
+#grade-semana {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -186,8 +342,7 @@ body
 
 /*  DIA DE PROGRAMAÇÃO */
 
-.dia-programacao
-{
+.dia-programacao {
     flex: 1;
     border: 1px solid #333;
     border-radius: 5px;
@@ -198,8 +353,7 @@ body
     border-color: var(--yellow-1);
 }
 
-.dia-programacao:hover .grade-dia
-{
+.dia-programacao:hover .grade-dia {
     display: block !important;
 }
 
@@ -209,8 +363,7 @@ body
     color: var(--yellow-1);
 }
 
-.dia-toggle
-{
+.dia-toggle {
     width: 100%;
     background-color: var(--blue-1);
     border-color: var(--yellow-1);
@@ -224,20 +377,17 @@ body
     transition: background 0.3s ease;
 }
 
-.palestra
-{
+.palestra {
     color: black;
 }
 
-.dia-toggle h3
-{
+.dia-toggle h3 {
     margin: 0;
     font-size: 1.1rem;
-    color:#333;
+    color: #333;
 }
 
-.grade-dia
-{
+.grade-dia {
     display: none;
     background-color: var(--blue-1);
     color: black;
@@ -245,29 +395,28 @@ body
     border-color: var(--yellow-1);
 }
 
-.grade-dia ol
-{
+.grade-dia ol {
     list-style: none;
     padding: 0;
     border-color: var(--yellow-1);
 }
 
 dl {
-    display: grid;                
-    grid-template-columns: 100px 1fr; 
-    gap: 5px;                      
-    margin-top: 10px;             
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 5px;
+    margin-top: 10px;
 }
 
 dt {
     font-weight: bold;
     color: #000000;
-    font-size: 0.9rem;     
+    font-size: 0.9rem;
 }
 
 dd {
-    margin: 0;    
-    color: #000000;              
+    margin: 0;
+    color: #000000;
 }
 
 
@@ -286,16 +435,14 @@ dd {
 
 /* MAPA */
 
-#localizacao h2
-{
+#localizacao h2 {
     color: var(--yellow-1);
     font-size: 1.8rem;
     margin-bottom: 10px;
     margin-left: 10px;
 }
 
-.uni 
-{
+.uni {
     background-color: rgb(255, 255, 255);
     padding: 20px;
     color: black;
@@ -316,16 +463,17 @@ dd {
 
 }
 
-#faq > hr {
+#faq>hr {
 
     width: 40px;
     border: none;
-    border-top: 2px solid #1a1a1a;;
+    border-top: 2px solid #1a1a1a;
+    ;
     margin: 0 0 40px 0;
 
 }
 
-#faq > h2 {
+#faq>h2 {
 
     font-family: 'DM Serif Display', serif;
     font-weight: 400;
@@ -337,117 +485,123 @@ dd {
 
 }
 
-#faq > div {
+#faq>div {
 
-  width: 100%;
-  max-width: 680px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 
 }
 
 #faq details {
-  
-  border-bottom: 1px solid #e5e5e5;
-  overflow: hidden;
+
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
 
 }
 
 #faq details:first-child {
 
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 
 }
 
 #faq summary {
 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #1a1a1a;
-  letter-spacing: -0.01em;
-  padding: 22px 36px 22px 0;
-  cursor: pointer;
-  list-style: none;
-  position: relative;
-  transition: color 200ms ease;
-  user-select: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+    padding: 22px 36px 22px 0;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    transition: color 200ms ease;
+    user-select: none;
 
 }
 
-#faq summary::-webkit-details-marker { display: none; }
-#faq summary::marker { display: none; }
+#faq summary::-webkit-details-marker {
+    display: none;
+}
+
+#faq summary::marker {
+    display: none;
+}
 
 #faq summary::after {
 
-  content: '+';
-  position: absolute;
-  right: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  color: #888;
-  transition: transform 200ms ease, color 200ms ease, content 200ms ease;
-  line-height: 1;
+    content: '+';
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #888;
+    transition: transform 200ms ease, color 200ms ease, content 200ms ease;
+    line-height: 1;
 
 }
 
-#faq details[open] > summary::after {
+#faq details[open]>summary::after {
 
-  content: '−';
-  color: #1a1a1a;
+    content: '−';
+    color: #1a1a1a;
 
 }
 
 #faq summary:hover {
 
-  color: #888;
+    color: #888;
 
 }
 
-#faq details > p {
+#faq details>p {
 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 300;
-  line-height: 1.75;
-  color: #555;
-  margin: 0;
-  padding: 0 48px 24px 0;
-  max-width: 580px;
-  animation: faq-reveal 220ms ease forwards;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #555;
+    margin: 0;
+    padding: 0 48px 24px 0;
+    max-width: 580px;
+    animation: faq-reveal 220ms ease forwards;
 
 }
 
 @keyframes faq-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* RESPONSIVIDADE FAQ */
 @media (max-width: 480px) {
-  #faq {
-    padding: 56px 20px;
-  }
- 
-  #faq summary {
-    font-size: 0.9rem;
-    padding-right: 28px;
-  }
- 
-  #faq details > p {
-    font-size: 0.85rem;
-    padding-right: 0;
-  }
-}
-/* FAQ TERMINA AQUI */
+    #faq {
+        padding: 56px 20px;
+    }
 
+    #faq summary {
+        font-size: 0.9rem;
+        padding-right: 28px;
+    }
+
+    #faq details>p {
+        font-size: 0.85rem;
+        padding-right: 0;
+    }
+}
+
+/* FAQ TERMINA AQUI */

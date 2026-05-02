@@ -16,18 +16,18 @@
             <div class="header-identidade">
                 <a href="https://www.unicesumar.edu.br/" target="_blank">
                     <img src="imgs/unicesumar-logo.png" alt="Logo UniCesumar">
-                </a>   
-                
+                </a>
+
             </div>
 
             <div>
                 <!-- Navegação -->
                 <nav class="navegacao">
-                        <a href="index.html">Home</a>
-                        <a href="inscricao-participante.html">Participante</a>
-                        <a href="inscricao-palestrante.html">Palestrante</a>
-                        <a href="#programacao">Programação</a>   
-                        <a href="#contato">Contato</a>
+                    <a href="index.html">Home</a>
+                    <a href="inscricao-participante.html">Participante</a>
+                    <a href="inscricao-palestrante.html">Palestrante</a>
+                    <a href="#programacao">Programação</a>
+                    <a href="#contato">Contato</a>
                 </nav>
             </div>
         </div>
@@ -36,21 +36,59 @@
     <main id="conteudo-principal">
 
         <section id="sobre">
-            <div class="sobre-evento">
+
+            <canvas id="grid-canvas"></canvas>
+
+            <div class="capa-evento">
                 <h1 id="titulo-tech">II TECH</h1>
                 <h1 id="titulo-week">WEEK 2026</h1>
-                <h3 id="sub-titulo">Inteligência <span class="destaque1"> Artificial</span> em  <span class="destaque2">Ação</span></h3>
+                <h3 id="sub-titulo">Inteligência <span class="destaque1"> Artificial</span> em <span
+                        class="destaque2">Ação</span></h3>
 
-                <dl class="evento-info">
-                    <dt>Datas</dt>
-                    <dd>20 a 24 de outubro de 2026</dd>
+                <div class="evento-info">
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>DATAS</small>
+                            <span>01 a 03 / Jul / 2026</span>
+                        </div>
+                    </div>
 
-                    <dt>Local</dt>
-                    <dd>Bloco X — Auditório Central</dd>
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                                <circle cx="12" cy="9" r="2.5" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>LOCAL</small>
+                            <span>Unicesumar — Auditório </span>
+                        </div>
+                    </div>
 
-                    <dt>Formato</dt>
-                    <dd>Presencial</dd>
-                </dl>
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>FORMATO</small>
+                            <span>Presencial</span>
+                        </div>
+                    </div>
+                </div>
 
                 <button href="inscricao-participante.html">Faça sua Inscrição</button>
             </div>
@@ -62,13 +100,71 @@
             </div>
         </section>
 
+
+        <section id="sobre-evento">
+            <h2>Sobre o Evento</h2>
+            <p>A <strong>Tech Week</strong> reúne alunos, professores e profissionais para discutir inovação e
+                tecnologia. O foco desta edição é <strong>Inteligência Artificial aplicada na prática</strong>.</p>
+
+            <div class="sobre-cards">
+                <div class="sobre-card">
+                    <div class="sobre-card-icone">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21h6" />
+                            <path
+                                d="M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Inovação Tecnológica</h3>
+                    <p>Workshops, demos e palestras sobre as tecnologias que estão moldando o futuro do mercado.</p>
+                </div>
+
+                <div class="sobre-card">
+                    <div class="sobre-card-icone">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                            <path
+                                d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                            <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+                            <path d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+                            <path d="M19.938 10.5a4 4 0 0 1 .585.396" />
+                            <path d="M6 18a4 4 0 0 1-1.967-.516" />
+                            <path d="M19.967 17.484A4 4 0 0 1 18 18" />
+                        </svg>
+                    </div>
+                    <h3>IA Aplicada</h3>
+                    <p>Casos reais de Inteligência Artificial resolvendo problemas em saúde, educação e negócios.</p>
+                </div>
+
+                <div class="sobre-card">
+                    <div class="sobre-card-icone">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>Conecte-se com palestrantes, recrutadores e a comunidade tech da região de Londrina.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="programacao">
             <h2>Programação</h2>
 
             <div id="grade-semana">
 
                 <article class="dia-programacao">
-                    <button class="dia-toggle" >
+                    <button class="dia-toggle">
                         <h3>Segunda-feira — 20/10</h3>
                         <span aria-hidden="true">▼</span>
                     </button>
@@ -104,7 +200,7 @@
 
 
                 <article class="dia-programacao">
-                    <button class="dia-toggle" >
+                    <button class="dia-toggle">
                         <h3>Terça-feira — 21/10</h3>
                         <span aria-hidden="true">▼</span>
                     </button>
@@ -116,7 +212,7 @@
 
 
                 <article class="dia-programacao">
-                    <button class="dia-toggle" >
+                    <button class="dia-toggle">
                         <h3>Quarta-feira — 22/10</h3>
                         <span aria-hidden="true">▼</span>
                     </button>
@@ -185,7 +281,7 @@
                 <li>
                     <a href="https://dentalclean.com/br/" target="_blank">
                         <img src="imgs/patrocinadores/dentalcleanLogo.jpg"
-                            alt="Logotipo do patrocinador: Nome da Empresa"/>
+                            alt="Logotipo do patrocinador: Nome da Empresa" />
                     </a>
                 </li>
             </ul>
@@ -195,8 +291,10 @@
         <section>
             <div id="chat">
                 <button id="btnChat" aria-label="Abrir chat">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                     </svg>
                 </button>
             </div>
@@ -222,34 +320,43 @@
             <div>
                 <details>
                     <summary>Como posso patrocinar o evento?</summary>
-                    <p>Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a nossa coordenação pelo telefone/WhatsApp: (xx) x xxxx-xxxx.</p>
+                    <p>Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a
+                        nossa coordenação pelo telefone/WhatsApp: (xx) x xxxx-xxxx.</p>
                 </details>
 
                 <details>
                     <summary>Como confirmo minha presença nas atividades?</summary>
-                    <p>Ao final de cada palestra, será exibido um QR Code exclusivo para registro de presença. Certifique-se de escaneá-lo antes de sair da sala para garantir a validação da sua participação.</p>
+                    <p>Ao final de cada palestra, será exibido um QR Code exclusivo para registro de presença.
+                        Certifique-se de escaneá-lo antes de sair da sala para garantir a validação da sua participação.
+                    </p>
                 </details>
 
                 <details>
                     <summary>Como posso inscrever meu projeto para apresentação?</summary>
-                    <p>Você deve realizar o cadastro do seu projeto através do [link/portal de inscrições]. Após o envio, nossa equipe técnica realizará a análise e verificação dos requisitos para autorizar a apresentação.</p>
+                    <p>Você deve realizar o cadastro do seu projeto através do [link/portal de inscrições]. Após o
+                        envio, nossa equipe técnica realizará a análise e verificação dos requisitos para autorizar a
+                        apresentação.</p>
                 </details>
 
                 <details>
                     <summary>Como participo do Coffee Break?</summary>
-                    <p>No momento da inscrição no evento, selecione a opção correspondente ao Coffee Break. Os participantes que optarem por este serviço receberão as instruções para o pagamento da taxa adicional de adesão.</p>
+                    <p>No momento da inscrição no evento, selecione a opção correspondente ao Coffee Break. Os
+                        participantes que optarem por este serviço receberão as instruções para o pagamento da taxa
+                        adicional de adesão.</p>
                 </details>
-                
+
                 <details>
                     <summary>Qual o prazo limite para realizar a inscrição?</summary>
-                    <p>As inscrições para cada palestra podem ser feitas até 1 hora antes do horário de início previsto. Após esse período, o sistema de inscrições será automaticamente bloqueado para aquela sessão.</p>
+                    <p>As inscrições para cada palestra podem ser feitas até 1 hora antes do horário de início previsto.
+                        Após esse período, o sistema de inscrições será automaticamente bloqueado para aquela sessão.
+                    </p>
                 </details>
             </div>
         </section>
 
     </main>
 
-    <footer  id="contato" role="contentinfo">
+    <footer id="contato" role="contentinfo">
         <address>
             <p>Organização: Comissão da Tech Week 2026</p>
             <p>
@@ -260,6 +367,7 @@
         </address>
     </footer>
 
+    <script src="canvas.js"></script>
     <script src="chatbot.js"></script>
 </body>
 
