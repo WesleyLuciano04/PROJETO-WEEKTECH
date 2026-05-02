@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição Palestrante — Tech Week 2026</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="palestrante.css">
 </head>
 
 <body>
@@ -32,14 +32,70 @@
 
     <main id="conteudo-principal">
 
-        <div class="apresentacaoTechWeek">
-                <strong class="header-evento-titulo">II Tech Week 2026</strong>
-                <span class="header-evento-subtitulo">Inteligência Artificial em Ação</span>
+        <section id="sobre">
 
+            <canvas id="grid-canvas"></canvas>
+
+            <div class="capa-evento">
+                <h1 id="titulo-tech">II TECH</h1>
+                <h1 id="titulo-week">WEEK 2026</h1>
+                <h3 id="sub-titulo">Inteligência <span class="destaque1"> Artificial</span> em <span
+                        class="destaque2">Ação</span></h3>
+
+                <div class="evento-info">
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>DATAS</small>
+                            <span>01 a 03 / Jul / 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                                <circle cx="12" cy="9" r="2.5" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>LOCAL</small>
+                            <span>Unicesumar — Auditório </span>
+                        </div>
+                    </div>
+
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>FORMATO</small>
+                            <span>Presencial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button href="inscricao-participante.html">Faça sua Inscrição</button>
+            </div>
+
+            <div class="apresentacaoTechWeek">
                 <a href="index.html">
-                    <img id="tech" src="imgs/logotw.png" alt="Logo do evento: Tech Week 2026">
+                    <img id="tech" src="imgs/logotw1.png" alt="Logo do evento: Tech Week 2026">
                 </a>
-        </div>
+            </div>
+        </section>
 
         <section id="introducao-palestrante">
             <h2>Inscrição para Palestrante</h2>

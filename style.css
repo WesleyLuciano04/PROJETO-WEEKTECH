@@ -31,8 +31,6 @@ body {
     color: var(--blue-1);
 }
 
-
-
 .skip-link {
     text-decoration: none;
     display: flex;
@@ -108,7 +106,6 @@ body {
 
 #tech {
     margin-right: 70px;
-
 }
 
 .capa-evento button {
@@ -226,6 +223,8 @@ body {
     height: auto;
 }
 
+/* FIM DA SESSÃO SOBRE  */
+
 /*Sobre o evento*/
 
 #sobre-evento {
@@ -296,8 +295,6 @@ body {
     margin-bottom: 16px;
 }
 
-
-
 .sobre-card-icone svg {
     width: 24px;
     height: 24px;
@@ -317,17 +314,18 @@ body {
     margin: 0;
 }
 
-
 /* ==PROGRAMAÇÃO == */
 
-#programacao {
+#programacao 
+{
     color: rgb(73, 75, 168);
     padding: 20px 0;
     text-align: center;
 }
 
-#grade-semana {
-    display: flex;
+#grade-semana 
+{
+    display: column;
     flex-direction: row;
     gap: 20px;
     max-width: 800px !important;
@@ -342,87 +340,123 @@ body {
 
 /*  DIA DE PROGRAMAÇÃO */
 
-.dia-programacao {
+.dia-programacao 
+{
     flex: 1;
     border: 1px solid #333;
-    border-radius: 5px;
+    border-radius: 12px;
     overflow: hidden;
+    background-clip: padding-box;
     background-color: rgb(255, 255, 255);
     width: 100%;
     min-width: 220px;
     border-color: var(--yellow-1);
+    margin-bottom: 06px;
 }
 
-.dia-programacao:hover .grade-dia {
+.dia-programacao:hover .grade-dia 
+{
     display: block !important;
 }
 
-.dia-programacao:hover span[aria-hidden="true"] {
-    transform: rotate(180deg);
-    transition: transform 0.3s;
-    color: var(--yellow-1);
-}
-
-.dia-toggle {
+.dia-toggle 
+{
     width: 100%;
-    background-color: var(--blue-1);
+    background-color: white;
     border-color: var(--yellow-1);
-    padding: 20px;
-    display: flex;
+    padding: 15px;
+    display: column;
     align-items: center;
     justify-content: space-between;
     text-align: left;
     cursor: pointer;
     margin: 0;
+    border-radius: 12px;
     transition: background 0.3s ease;
 }
 
-.palestra {
-    color: black;
+#dias
+{
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--yellow-dark);
 }
 
 .dia-toggle h3 {
     margin: 0;
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 1.3rem;
+    color: var(--blue-1);
 }
 
-.grade-dia {
+.dia-toggle p {
+    margin: 0;
+    font-size: 0.7rem;
+    color: #555;
+}
+
+/* PROGRAMAÇÃO SESSÕES  */
+.grade-dia 
+{
     display: none;
-    background-color: var(--blue-1);
+    background-color: white;
     color: black;
     padding: 20px;
     border-color: var(--yellow-1);
 }
 
 .grade-dia ol {
+    display: flex;
+    flex-direction: row;
     list-style: none;
     padding: 0;
-    border-color: var(--yellow-1);
+    gap: 12px;
 }
 
-dl {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 5px;
-    margin-top: 10px;
+.palestra-card 
+{
+    background-color: #e4dfdf;
+    border: 1px solid #e0e8f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: black;
+    margin: 10px;
+    min-width: 120px;
+    max-width: 160px;
+    margin-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-dt {
-    font-weight: bold;
-    color: #000000;
-    font-size: 0.9rem;
+.palestra-card:hover
+{
+    background-color: var(--yellow-1);
+    border-color: var(--blue-2);
 }
 
-dd {
+.palestra-tag
+{
+    font-size: 0.6rem;
+    color: var(--yellow-dark);
+    font-weight: 700;
+}
+
+.palestra-card h4 
+{
     margin: 0;
-    color: #000000;
+    font-size: 0.7rem;
+}   
+
+#sala
+{
+    margin-left: 5px;
 }
 
 
 /* PATROCINADORES */
 
-#patrocinadores img {
+#patrocinadores img 
+{
     width: 200px;
     height: 80px;
 }
