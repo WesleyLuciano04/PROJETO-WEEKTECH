@@ -455,34 +455,135 @@ body {
 
 /* PATROCINADORES */
 
-#patrocinadores img 
+#palestrantes
 {
-    width: 200px;
-    height: 80px;
+    background-color: var(--blue-2);
+    padding: 2rem;
 }
 
-#patrocinadores ul {
-    list-style: none;
-    padding: 0;
+.palestrantes-grid
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#titulo-palestrantes
+{
+    color: var(--yellow-1);
+    align-items: center;
+    font-size: 2rem;
+    margin-left: 42%;
+}
+
+#palestrante img
+{
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    object-fit: cover;
+    width: 200px;
+    height: 220px;
+}
+
+.palestrante-card
+{
+    background-color: rgb(255, 255, 255);
+}
+
+/* Borda hexagonal */
+#palestrante img
+{
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    background: #cde8f5; 
+}
+
+#palestrante h3
+{
+    font-size: 0.9rem;
+    color: var(--blue-1);
     margin: 0;
+}
+
+#palestrante dt
+{
+    font-size: 0.7rem;
+    color: black;
+    margin: 0;
+}
+
+#palestrante-card 
+{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+#palestrante-card h3
+{
+    font-size: 1rem;
+    color: var(--blue-1);
+    margin: 0;
+}
+
+#palestrantes p
+{
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    margin-top: 40px;
+}
+
+#palestrantes a
+{
+    text-decoration: none;
+    color: var(--yellow-1);
+    font-size: 1.1rem;
 }
 
 /* MAPA */
 
-#localizacao h2 {
-    color: var(--yellow-1);
+#localizacao 
+{
+    background: #f0f4f8;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+#localizacao h2 
+{
+    display: column;
+    color: var(--blue-1);
     font-size: 1.8rem;
     margin-bottom: 10px;
     margin-left: 10px;
 }
 
-.uni {
-    background-color: rgb(255, 255, 255);
+.uni 
+{    display: column;
     padding: 20px;
     color: black;
-    margin: 10px auto;
+    margin: 10px;
 }
 
+#mapa-faculdade
+{
+    display: column;
+    padding: 20px;
+    color: black;
+    margin: 10px;
+    margin-left: 200px;
+}
+
+#mapa-faculdade iframe
+{
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+}
 
 /* CHATBOT AQUI */
 
