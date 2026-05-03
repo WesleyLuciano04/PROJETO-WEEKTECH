@@ -9,7 +9,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
+    background-attachment: fixed; /* Mantém o fundo parado enquanto você rola */
+    color: white; /* Cor padrão do texto para garantir leitura */
+    font-family: sans-serif;
+    margin: 0;
 }
 
 /*  HEADER */
@@ -23,12 +27,13 @@ body {
 
 .navegacao {
     display: flex;
-    gap: 15px;
+    gap: 1px;
 }
 
 .navegacao a {
     text-decoration: none;
-    color: var(--blue-1);
+    color: white;
+    margin-right: 20px;
 }
 
 .skip-link {
@@ -49,7 +54,6 @@ body {
 }
 
 #sobre {
-    background-image: url(imgs/fundo_tech_week.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,19 +232,18 @@ body {
 /*Sobre o evento*/
 
 #sobre-evento {
-    background: #f0f4f8;
     padding: 60px 80px;
     text-align: center;
 }
 
 #sobre-evento>h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: var(--blue-2);
+    color: rgb(255, 255, 255);
     margin: 0 0 16px 0;
 }
 
 #sobre-evento>p {
-    color: #555;
+    color: #ffffff;
     font-size: 1rem;
     line-height: 1.7;
     max-width: 640px;
@@ -323,6 +326,22 @@ body {
     text-align: center;
 }
 
+#programacao p
+{
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+#programacao h2
+{
+    color: var(--yellow-1);
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
 #grade-semana 
 {
     display: column;
@@ -361,8 +380,9 @@ body {
 
 .dia-toggle 
 {
+    color: rgb(0, 0, 0);
     width: 100%;
-    background-color: white;
+    background-color: var(--blue-2);
     border-color: var(--yellow-1);
     padding: 15px;
     display: column;
@@ -379,7 +399,6 @@ body {
 {
     margin: 0;
     font-size: 0.7rem;
-    color: var(--yellow-dark);
 }
 
 .dia-toggle h3 {
@@ -398,7 +417,7 @@ body {
 .grade-dia 
 {
     display: none;
-    background-color: white;
+    background-color: var(--blue-2)
     color: black;
     padding: 20px;
     border-color: var(--yellow-1);
@@ -452,12 +471,10 @@ body {
     margin-left: 5px;
 }
 
-
-/* PATROCINADORES */
+/* PALESTRANTES */
 
 #palestrantes
 {
-    background-color: var(--blue-2);
     padding: 2rem;
 }
 
@@ -486,11 +503,6 @@ body {
     height: 220px;
 }
 
-.palestrante-card
-{
-    background-color: rgb(255, 255, 255);
-}
-
 /* Borda hexagonal */
 #palestrante img
 {
@@ -508,7 +520,7 @@ body {
 #palestrante dt
 {
     font-size: 0.7rem;
-    color: black;
+    color: rgb(255, 255, 255);
     margin: 0;
 }
 
@@ -547,7 +559,6 @@ body {
 
 #localizacao 
 {
-    background: #f0f4f8;
     display: flex;
     flex-direction: row;
     padding: 2rem;
@@ -556,7 +567,7 @@ body {
 #localizacao h2 
 {
     display: column;
-    color: var(--blue-1);
+    color: var(--yellow-1);
     font-size: 1.8rem;
     margin-bottom: 10px;
     margin-left: 10px;
@@ -565,7 +576,7 @@ body {
 .uni 
 {    display: column;
     padding: 20px;
-    color: black;
+    color: rgb(255, 255, 255);
     margin: 10px;
 }
 
@@ -573,7 +584,7 @@ body {
 {
     display: column;
     padding: 20px;
-    color: black;
+    color: rgb(255, 255, 255);
     margin: 10px;
     margin-left: 200px;
 }
@@ -585,49 +596,110 @@ body {
     height: 300px;
 }
 
+/* PATROCINADORES */
+
+#patrocinadores
+{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#titulo-patrocinadores
+{
+    color: rgb(255, 255, 255);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}  
+
+#patrocinadores-img
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+}
+
+#card-patrocinio
+{
+    border: 1px solid var(--blue-2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 10px;
+    min-width: 120px;
+    max-width: 160px;
+    margin-width: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#card-patrocinio:hover
+{
+    border: 2px solid var(--yellow-1);
+}
+
+#patrocinadores p
+{
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#titulo-patrocinio
+{
+    color: var(--yellow-dark);
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#patrocinadores img
+{
+    width: 150px;
+    height: auto;
+    margin-left: -45px;
+}
 /* CHATBOT AQUI */
 
 
 /* FAQ COMEÇA AQUI */
-#faq {
-
+#faq 
+{
     padding: 80px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-#faq>hr {
-
+#faq hr 
+{
     width: 40px;
     border: none;
     border-top: 2px solid #1a1a1a;
-    ;
     margin: 0 0 40px 0;
-
 }
 
-#faq>h2 {
-
+#faq h2 
+{
     font-family: 'DM Serif Display', serif;
     font-weight: 400;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
-    color: #1a1a1a;
+    color: var(--yellow-1);
     letter-spacing: -0.02em;
     margin: 0 0 56px 0;
     text-align: center;
-
 }
 
-#faq>div {
-
+#faq-container
+{
     width: 100%;
     max-width: 680px;
     display: flex;
     flex-direction: column;
     gap: 0;
-
 }
 
 #faq details {
@@ -648,7 +720,7 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #1a1a1a;
+    color: rgb(255, 255, 255);
     letter-spacing: -0.01em;
     padding: 22px 36px 22px 0;
     cursor: pointer;
@@ -692,7 +764,7 @@ body {
 
 #faq summary:hover {
 
-    color: #888;
+    color: var(--yellow-1);
 
 }
 
@@ -702,7 +774,7 @@ body {
     font-size: 0.88rem;
     font-weight: 300;
     line-height: 1.75;
-    color: #555;
+    color: rgb(255, 255, 255);
     margin: 0;
     padding: 0 48px 24px 0;
     max-width: 580px;
@@ -740,3 +812,24 @@ body {
 }
 
 /* FAQ TERMINA AQUI */
+
+/* RODAPÉ */
+
+#rodape-logo img
+{
+    width: 140px;
+    height: auto;
+}
+
+#contato a
+{
+    text-decoration: none;
+    color: var(--yellow-1);
+}
+
+#redes
+{
+    display: flex;
+    gap: 15px;
+    font-size: 1.2rem;
+}
