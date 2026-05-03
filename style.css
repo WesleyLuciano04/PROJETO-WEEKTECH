@@ -10,8 +10,8 @@ body {
     margin: 0;
     padding: 0;
     background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
-    background-attachment: fixed; /* Mantém o fundo parado enquanto você rola */
-    color: white; /* Cor padrão do texto para garantir leitura */
+    background-attachment: fixed; 
+    color: white; 
     font-family: sans-serif;
     margin: 0;
 }
