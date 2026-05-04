@@ -14,20 +14,35 @@ const botConfig =
     welcomeMessage: 'Olá, sou o Bot da Tech Week. Como posso te ajudar hoje?',
     options: ['Data, Horário ou Local do Evento.', 'Cronograma: Palestras ou Projetos.', 'Palestrantes.', 'Patrocinadores.'],
 
-    flows:
-    {
-
-    },
-
     responses:
     [
-        { pattern: /(data)/i, response: '<br>O evento irá ocorrer nos dias 01, 02 e 03 de Junho.'},
-        { pattern: /(horario|horário)/i, response: '<br>O evento começa as 19:00hr e termina as 22:00hr.'},
-        { pattern: /(endereco|local|endereço)/i, response: '<br>📍Unicesumar Londrina<br>Av. Santa Mônica, 450.'},
-        { pattern: /(palestras|palestra)/i, response: null, flow: 'palestra'},
-        { pattern: /(projeto|projetos)/i, response: null, flow: 'projeto'},
-        { pattern: /(palestrantes|palestrante)/i, response: null, flow: 'palestrante'},
-        { pattern: /(patrocinadores)/i, response: null, flow: 'patrocinadores'},
+        //data, horário ou local do evento
+        { pattern: /(data)/i, response: '📆 O evento irá ocorrer nos dias 01, 02 e 03 de Junho.'},
+        { pattern: /(horario|horário|horarios)/i, response: '🕒 O evento começa as 19:00hr e termina as 22:00hr.', action: 'scrollToProgramacao'},
+        { pattern: /(endereco|local|endereço)/i, response: '📍Unicesumar Londrina<br>Av. Santa Mônica, 450.', action: 'scrollToLocal'},
+
+        //cronograma: palestras os projetos
+        { pattern: /(palestrantes)/i, response: 'Confira na seção ao lado, os palestrantes registrados confirmados.', action: 'scrollToPalestrantes'},
+        { pattern: /(quero palestrar|ser palestrante|enviar palestra)/i, response: 'Ficamos felizes com seu interesse! Você pode enviar sua proposta de palestra através <a href="inscricao-palestrante.html">deste formulário</a>.' },
+        { pattern: /(projeto|trabalho|apresentar)/i, response: 'Para apresentar um projeto, no momento da inscrição o usuário deve fazer check-in no campo: "Quero apresentar um projeto"'},
+
+        //patrocinadores
+        { pattern: /(patricinio|patrocinar)/i, response: 'Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a nossa coordenação pelo telefone/WhatsApp: (43) 99996-1905.'},
+        
+        //sobre o que se trata a techWeek
+        {pattern: /(sobre|tech|week)/i, response: 'A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia. O foco desta edição é Inteligência Artificial aplicada na prática.'},
+
+        //como fazer a inscrição
+        { pattern: /(inscricao|inscrever|cadastro|participar)/i, response: 'Você pode realizar sua inscrição clicando no botão "Faça sua Inscrição" no topo da página ou <a href="inscricao-participante.html">clicando aqui</a>.' },
+        //confirmação de presença
+        { pattern: /(certificado|horas|presenca|checkin)/i, response: 'A presença será registrada via QR Code ao final de cada palestra. O usuário deve ler o qr code através da página do evento, na aba de login.'},
+        //coffee break
+        { pattern: /(comida|lanche|coffee|cafe)/i, response: 'O Coffee Break é opcional. Em caso de interesse no momento da inscrição, marque o campo: "Participar do Coffee Break". Importante estar ciente que haverá uma taxa colaborativa, que será cobrada presencialmente em sala de aula.'},
+        //meios de contato
+        { pattern: /(instagram|redes|social|contato)/i, response: 'Siga a @unicesumarlondrina no Instagram para novidades em tempo real ou fale pelo WhatsApp: (44) 9139-6999.' },
+
+        //agradecimento
+        { pattern: /(obrigado|obrigada)/i, response: 'Nós que agradecemos! Caso precise de mais informações é só me pedir! 🤗'},
     ]
 };
 
@@ -73,7 +88,7 @@ function sendMessage()
     {
         //o bot recebe o que o usuário escreveu
         const botResponse = getBotResponse(userMessage);
-        appendMessage('Fernandinha: ', botResponse); //resposta do bot
+        appendMessage('TW: ', botResponse); //resposta do bot
     }, 500) //tempo de resposta em milisegundos
 }
 
@@ -124,6 +139,21 @@ function getBotResponse(input)
     {
         if (response.pattern.test(msg))
         {
+            if (response.action === 'scrollToProgramacao')
+            {
+                scrollToElement('programacao');
+            }
+
+            if (response.action === 'scrollToPalestrantes')
+            {
+                scrollToElement('palestrantes');
+            }
+
+            if (response.action === 'scrollToLocal')
+            {
+                scrollToElement('localizacao');
+            }
+
             if (response.flow)
             {
                 currentFlow = response.flow;
@@ -186,4 +216,13 @@ function caps(str)
 {
     if (typeof str !== 'string' || str.length === 0) return str;
     return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function scrollToElement(id)
+{
+    const element = document.getElementById(id);
+    if(element)
+    {
+        element.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
 }
