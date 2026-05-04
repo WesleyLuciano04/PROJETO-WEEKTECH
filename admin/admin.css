@@ -1,0 +1,669 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==================================================
+   CORES DO PROJETO
+   Altere aqui para mudar as cores em todo o admin
+   ================================================== */
+
+:root {
+    --blue-escuro:  #00243B;  /* fundo do header, tabela */
+    --blue-medio:   #005387;  /* links, ícones, bordas ativas */
+    --amarelo:      #FFD621;  /* destaque, nav ativo */
+    --amarelo-dark: #B39617;  /* hover do amarelo */
+    --verde:        #2ecc71;  /* aprovado */
+    --verde-dark:   #1a7a43;  /* texto aprovado */
+    --vermelho:     #e74c3c;  /* reprovado */
+    --fundo:        #f4f6f9;  /* fundo da página */
+    --branco:       #ffffff;
+    --texto:        #1a2e44;  /* texto principal */
+    --texto-suave:  #7a8fa6;  /* texto secundário */
+    --borda:        #e0e8f0;  /* bordas dos cards */
+}
+
+/* ==================================================
+   RESET BÁSICO
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+/* ==================================================
+   HEADER — barra de navegação no topo
+   ================================================== */
+
+.admin-header {
+    background: var(--blue-escuro);
+    border-bottom: 2px solid var(--amarelo);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo em branco */
+.header-identidade img {
+    width: 140px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Link da página atual fica amarelo */
+nav ul li a.ativo {
+    color: var(--blue-escuro);
+    background: var(--amarelo);
+    font-weight: 700;
+}
+
+/* ==================================================
+   ÁREA PRINCIPAL
+   ================================================== */
+
+#conteudo-admin {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ==================================================
+   TÍTULO DA PÁGINA
+   ================================================== */
+
+.admin-page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--blue-escuro);
+    margin-bottom: 4px;
+}
+
+.admin-page-header p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* ==================================================
+   DASHBOARD — títulos de seção
+   ================================================== */
+
+#participantes-admin h2,
+#palestrantes-admin h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--texto);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* ==================================================
+   DASHBOARD — grids de cards
+   ================================================== */
+
+.stats-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.participantes-grid .stat-card { flex: 1; min-width: 200px; }
+.palestrantes-grid .stat-card  { flex: 1; min-width: 140px; }
+
+/* Cards coloridos — Participantes */
+.participantes-grid .stat-card {
+    border-radius: 16px;
+    padding: 24px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.participantes-grid .stat-card:nth-child(1) { background: linear-gradient(135deg, var(--blue-escuro), var(--blue-medio)); }
+.participantes-grid .stat-card:nth-child(2) { background: linear-gradient(135deg, #c8a200, var(--amarelo)); }
+.participantes-grid .stat-card:nth-child(3) { background: linear-gradient(135deg, var(--verde-dark), var(--verde)); }
+
+/* Círculo decorativo no canto */
+.participantes-grid .stat-card::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.participantes-grid .stat-card .stat-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.participantes-grid .stat-card .stat-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 8px;
+}
+
+/* Cards brancos — Palestrantes */
+.palestrantes-grid .stat-card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.palestrantes-grid .stat-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.palestrantes-grid .stat-card .stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--texto);
+    line-height: 1;
+}
+
+.palestrantes-grid .stat-card .stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ==================================================
+   ÍCONE dos cards
+   ================================================== */
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 83, 135, 0.1);
+    color: var(--blue-medio);
+}
+
+.stat-icon--yellow { background: rgba(255, 214, 33, 0.2);  color: var(--amarelo-dark); }
+.stat-icon--green  { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
+.stat-icon--red    { background: rgba(231, 76, 60, 0.1);   color: var(--vermelho); }
+
+.palestrantes-grid .stat-card:nth-child(1) .stat-icon { background: rgba(0, 83, 135, 0.1);   color: var(--blue-medio); }
+.palestrantes-grid .stat-card:nth-child(2) .stat-icon { background: rgba(255, 214, 33, 0.2);  color: var(--amarelo-dark); }
+.palestrantes-grid .stat-card:nth-child(3) .stat-icon { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
+.palestrantes-grid .stat-card:nth-child(4) .stat-icon { background: rgba(231, 76, 60, 0.1);   color: var(--vermelho); }
+
+/* ==================================================
+   FILTRO CARDS (Total, Coffee, Com Projeto...)
+   ================================================== */
+
+.filtro-cards {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.filtro-card {
+    background: var(--branco);
+    border: 1.5px solid var(--borda);
+    border-radius: 14px;
+    padding: 20px;
+    flex: 1;
+    min-width: 140px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.filtro-card:hover {
+    border-color: var(--blue-medio);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.filtro-card.ativo {
+    border-color: var(--blue-medio);
+    background: rgba(0, 83, 135, 0.04);
+    box-shadow: 0 4px 20px rgba(0, 36, 59, 0.12);
+}
+
+.filtro-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+.filtro-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ==================================================
+   FILTRO STATUS PILLS
+   Aparece só quando "Com Projeto" está ativo
+   ================================================== */
+
+.filtro-status-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filtro-status-wrap.hidden { display: none; }
+
+.filtro-status-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+}
+
+.filtro-status-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1.5px solid var(--borda);
+    background: var(--branco);
+    color: var(--texto-suave);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pill:hover { border-color: var(--blue-medio); color: var(--blue-medio); }
+.pill.ativo { background: var(--blue-escuro); border-color: var(--blue-escuro); color: white; }
+
+.pill--pendente.ativo  { background: rgba(255, 214, 33, 0.2);  border-color: var(--amarelo-dark); color: var(--amarelo-dark); }
+.pill--aprovado.ativo  { background: rgba(46, 204, 113, 0.15); border-color: var(--verde-dark);   color: var(--verde-dark); }
+.pill--reprovado.ativo { background: rgba(231, 76, 60, 0.1);   border-color: var(--vermelho);     color: var(--vermelho); }
+
+/* ==================================================
+   BUSCA
+   ================================================== */
+
+.busca-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--branco);
+    border: 1.5px solid var(--borda);
+    border-radius: 10px;
+    padding: 12px 16px;
+    transition: border-color 0.2s ease;
+}
+
+.busca-wrapper:focus-within { border-color: var(--blue-medio); }
+.busca-wrapper svg { color: var(--texto-suave); flex-shrink: 0; }
+
+.busca-wrapper input {
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    color: var(--texto);
+    background: transparent;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.busca-wrapper input::placeholder { color: var(--texto-suave); }
+
+/* ==================================================
+   TABELA
+   ================================================== */
+
+.table-wrapper {
+    background: var(--branco);
+    border-radius: 14px;
+    border: 1px solid var(--borda);
+    overflow: hidden;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+thead tr { background: var(--blue-escuro); }
+
+thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--borda);
+    transition: background 0.15s ease;
+}
+
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #f8fafc; }
+
+tbody td {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    color: var(--texto);
+}
+
+/* ==================================================
+   BADGES (etiquetas de status)
+   ================================================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.badge--pendente  { background: rgba(255, 214, 33, 0.2);  color: var(--amarelo-dark); }
+.badge--aprovado  { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
+.badge--reprovado { background: rgba(231, 76, 60, 0.1);   color: var(--vermelho); }
+.badge--sim       { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
+.badge--nao       { background: rgba(0, 0, 0, 0.06);      color: var(--texto-suave); }
+
+/* ==================================================
+   BOTÃO VER (na tabela)
+   ================================================== */
+
+.btn-ver {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: rgba(0, 83, 135, 0.08);
+    color: var(--blue-medio);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.btn-ver:hover { background: rgba(0, 83, 135, 0.15); }
+
+/* ==================================================
+   BOTÃO EXPORTAR EXCEL
+   ================================================== */
+
+.exportar-wrap { display: flex; justify-content: flex-end; }
+
+.btn-exportar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--blue-escuro);
+    color: white;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-exportar:hover {
+    background: var(--blue-medio);
+    transform: translateY(-1px);
+}
+
+/* ==================================================
+   BOTÃO VOLTAR — páginas de detalhe
+   ================================================== */
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--blue-medio);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.btn-voltar:hover { color: var(--blue-escuro); }
+
+/* ==================================================
+   DETALHE — card branco com borda
+   ================================================== */
+
+.detalhe-card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 28px;
+}
+
+/* Título do card com ícone */
+.detalhe-card-titulo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--blue-medio);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--borda);
+}
+
+/* Grid de campos em duas colunas */
+.detalhe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Um campo (rótulo + valor) */
+.detalhe-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detalhe-rotulo {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.detalhe-valor {
+    font-size: 0.9rem;
+    color: var(--texto);
+    font-weight: 500;
+}
+
+/* Caixa de texto longa (briefing, currículo, descrição) */
+.detalhe-bloco-texto {
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    color: var(--texto);
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+/* Linha final com badges (autoriza + status) */
+.detalhe-rodape-info {
+    display: flex;
+    gap: 32px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--borda);
+    flex-wrap: wrap;
+}
+
+/* ==================================================
+   BOTÃO DOWNLOAD (baixar currículo)
+   ================================================== */
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--fundo);
+    border: 1.5px solid var(--borda);
+    border-radius: 8px;
+    color: var(--texto);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-download:hover {
+    border-color: var(--blue-medio);
+    background: rgba(0, 83, 135, 0.04);
+    color: var(--blue-medio);
+}
+
+/* ==================================================
+   FORMULÁRIO DE ATUALIZAR STATUS
+   ================================================== */
+
+.form-status {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-rotulo {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--texto-suave);
+}
+
+.form-select {
+    padding: 10px 14px;
+    border: 1.5px solid var(--borda);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--texto);
+    background: var(--branco);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    min-width: 180px;
+}
+
+.form-select:focus { border-color: var(--blue-medio); }
+
+.btn-atualizar {
+    padding: 10px 24px;
+    background: var(--blue-escuro);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-atualizar:hover {
+    background: var(--blue-medio);
+    transform: translateY(-1px);
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+#rodape-admin {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    border-top: 1px solid var(--borda);
+    margin-top: 20px;
+}

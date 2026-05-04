@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe do Palestrante — Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="header-inner">
+            <div class="header-identidade">
+                <a href="https://www.unicesumar.edu.br/" target="_blank">
+                    <img src="../imgs/unicesumar-logo.png" alt="Logo UniCesumar">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="participante.html">Participantes</a></li>
+                        <li><a href="palestrante.html" class="ativo">Palestrantes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-admin">
+
+        <a href="palestrante.html" class="btn-voltar">← Voltar</a>
+
+        <section class="admin-page-header">
+            <h1>Detalhes do Palestrante</h1>
+            <p>Visualize e gerencie a proposta de palestra.</p>
+        </section>
+
+        <!-- CARD: Informações gerais -->
+        <section class="detalhe-card">
+            <h2 class="detalhe-card-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                    <path d="M12 19v3"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <rect x="9" y="2" width="6" height="13" rx="3"/>
+                </svg>
+                Informações
+            </h2>
+
+            <div class="detalhe-grid">
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">ID</span>
+                    <span class="detalhe-valor">1</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Nome</span>
+                    <span class="detalhe-valor">João Silva</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Email</span>
+                    <span class="detalhe-valor">joao@email.com</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Telefone</span>
+                    <span class="detalhe-valor">(43) 99999-9999</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Tema da Palestra</span>
+                    <span class="detalhe-valor">Inteligência Artificial</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Duração</span>
+                    <span class="detalhe-valor">60 minutos</span>
+                </div>
+            </div>
+
+            <div class="detalhe-campo" style="margin-top: 16px;">
+                <span class="detalhe-rotulo">Briefing</span>
+                <div class="detalhe-bloco-texto">Apresentação sobre conceitos básicos de IA e aplicações práticas.</div>
+            </div>
+
+            <div class="detalhe-campo" style="margin-top: 12px;">
+                <span class="detalhe-rotulo">Currículo</span>
+                <div class="detalhe-bloco-texto">Desenvolvedor com experiência em IA e Machine Learning.</div>
+            </div>
+
+            <div class="detalhe-rodape-info">
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Autoriza divulgação</span>
+                    <span class="badge badge--sim">✓ Sim</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Status Atual</span>
+                    <span class="badge badge--pendente">⏱ PENDENTE</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARD: Arquivo do currículo -->
+        <section class="detalhe-card" id="arquivo-curriculo">
+            <h2 class="detalhe-card-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                    <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2z"/>
+                    <path d="M14 2v6h6"/>
+                    <line x1="12" y1="11" x2="12" y2="17"/>
+                    <polyline points="9 14 12 17 15 14"/>
+                </svg>
+                Arquivo do Currículo
+            </h2>
+
+            <a href="#" target="_blank" class="btn-download">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Baixar currículo
+            </a>
+        </section>
+
+        <!-- CARD: Atualizar status -->
+        <section class="detalhe-card" id="atualizar-status">
+            <h2 class="detalhe-card-titulo">Atualizar Status</h2>
+
+            <form method="post" class="form-status">
+                <div class="form-grupo">
+                    <label for="status" class="form-rotulo">Novo status:</label>
+                    <select id="status" name="status" class="form-select">
+                        <option >Selecione</option>
+                        <option >Pendente</option>
+                        <option >Aprovado</option>
+                        <option >Reprovado</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-atualizar">Atualizar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="rodape-admin">
+        <p>Painel administrativo — II Tech Week 2026</p>
+    </footer>
+
+</body>
+
+</html>
