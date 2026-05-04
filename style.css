@@ -9,8 +9,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
-    background-attachment: fixed; 
+    background: radial-gradient(circle at center, #9dbee7 0%, #285cb1 100%);
+    background-attachment: fixed;
     color: white; 
     font-family: sans-serif;
     margin: 0;
@@ -18,7 +18,8 @@ body {
 
 /*  HEADER */
 
-.header-inner {
+.header-inner 
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,6 +29,13 @@ body {
 .navegacao {
     display: flex;
     gap: 1px;
+}
+
+/* MODO ESCURO */
+#body.modoEscuro
+{
+    background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
+    background-attachment: fixed;
 }
 
 .navegacao a {
@@ -53,7 +61,8 @@ body {
     height: auto;
 }
 
-#sobre {
+#sobre 
+{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,7 +121,8 @@ body {
     margin-right: 70px;
 }
 
-.capa-evento button {
+.capa-evento button 
+{
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -231,18 +241,24 @@ body {
 
 /*Sobre o evento*/
 
+#sobre
+{
+   background: radial-gradient(circle at center, #9dbee7 0%, #285cb1 100%);
+   background-attachment: fixed;
+}
+
 #sobre-evento {
     padding: 60px 80px;
     text-align: center;
 }
 
-#sobre-evento>h2 {
+#sobre-evento h2 {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: rgb(255, 255, 255);
     margin: 0 0 16px 0;
 }
 
-#sobre-evento>p {
+#sobre-evento p {
     color: #ffffff;
     font-size: 1rem;
     line-height: 1.7;
@@ -417,7 +433,7 @@ body {
 .grade-dia 
 {
     display: none;
-    background-color: var(--blue-2)
+    background-color: var(--blue-2);
     color: black;
     padding: 20px;
     border-color: var(--yellow-1);
@@ -433,8 +449,8 @@ body {
 
 .palestra-card 
 {
-    background-color: #e4dfdf;
-    border: 1px solid #e0e8f0;
+    background-color: #c3c1c5;
+    border: 1px solid var(--yellow-1);
     border-radius: 8px;
     padding: 10px 14px;
     color: black;
@@ -662,8 +678,8 @@ body {
     height: auto;
     margin-left: -45px;
 }
-/* CHATBOT AQUI */
 
+/* CHATBOT AQUI */
 
 /* FAQ COMEÇA AQUI */
 #faq 

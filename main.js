@@ -1,5 +1,6 @@
 // Validação do Formulário de Inscrição de Participante
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener ('DOMContentLoaded', function() 
+{
     const formulario = document.getElementById('form-inscricao-participante');
     const temProjetoCheckbox = document.getElementById('tem-projeto');
     const dadosProjeto = document.getElementById('dados-projeto');
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 dadosProjeto.style.display = 'none';
             }
         });
-    }
+    };
 
     // Validação ao submeter o formulário
     if (formulario) {
@@ -37,9 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Descomentar a linha abaixo para enviar o formulário
             // this.submit();
         });
-    }
+    };
 });
-
 // Função para validar todos os campos
 function validarFormulario() {
     const erros = [];
@@ -137,5 +137,21 @@ function limparErros() {
     const containerErros = document.getElementById('container-erros');
     if (containerErros) {
         containerErros.remove();
+    }
+}
+
+//Função para modo escuro
+function modoEscuro() {
+    const elementos = document.querySelectorAll('body, #sobre, #sobre-evento, #programacao, #palestrantes, #localizacao, #patrocinadores, #faq, footer');
+    
+    elementos.forEach(function(el) {
+        el.classList.toggle("modoEscuro");
+    });
+
+    const btn = document.querySelector('.navegacao button');
+    if (document.body.classList.contains("modoEscuro")) {
+        btn.textContent = "Claro";
+    } else {
+        btn.textContent = "Escuro";
     }
 }
