@@ -3,50 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição Participante — Tech Week 2026</title>
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="participante-tela">
 
-    <header>
+    <header class="cabecalho-participante">
         <div class="header-inner">
             <div class="header-identidade">
                 <a href="https://www.unicesumar.edu.br/" target="_blank">
                     <img src="imgs/unicesumar-logo.png" alt="Logo UniCesumar">
                 </a>   
-                
             </div>
-
-            <div>
-                <!-- Navegação -->
-                <nav class="navegacao">
-                        <a href="index.html">Home</a>
-                        <a href="inscricao-participante.html">Participante</a>
-                        <a href="inscricao-palestrante.html">Palestrante</a>
-                </nav>
-            </div>
+            <!-- Navegação -->
+            <nav class="navegacao">
+                <a href="index.html">Home</a>
+                <a href="inscricao-participante.html">Participante</a>
+                <a href="inscricao-palestrante.html">Palestrante</a>
+            </nav>
         </div>
     </header>
 
-    <main id="conteudo-principal">
-
-        <div class="apresentacaoTechWeek">
-                <strong class="header-evento-titulo">II Tech Week 2026</strong>
-                <span class="header-evento-subtitulo">Inteligência Artificial em Ação</span>
+    <main id="conteudo-participante">
+        <div class="capa-participante">
+            <section id="introducao-participante">
+                <h2>Inscrição de Participantes</h2>
+                <p>Preencha o formulário para participar da Tech Week 2026.</p>
+            </section>
 
                 <a href="index.html">
-                    <img id="tech" src="imgs/logotw.png" alt="Logo do evento: Tech Week 2026">
+                    <img id="img-participante" src="imgs/logotw1.png" alt="Logo do evento: Tech Week 2026">
                 </a>
         </div>
 
-        <section id="introducao-Participante">
-            <h2>Inscrição de Participantes</h2>
-            <p>Preencha o formulário para participar da Tech Week 2026.</p>
-        </section>
-
-        <section id="form-Participante">
+        <section id="form-participante">
             <h2>Formulário</h2>
 
             <form method="POST" id="form-inscricao-participante">
@@ -55,71 +52,59 @@
                     <legend>Dados Pessoais</legend>
 
                     <div class="campo">
-                        <label>
-                            Nome completo *
-                            <input type="text" id="participante-nome" placeholder="Digite seu nome completo">
-                        </label>
+                        <label>Nome completo *</label>
+                        <input type="text" id="participante-nome" placeholder="Digite seu nome completo">
                     </div>
 
                     <div class="campo">
-                        <label>
-                            RA *
-                            <input type="text" id="participante-ra" placeholder="Ex: 00000000-2">
-                        </label>
+                        <label>RA *</label>
+                        <input type="text" id="participante-ra" placeholder="Ex: 00000000-2">
                     </div>
 
                     <div class="campo">
-                        <label>
-                            Curso *
-                            <select id="participante-curso">
+                        <label>Curso *</label>
+                        <select id="participante-curso">
                                 <option value="">Selecione</option>
                                 <option>ADS</option>
                                 <option>Engenharia de Software</option>
-                            </select>
-                        </label>
+                        </select>
                     </div>
 
                     <div class="campo">
-                        <label>
-                            Semestre *
-                            <select id="participante-serie">
+                        <label>Semestre *</label>
+                        <select id="participante-serie">
                                 <option value="">Selecione</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                            </select>
-                        </label>
+                                <option>1°</option>
+                                <option>2°</option>
+                                <option>3°</option>
+                                <option>4°</option>
+                                <option>5°</option>
+                                <option>6°</option>
+                                <option>7°</option>
+                                <option>8°</option>
+                        </select>
                     </div>
 
                 </fieldset>
-
+                
                 <fieldset id="secao-projeto">
                     <legend>Projeto</legend>
 
-                    <div class="campo">
-                        <label>
-                            <input type="checkbox" id="tem-projeto">
-                            Quero apresentar um projeto
-                        </label>
+                    <div class="campo-checkbox">
+                        <input type="checkbox" id="tem-projeto">
+                        <label class="label-checkbox">Quero apresentar um projeto</label>
                     </div>
 
                     <div id="dados-projeto">
 
                         <div class="campo">
-                            <label>
-                                Nome do Projeto
-                                <input type="text" placeholder="Ex: IA na pratica" id="projeto-nome">
-                            </label>
+                            <label>Nome do Projeto</label>
+                            <input type="text" placeholder="Ex: IA na pratica" id="projeto-nome">
                         </div>
 
                         <div class="campo">
-                            <label>
-                                Descrição
-                                <textarea id="projeto-descricao" placeholder="Pequena descrição do projeto"></textarea>
-                            </label>
+                            <label>Descrição</label>
+                            <textarea id="projeto-descricao" placeholder="Pequena descrição do projeto"></textarea>
                         </div>
 
                     </div>
@@ -128,19 +113,17 @@
                 <fieldset id="secao-coffee-break">
                     <legend>Coffee Break</legend>
 
-                    <div class="campo">
-                        <label>
-                            <input type="checkbox" id="coffee-break">
-                            Participar do coffee break
-                        </label>
+                    <div class="campo-checkbox">
+                        <input type="checkbox" id="coffee-break">
+                        <label class="label-checkbox">Participar do coffee break</label>
                     </div>
 
                     <div id="info-coffee-break"></div>
                 </fieldset>
 
                 <div class="acoes-formulario">
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Limpar</button>
+                    <button id="btnEnviar" type="submit">Enviar</button>
+                    <button id="btnLimpar" type="reset">Limpar</button>
                 </div>
 
             </form>
@@ -148,18 +131,17 @@
 
     </main>
 
-    <footer role="contentinfo">
-        <address>
-            <p>Organização: Comissão da Tech Week 2026</p>
-            <p>
-                Contato:
+    <footer role="contentinfo" id="rodape-participante">
+            <div>
                 <a href="https://api.whatsapp.com/send?phone=554491399006&amp;text=Ol%C3%A1!%20Acessei%20o%20site%20da%20UniCesumar%20e%20quero%20saber%20mais%20informa%C3%A7%C3%B5es.%20Voc%C3%AA%20pode%20ajudar?"
-                    target="_blank"><i>WhatsApp</i></a>
-            </p>
-        </address>
+                    target="_blank"><img src="imgs/iconWhats.png" alt="">
+                </a>
+            </div>
+            <p>Organização: Comissão da Tech Week 2026</p>
     </footer>
 
     <script src="main.js"></script>
+    <script src="canvas.js"></script>
 </body>
 
 </html>
