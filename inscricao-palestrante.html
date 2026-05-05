@@ -3,104 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição Palestrante — Tech Week 2026</title>
-    <link rel="stylesheet" href="palestrante.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+    <header class="cabecalho-participante">
         <div class="header-inner">
             <div class="header-identidade">
                 <a href="https://www.unicesumar.edu.br/" target="_blank">
                     <img src="imgs/unicesumar-logo.png" alt="Logo UniCesumar">
                 </a>   
-                
             </div>
-
-            <div>
-                <!-- Navegação -->
-                <nav class="navegacao">
-                        <a href="index.html">Home</a>
-                        <a href="inscricao-participante.html">Participante</a>
-                        <a href="inscricao-palestrante.html">Palestrante</a>
-                </nav>
-            </div>
+            <!-- Navegação -->
+            <nav class="navegacao">
+                <a href="index.html">Home</a>
+                <a href="inscricao-participante.html">Participante</a>
+                <a href="inscricao-palestrante.html">Palestrante</a>
+            </nav>
         </div>
     </header>
 
-    <main id="conteudo-principal">
+    <main id="conteudo-palestrante">
+        <div class="capa-participante">
+            <section id="introducao-palestrante">
+                <h2>Inscrição para Palestrante</h2>
+                <p>Envie sua proposta de palestra para a Tech Week 2026.</p>
+            </section>
 
-        <section id="sobre">
-
-            <canvas id="grid-canvas"></canvas>
-
-            <div class="capa-evento">
-                <h1 id="titulo-tech">II TECH</h1>
-                <h1 id="titulo-week">WEEK 2026</h1>
-                <h3 id="sub-titulo">Inteligência <span class="destaque1"> Artificial</span> em <span
-                        class="destaque2">Ação</span></h3>
-
-                <div class="evento-info">
-                    <div class="evento-info-item">
-                        <span class="evento-info-icone">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
-                        </span>
-                        <div>
-                            <small>DATAS</small>
-                            <span>01 a 03 / Jul / 2026</span>
-                        </div>
-                    </div>
-
-                    <div class="evento-info-item">
-                        <span class="evento-info-icone">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-                                <circle cx="12" cy="9" r="2.5" />
-                            </svg>
-                        </span>
-                        <div>
-                            <small>LOCAL</small>
-                            <span>Unicesumar — Auditório </span>
-                        </div>
-                    </div>
-
-                    <div class="evento-info-item">
-                        <span class="evento-info-icone">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                            </svg>
-                        </span>
-                        <div>
-                            <small>FORMATO</small>
-                            <span>Presencial</span>
-                        </div>
-                    </div>
-                </div>
-
-                <button href="inscricao-participante.html">Faça sua Inscrição</button>
-            </div>
-
-            <div class="apresentacaoTechWeek">
                 <a href="index.html">
-                    <img id="tech" src="imgs/logotw1.png" alt="Logo do evento: Tech Week 2026">
+                    <img id="img-participante" src="imgs/logotw1.png" alt="Logo do evento: Tech Week 2026">
                 </a>
-            </div>
-        </section>
-
-        <section id="introducao-palestrante">
-            <h2>Inscrição para Palestrante</h2>
-            <p>Envie sua proposta de palestra para a Tech Week 2026.</p>
-        </section>
+        </div>
 
         <section id="form-palestrante">
             <h2>Formulário de Palestra</h2>
@@ -111,24 +48,18 @@
                     <legend>Dados Pessoais</legend>
 
                     <div class="campo">
-                        <label>
-                            Nome completo *
-                            <input type="text" id="palestrante-nome" placeholder="Digite seu nome completo">
-                        </label>
+                        <label>Nome completo *</label>
+                        <input type="text" id="palestrante-nome" placeholder="Digite seu nome completo">
                     </div>
 
                     <div class="campo">
-                        <label>
-                            Telefone *
-                            <input type="tel" id="palestrante-telefone" placeholder="(43 99999-9999)">
-                        </label>
+                        <label>Telefone *</label>
+                        <input type="tel" id="palestrante-telefone" placeholder="(43 99999-9999)">
                     </div>
 
                     <div class="campo">
-                        <label>
-                            E-mail *
-                            <input type="email" id="palestrante-email" placeholder="seuemail@gmail.com">
-                        </label>
+                        <label>E-mail *</label>
+                        <input type="email" id="palestrante-email" placeholder="seuemail@gmail.com">
                     </div>
 
                 </fieldset>
@@ -137,31 +68,13 @@
                     <legend>Dados da Palestra</legend>
 
                     <div class="campo">
-                        <label>
-                            Tema da Palestra *
-                            <input type="text" id="palestrante-tema" placeholder="Ex: IA na pratica">
-                        </label>
+                        <label>Tema da Palestra *</label>
+                        <input type="text" id="palestrante-tema" placeholder="Ex: IA na pratica">
                     </div>
 
                     <div class="campo">
-                        <label>
-                            Briefing *
-                            <textarea id="palestrante-briefing"
-                                placeholder="Escreva os objetivos da palestra"></textarea>
-                        </label>
-                    </div>
-
-                    <div class="campo">
-                        <label>
-                            Duração *
-                            <select id="palestrante-duracao" placeholder="Selecione a duração desejada">
-                                <option>Selecione</option>
-                                <option>40 minutos</option>
-                                <option>45 minutos</option>
-                                <option>50 minutos</option>
-                                <option>60 minutos</option>
-                            </select>
-                        </label>
+                        <label>Briefing *</label>
+                        <textarea id="palestrante-briefing" placeholder="Escreva os objetivos da palestra"></textarea>
                     </div>
 
                 </fieldset>
@@ -170,18 +83,13 @@
                     <legend>Currículo</legend>
 
                     <div class="campo">
-                        <label>
-                            Mini Currículo *
-                            <textarea id="palestrante-curriculo-resumo"
-                                placeholder="Descreve brevemente sua trajetória"></textarea>
-                        </label>
+                        <label>Mini Currículo *</label>
+                        <textarea id="palestrante-curriculo-resumo" placeholder="Descreve brevemente sua trajetória"></textarea>
                     </div>
 
                     <div class="campo">
-                        <label>
-                            Arquivo (opcional)
-                            <input type="file" id="palestrante-curriculo-arquivo">
-                        </label>
+                        <label>Arquivo (opcional)</label>
+                        <input type="file" id="palestrante-curriculo-arquivo">
                     </div>
 
                 </fieldset>
@@ -189,17 +97,15 @@
                 <fieldset>
                     <legend>Confirmação</legend>
 
-                    <div class="campo">
-                        <label>
-                            <input type="checkbox" id="palestrante-autoriza-divulgacao">
-                            Autorizo a divulgação dos meus dados
-                        </label>
+                    <div class="campo-checkbox">
+                        <input type="checkbox" id="palestrante-autoriza-divulgacao">
+                        <label class="label-checkbox">Autorizo a divulgação dos meus dados</label>
                     </div>
                 </fieldset>
 
                 <div class="acoes-formulario">
-                    <button type="submit">Enviar</button>
-                    <button type="reset">Limpar</button>
+                    <button class="btnEnviar" type="submit">Enviar</button>
+                    <button class="btnLimpar" type="reset">Limpar</button>
                 </div>
 
             </form>
@@ -207,15 +113,13 @@
 
     </main>
 
-    <footer role="contentinfo">
-        <address>
-            <p>Organização: Comissão da Tech Week 2026</p>
-            <p>
-                Contato:
+    <footer role="contentinfo" class="rodape-pp">
+            <div>
                 <a href="https://api.whatsapp.com/send?phone=554491399006&amp;text=Ol%C3%A1!%20Acessei%20o%20site%20da%20UniCesumar%20e%20quero%20saber%20mais%20informa%C3%A7%C3%B5es.%20Voc%C3%AA%20pode%20ajudar?"
-                    target="_blank"><i>WhatsApp</i></a>
-            </p>
-        </address>
+                    target="_blank"><img src="imgs/iconWhats.png" alt="">
+                </a>
+            </div>
+            <p>Organização: Comissão da Tech Week 2026</p>
     </footer>
   
 </body>

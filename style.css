@@ -891,7 +891,8 @@ body {
     margin-bottom: 3rem;
 }
 
-#conteudo-participante
+#conteudo-participante,
+#conteudo-palestrante
 {
     padding: 0 15px;
     margin: 0 auto;
@@ -920,19 +921,22 @@ body {
     filter: drop-shadow(0 0 40px rgba(255, 214, 33, 0.9));
 }
 
-#introducao-participante
+#introducao-participante,
+#introducao-palestrante
 {
     width: 50%;
 }
 
-#introducao-participante h2
+#introducao-participante h2,
+#introducao-palestrante h2
 {
     font-size: 2rem;
     text-transform: uppercase;
     text-shadow: 1.5px 1.5px 2.5px var(--blue-1);
 }
 
-#introducao-participante p
+#introducao-participante p,
+#introducao-palestrante p
 {
     font-size: 1.5rem;
     color: var(--yellow-1);
@@ -941,13 +945,15 @@ body {
     font-weight: bold;
 }
 
-#form-participante h2
+#form-participante h2,
+#form-palestrante h2
 {
     margin: 3rem 0 1.5rem 0;
     text-transform: uppercase;
 }
 
-#form-participante fieldset
+#form-participante fieldset,
+#form-palestrante fieldset
 {
     background: rgba(0, 36, 59, 0.424);
     backdrop-filter: blur(12px);
@@ -976,7 +982,8 @@ body {
     padding: 5px;
 }
 
-.campo label{
+.campo label
+{
     font-family: 'Times New Roman', Times, serif;
     color: #ffffff;
     display: block;
@@ -1014,19 +1021,18 @@ body {
     font-weight: bold;
 }
 
-#tem-projeto
+#tem-projeto,
+#palestrante-autoriza-divulgacao
 {
     box-sizing: border-box;
     width: 1.5rem;
     height: 1.5rem;
-    border-radius: 5px;
-    border: 2px;
-    border-style: outset;
-    border-color: var(--yellow-dark);
     padding: 0.5rem 0.5rem;
 }
 
-#projeto-descricao
+#projeto-descricao,
+#palestrante-briefing,
+#palestrante-curriculo-resumo
 {
     box-sizing: border-box;
     width: 45rem;
@@ -1051,7 +1057,7 @@ body {
     padding: 0.5rem 0.5rem;
 }
 
-#rodape-participante
+.rodape-pp
 {
     margin-top: 5rem;
     display: flex;
@@ -1060,7 +1066,7 @@ body {
     padding: 10px;
 }
 
-#rodape-participante img
+.rodape-pp img
 {
     margin-left: 1rem;
     width: 40px;
@@ -1068,7 +1074,7 @@ body {
     transition: filter 0.3s ease;
 }
 
-#rodape-participante p
+.rodape-pp p
 {
     margin-right: 1rem;
     margin: 10px;
@@ -1083,8 +1089,8 @@ body {
     justify-content: right;
 }
 
-#btnEnviar,
-#btnLimpar
+.btnEnviar,
+.btnLimpar
 {
     width: fit-content; /* só ocupa o espaço necessário */
     margin: 10px 10px 10px 0;
@@ -1098,15 +1104,16 @@ body {
     color: var(--blue-2);
 }
 
-#btnEnviar:hover,
-#btnLimpar:hover
+.btnEnviar:hover,
+.btnLimpar:hover
 {
     background-color: var(--yellow-dark);
 }
 
 @media (max-width: 900px) 
 {
-    #conteudo-participante 
+    #conteudo-participante,
+    #conteudo-palestrante
     {
         width: 95%;
     }
@@ -1129,7 +1136,9 @@ body {
         max-width: 100%;
     }
  
-    #projeto-descricao 
+    #projeto-descricao,
+    #palestrante-briefing,
+    #palestrante-curriculo-resumo
     {
         width: 100%;
         max-width: 100%;
@@ -1143,7 +1152,8 @@ body {
  
 @media (max-width: 600px) 
 {
-    #conteudo-participante 
+    #conteudo-participante,
+    #conteudo-palestrante
     {
         width: 100%;
         padding: 0 10px;
@@ -1168,20 +1178,24 @@ body {
         box-sizing: border-box;
     }
  
-    #projeto-descricao 
+    #projeto-descricao,
+    #palestrante-briefing,
+    #palestrante-curriculo-resumo
     {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
  
-    #introducao-participante 
+    #introducao-participante,
+    #introducao-palestrante
     {
         width: 100%;
         text-align: center;
     }
  
-    #form-participante fieldset 
+    #form-participante fieldset,
+    #form-palestrante fieldset
     {
         padding: 20px 12px;
     }
@@ -1201,7 +1215,8 @@ body {
         margin: 0 auto;
     }
  
-    #introducao-participante p 
+    #introducao-participante p,
+    #introducao-palestrante p
     {
         font-size: 1.1rem;
     }
