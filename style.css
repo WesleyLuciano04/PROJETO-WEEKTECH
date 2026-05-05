@@ -292,7 +292,6 @@ body {
 }
 
 #sobre-evento p {
-    color: #ffffff;
     font-size: 1rem;
     line-height: 1.7;
     max-width: 640px;
@@ -308,7 +307,7 @@ body {
 }
 
 .sobre-card {
-    background: #ffffff;
+    background: var(--blue-2);
     border: 1px solid #e0e8f0;
     border-radius: 12px;
     padding: 28px 24px;
@@ -321,7 +320,7 @@ body {
 
 .sobre-card:hover {
     border: 2px solid var(--yellow-1);
-    background: rgba(255, 214, 33, 0.05);
+    background: var(--blue-1);
     box-shadow: 0 4px 20px rgba(255, 214, 33, 0.2);
 }
 
@@ -331,7 +330,7 @@ body {
 }
 
 .sobre-card:hover h3 {
-    color: var(--yellow-dark);
+    color: var(--yellow-1);
 }
 
 /* Ícone */
@@ -361,7 +360,7 @@ body {
 
 .sobre-card p {
     font-size: 0.88rem;
-    color: #666;
+    color: #e5e5e5;
     line-height: 1.6;
     margin: 0;
 }
