@@ -23,12 +23,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .navegacao {
     display: flex;
-    gap: 1px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* MODO ESCURO */
@@ -57,8 +61,37 @@ body {
 }
 
 .header-identidade img {
-    width: 200px;
+    width: 180px;
     height: auto;
+    filter: drop-shadow(1px 1.5px 0.55rem #92caed);
+}
+
+@media (max-width: 600px) 
+{
+    .header-inner 
+    {
+        flex-direction: column; /* Empilha logo e menu */
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .header-identidade img 
+    {
+        width: 140px; /* Logo um pouco menor no celular */
+    }
+
+    .navegacao 
+    {
+        gap: 10px;
+        margin-right: 0 !important; /* Remove a margem lateral */
+        padding: 5px 10px; /* Menos espaço entre os links no celular */
+    }
+
+    .navegacao a 
+    {
+        font-size: 0.9rem; /* Diminui levemente o texto */
+        margin-right: 0; /* Remove margens fixas que podem quebrar o layout */
+    }
 }
 
 #sobre 
@@ -848,4 +881,328 @@ body {
     display: flex;
     gap: 15px;
     font-size: 1.2rem;
+}
+
+/* -------------------- TELA PARTICIPANTE ---------------------- */
+/* ------------------------------------------------------------- */
+
+.cabecalho-participante
+{
+    margin-bottom: 3rem;
+}
+
+#conteudo-participante
+{
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.capa-participante
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.capa-participante #img-participante
+{
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 214, 33, 0.6));
+    transition: filter 0.3s ease;
+}
+
+.capa-participante #img-participante:hover
+{
+    filter: drop-shadow(0 0 40px rgba(255, 214, 33, 0.9));
+}
+
+#introducao-participante
+{
+    width: 50%;
+}
+
+#introducao-participante h2
+{
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-shadow: 1.5px 1.5px 2.5px var(--blue-1);
+}
+
+#introducao-participante p
+{
+    font-size: 1.5rem;
+    color: var(--yellow-1);
+    text-shadow: 1.5px 1.5px 2.5px var(--yellow-dark);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#form-participante h2
+{
+    margin: 3rem 0 1.5rem 0;
+    text-transform: uppercase;
+}
+
+#form-participante fieldset
+{
+    background: rgba(0, 36, 59, 0.424);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.campo
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5rem;
+    padding: 5px;
+}
+
+.campo-checkbox
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0 5rem;
+    padding: 5px;
+}
+
+.campo label{
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select
+{
+    box-sizing: border-box;
+    width: 45rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: 2px;
+    border-style: outset;
+    border-color: var(--yellow-dark);
+    background-color: #fff;
+    padding: 0.5rem 0.5rem;
+}
+
+.campo input::placeholder
+{
+    color: var(--blue-2);
+}
+
+.label-checkbox
+{
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    display: block;
+    margin: 10px 0 0 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#tem-projeto
+{
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 5px;
+    border: 2px;
+    border-style: outset;
+    border-color: var(--yellow-dark);
+    padding: 0.5rem 0.5rem;
+}
+
+#projeto-descricao
+{
+    box-sizing: border-box;
+    width: 45rem;
+    height: 6rem;
+    border-radius: 5px;
+    border: 2px;
+    border-style: outset;
+    border-color: var(--yellow-dark);
+    background-color: #fff;
+    padding: 0.5rem 0.5rem;
+}
+
+#coffee-break
+{
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 5px;
+    border: 2px;
+    border-style: outset;
+    border-color: var(--yellow-dark);
+    padding: 0.5rem 0.5rem;
+}
+
+#rodape-participante
+{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#rodape-participante img
+{
+    margin-left: 1rem;
+    width: 40px;
+    filter: drop-shadow(0 0 0.15rem #fff);
+    transition: filter 0.3s ease;
+}
+
+#rodape-participante p
+{
+    margin-right: 1rem;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: #F8F8FF;
+}
+
+.acoes-formulario
+{
+    display: flex;
+    justify-content: right;
+}
+
+#btnEnviar,
+#btnLimpar
+{
+    width: fit-content; /* só ocupa o espaço necessário */
+    margin: 10px 10px 10px 0;
+    background-color: var(--yellow-1);
+    padding: 8px;
+    border-radius: 5px;
+    border-style: outset;
+    border-color: var(--yellow-dark);
+    font-size: 1.0rem;
+    cursor: pointer;
+    color: var(--blue-2);
+}
+
+#btnEnviar:hover,
+#btnLimpar:hover
+{
+    background-color: var(--yellow-dark);
+}
+
+@media (max-width: 900px) 
+{
+    #conteudo-participante 
+    {
+        width: 95%;
+    }
+ 
+    .campo 
+    {
+        flex-direction: column;
+        margin: 0 1rem;
+    }
+ 
+    .campo-checkbox 
+    {
+        margin: 0 1.5rem;
+    }
+ 
+    .campo input,
+    .campo select 
+    {
+        width: 100%;
+        max-width: 100%;
+    }
+ 
+    #projeto-descricao 
+    {
+        width: 100%;
+        max-width: 100%;
+    }
+ 
+    #introducao-participante 
+    {
+        width: 60%;
+    }
+}
+ 
+@media (max-width: 600px) 
+{
+    #conteudo-participante 
+    {
+        width: 100%;
+        padding: 0 10px;
+    }
+ 
+    .campo 
+    {
+        flex-direction: column;
+        margin: 0 0.5rem;
+    }
+ 
+    .campo-checkbox 
+    {
+        margin: 0 0.5rem;
+    }
+ 
+    .campo input,
+    .campo select 
+    {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+ 
+    #projeto-descricao 
+    {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+ 
+    #introducao-participante 
+    {
+        width: 100%;
+        text-align: center;
+    }
+ 
+    #form-participante fieldset 
+    {
+        padding: 20px 12px;
+    }
+
+    .capa-participante 
+    {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+ 
+    .capa-participante #img-participante 
+    {
+        width: 180px;
+        max-width: 180px;
+        display: block;
+        margin: 0 auto;
+    }
+ 
+    #introducao-participante p 
+    {
+        font-size: 1.1rem;
+    }
 }
