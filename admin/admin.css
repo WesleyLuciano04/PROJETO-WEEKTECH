@@ -1,28 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
-
-/* ==================================================
-   CORES DO PROJETO
-   Altere aqui para mudar as cores em todo o admin
-   ================================================== */
-
 :root {
-    --blue-escuro:  #00243B;  /* fundo do header, tabela */
-    --blue-medio:   #005387;  /* links, ícones, bordas ativas */
-    --amarelo:      #FFD621;  /* destaque, nav ativo */
-    --amarelo-dark: #B39617;  /* hover do amarelo */
-    --verde:        #2ecc71;  /* aprovado */
-    --verde-dark:   #1a7a43;  /* texto aprovado */
-    --vermelho:     #e74c3c;  /* reprovado */
-    --fundo:        #f4f6f9;  /* fundo da página */
-    --branco:       #ffffff;
-    --texto:        #1a2e44;  /* texto principal */
-    --texto-suave:  #7a8fa6;  /* texto secundário */
-    --borda:        #e0e8f0;  /* bordas dos cards */
-}
+    --blue-1: #005387;
+    --blue-2: #00243B;
+    --yellow-1: #FFD621;
+    --yellow-dark: #B39617;
 
-/* ==================================================
-   RESET BÁSICO
-   ================================================== */
+    --verde:       #2ecc71;
+    --verde-dark:  #1a7a43;
+    --vermelho:    #e74c3c;
+}
 
 * {
     box-sizing: border-box;
@@ -31,18 +16,17 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: var(--fundo);
-    color: var(--texto);
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at center, #9dbee7 0%, #285cb1 100%);
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
 }
 
-/* ==================================================
-   HEADER — barra de navegação no topo
-   ================================================== */
+/* header*/
 
 .admin-header {
-    background: var(--blue-escuro);
-    border-bottom: 2px solid var(--amarelo);
+    background: transparent;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -52,49 +36,63 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-/* Logo em branco */
 .header-identidade img {
-    width: 140px;
+    width: 180px;
     height: auto;
-    filter: brightness(0) invert(1);
+    filter: drop-shadow(1px 1.5px 0.55rem #92caed);
 }
 
 nav ul {
     display: flex;
-    gap: 8px;
+    gap: 20px;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.88rem;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: color 0.2s ease, background 0.2s ease;
+    color: white;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    transition: color 0.2s ease;
 }
 
 nav ul li a:hover {
-    color: white;
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--yellow-1);
 }
 
-/* Link da página atual fica amarelo */
 nav ul li a.ativo {
-    color: var(--blue-escuro);
-    background: var(--amarelo);
+    color: var(--yellow-1);
     font-weight: 700;
 }
 
-/* ==================================================
-   ÁREA PRINCIPAL
-   ================================================== */
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .header-identidade img {
+        width: 140px;
+    }
+
+    nav ul {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* conteudo principal */
 
 #conteudo-admin {
     max-width: 1200px;
@@ -105,40 +103,32 @@ nav ul li a.ativo {
     gap: 24px;
 }
 
-/* ==================================================
-   TÍTULO DA PÁGINA
-   ================================================== */
 
 .admin-page-header h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    color: var(--blue-escuro);
+    font-weight: 700;
+    color: var(--yellow-1);
     margin-bottom: 4px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .admin-page-header p {
-    color: var(--texto-suave);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 0.9rem;
 }
 
-/* ==================================================
-   DASHBOARD — títulos de seção
-   ================================================== */
+/* dashbord*/
 
 #participantes-admin h2,
 #palestrantes-admin h2 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--texto);
+    color: white;
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 16px;
 }
-
-/* ==================================================
-   DASHBOARD — grids de cards
-   ================================================== */
 
 .stats-grid {
     display: flex;
@@ -146,27 +136,26 @@ nav ul li a.ativo {
     flex-wrap: wrap;
 }
 
-.participantes-grid .stat-card { flex: 1; min-width: 200px; }
-.palestrantes-grid .stat-card  { flex: 1; min-width: 140px; }
-
 /* Cards coloridos — Participantes */
 .participantes-grid .stat-card {
-    border-radius: 16px;
+    flex: 1;
+    min-width: 200px;
+    border-radius: 12px;
     padding: 24px;
     color: white;
     position: relative;
     overflow: hidden;
-    min-height: 140px;
+    min-height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.participantes-grid .stat-card:nth-child(1) { background: linear-gradient(135deg, var(--blue-escuro), var(--blue-medio)); }
-.participantes-grid .stat-card:nth-child(2) { background: linear-gradient(135deg, #c8a200, var(--amarelo)); }
-.participantes-grid .stat-card:nth-child(3) { background: linear-gradient(135deg, var(--verde-dark), var(--verde)); }
+.participantes-grid .stat-card:nth-child(1) { background: rgba(0, 36, 59, 0.6); backdrop-filter: blur(10px); }
+.participantes-grid .stat-card:nth-child(2) { background: rgba(179, 150, 23, 0.5); backdrop-filter: blur(10px); }
+.participantes-grid .stat-card:nth-child(3) { background: rgba(26, 122, 67, 0.5); backdrop-filter: blur(10px); }
 
-/* Círculo decorativo no canto */
 .participantes-grid .stat-card::after {
     content: '';
     position: absolute;
@@ -175,15 +164,15 @@ nav ul li a.ativo {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .participantes-grid .stat-card .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    opacity: 0.85;
+    opacity: 0.8;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
 }
 
 .participantes-grid .stat-card .stat-number {
@@ -191,43 +180,45 @@ nav ul li a.ativo {
     font-weight: 700;
     line-height: 1;
     margin-top: 8px;
+    color: var(--yellow-1);
 }
 
 /* Cards brancos — Palestrantes */
 .palestrantes-grid .stat-card {
-    background: var(--branco);
-    border: 1px solid var(--borda);
-    border-radius: 14px;
+    flex: 1;
+    min-width: 140px;
+    background: rgba(0, 36, 59, 0.5);
+    border: 1px solid rgba(255, 214, 33, 0.2);
+    border-radius: 12px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(10px);
 }
 
 .palestrantes-grid .stat-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: var(--yellow-1);
     transform: translateY(-2px);
 }
 
 .palestrantes-grid .stat-card .stat-number {
     font-size: 2.2rem;
     font-weight: 700;
-    color: var(--texto);
+    color: var(--yellow-1);
     line-height: 1;
 }
 
 .palestrantes-grid .stat-card .stat-label {
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--texto-suave);
+    color: rgba(255, 255, 255, 0.65);
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
 
-/* ==================================================
-   ÍCONE dos cards
-   ================================================== */
+/* icones */
 
 .stat-icon {
     width: 40px;
@@ -236,22 +227,20 @@ nav ul li a.ativo {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 83, 135, 0.1);
-    color: var(--blue-medio);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
 }
 
-.stat-icon--yellow { background: rgba(255, 214, 33, 0.2);  color: var(--amarelo-dark); }
-.stat-icon--green  { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
-.stat-icon--red    { background: rgba(231, 76, 60, 0.1);   color: var(--vermelho); }
+.stat-icon--yellow { background: rgba(255, 214, 33, 0.15); color: var(--yellow-1); }
+.stat-icon--green  { background: rgba(46, 204, 113, 0.15); color: var(--verde); }
+.stat-icon--red    { background: rgba(231, 76, 60, 0.12);  color: #f1948a; }
 
-.palestrantes-grid .stat-card:nth-child(1) .stat-icon { background: rgba(0, 83, 135, 0.1);   color: var(--blue-medio); }
-.palestrantes-grid .stat-card:nth-child(2) .stat-icon { background: rgba(255, 214, 33, 0.2);  color: var(--amarelo-dark); }
-.palestrantes-grid .stat-card:nth-child(3) .stat-icon { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
-.palestrantes-grid .stat-card:nth-child(4) .stat-icon { background: rgba(231, 76, 60, 0.1);   color: var(--vermelho); }
+.palestrantes-grid .stat-card:nth-child(1) .stat-icon { background: rgba(255, 255, 255, 0.08);   color: white; }
+.palestrantes-grid .stat-card:nth-child(2) .stat-icon { background: rgba(255, 214, 33, 0.15);    color: var(--yellow-1); }
+.palestrantes-grid .stat-card:nth-child(3) .stat-icon { background: rgba(46, 204, 113, 0.15);   color: var(--verde); }
+.palestrantes-grid .stat-card:nth-child(4) .stat-icon { background: rgba(231, 76, 60, 0.12);    color: #f1948a; }
 
-/* ==================================================
-   FILTRO CARDS (Total, Coffee, Com Projeto...)
-   ================================================== */
+/*filtro */
 
 .filtro-cards {
     display: flex;
@@ -260,49 +249,43 @@ nav ul li a.ativo {
 }
 
 .filtro-card {
-    background: var(--branco);
-    border: 1.5px solid var(--borda);
-    border-radius: 14px;
-    padding: 20px;
+    background: rgba(0, 36, 59, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 18px 20px;
     flex: 1;
     min-width: 140px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(10px);
 }
 
 .filtro-card:hover {
-    border-color: var(--blue-medio);
+    border-color: rgba(255, 214, 33, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .filtro-card.ativo {
-    border-color: var(--blue-medio);
-    background: rgba(0, 83, 135, 0.04);
-    box-shadow: 0 4px 20px rgba(0, 36, 59, 0.12);
+    border-color: var(--yellow-1);
+    background: rgba(255, 214, 33, 0.08);
 }
 
 .filtro-number {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--texto);
+    color: white;
 }
 
 .filtro-label {
     font-size: 0.72rem;
     font-weight: 600;
-    color: var(--texto-suave);
+    color: rgba(255, 255, 255, 0.55);
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
-
-/* ==================================================
-   FILTRO STATUS PILLS
-   Aparece só quando "Com Projeto" está ativo
-   ================================================== */
 
 .filtro-status-wrap {
     display: flex;
@@ -316,7 +299,7 @@ nav ul li a.ativo {
 .filtro-status-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--texto-suave);
+    color: rgba(255, 255, 255, 0.65);
 }
 
 .filtro-status-pills {
@@ -333,92 +316,104 @@ nav ul li a.ativo {
     border-radius: 20px;
     font-size: 0.78rem;
     font-weight: 600;
-    border: 1.5px solid var(--borda);
-    background: var(--branco);
-    color: var(--texto-suave);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.65);
     cursor: pointer;
     transition: all 0.2s ease;
+    font-family: 'DM Sans', sans-serif;
 }
 
-.pill:hover { border-color: var(--blue-medio); color: var(--blue-medio); }
-.pill.ativo { background: var(--blue-escuro); border-color: var(--blue-escuro); color: white; }
+.pill:hover { border-color: rgba(255, 255, 255, 0.35); color: white; }
+.pill.ativo  { background: var(--blue-2); border-color: var(--yellow-1); color: var(--yellow-1); }
 
-.pill--pendente.ativo  { background: rgba(255, 214, 33, 0.2);  border-color: var(--amarelo-dark); color: var(--amarelo-dark); }
-.pill--aprovado.ativo  { background: rgba(46, 204, 113, 0.15); border-color: var(--verde-dark);   color: var(--verde-dark); }
-.pill--reprovado.ativo { background: rgba(231, 76, 60, 0.1);   border-color: var(--vermelho);     color: var(--vermelho); }
+.pill--pendente.ativo  { background: rgba(179, 150, 23, 0.2);  border-color: var(--yellow-1);  color: var(--yellow-1); }
+.pill--aprovado.ativo  { background: rgba(46, 204, 113, 0.15); border-color: var(--verde);      color: var(--verde); }
+.pill--reprovado.ativo { background: rgba(231, 76, 60, 0.12);  border-color: #f1948a;           color: #f1948a; }
 
-/* ==================================================
-   BUSCA
-   ================================================== */
+/* busca */
 
 .busca-wrapper {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: var(--branco);
-    border: 1.5px solid var(--borda);
-    border-radius: 10px;
+    background: rgba(0, 36, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     padding: 12px 16px;
     transition: border-color 0.2s ease;
+    backdrop-filter: blur(10px);
 }
 
-.busca-wrapper:focus-within { border-color: var(--blue-medio); }
-.busca-wrapper svg { color: var(--texto-suave); flex-shrink: 0; }
+.busca-wrapper:focus-within {
+    border-color: var(--yellow-1);
+}
+
+.busca-wrapper svg {
+    color: rgba(255, 255, 255, 0.5);
+    flex-shrink: 0;
+}
 
 .busca-wrapper input {
     border: none;
     outline: none;
     font-size: 0.9rem;
-    color: var(--texto);
+    color: white;
     background: transparent;
     width: 100%;
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
-.busca-wrapper input::placeholder { color: var(--texto-suave); }
+.busca-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
 
-/* ==================================================
-   TABELA
-   ================================================== */
+/*tabela*/
 
 .table-wrapper {
-    background: var(--branco);
-    border-radius: 14px;
-    border: 1px solid var(--borda);
+    background: rgba(0, 36, 59, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 214, 33, 0.2);
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
-table { width: 100%; border-collapse: collapse; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-thead tr { background: var(--blue-escuro); }
+thead tr {
+    background: var(--blue-2);
+    border-bottom: 2px solid var(--yellow-1);
+}
 
 thead th {
     padding: 14px 16px;
     text-align: left;
     font-size: 0.75rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.65);
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
 tbody tr {
-    border-bottom: 1px solid var(--borda);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: background 0.15s ease;
 }
 
 tbody tr:last-child { border-bottom: none; }
-tbody tr:hover { background: #f8fafc; }
+
+tbody tr:hover {
+    background: rgba(255, 214, 33, 0.04);
+}
 
 tbody td {
     padding: 14px 16px;
     font-size: 0.88rem;
-    color: var(--texto);
+    color: rgba(255, 255, 255, 0.85);
 }
-
-/* ==================================================
-   BADGES (etiquetas de status)
-   ================================================== */
 
 .badge {
     display: inline-flex;
@@ -431,106 +426,104 @@ tbody td {
     letter-spacing: 0.05em;
 }
 
-.badge--pendente  { background: rgba(255, 214, 33, 0.2);  color: var(--amarelo-dark); }
-.badge--aprovado  { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
-.badge--reprovado { background: rgba(231, 76, 60, 0.1);   color: var(--vermelho); }
-.badge--sim       { background: rgba(46, 204, 113, 0.15); color: var(--verde-dark); }
-.badge--nao       { background: rgba(0, 0, 0, 0.06);      color: var(--texto-suave); }
+.badge--pendente  { background: rgba(179, 150, 23, 0.25);  color: var(--yellow-1);  border: 1px solid rgba(255, 214, 33, 0.3); }
+.badge--aprovado  { background: rgba(46, 204, 113, 0.15);  color: var(--verde);     border: 1px solid rgba(46, 204, 113, 0.3); }
+.badge--reprovado { background: rgba(231, 76, 60, 0.12);   color: #f1948a;          border: 1px solid rgba(231, 76, 60, 0.3); }
+.badge--sim       { background: rgba(46, 204, 113, 0.15);  color: var(--verde);     border: 1px solid rgba(46, 204, 113, 0.3); }
+.badge--nao       { background: rgba(255, 255, 255, 0.06); color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.1); }
 
-/* ==================================================
-   BOTÃO VER (na tabela)
-   ================================================== */
+/* botoões*/
 
 .btn-ver {
     display: inline-flex;
     align-items: center;
     gap: 4px;
     padding: 6px 12px;
-    background: rgba(0, 83, 135, 0.08);
-    color: var(--blue-medio);
+    background: rgba(255, 214, 33, 0.1);
+    color: var(--yellow-1);
     border-radius: 6px;
     font-size: 0.8rem;
     font-weight: 600;
     text-decoration: none;
-    transition: background 0.2s ease;
+    border: 1px solid rgba(255, 214, 33, 0.2);
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-ver:hover { background: rgba(0, 83, 135, 0.15); }
+.btn-ver:hover {
+    background: rgba(255, 214, 33, 0.2);
+    border-color: var(--yellow-1);
+}
 
-/* ==================================================
-   BOTÃO EXPORTAR EXCEL
-   ================================================== */
 
-.exportar-wrap { display: flex; justify-content: flex-end; }
+.exportar-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
 
 .btn-exportar {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: var(--blue-escuro);
-    color: white;
+    background-color: var(--yellow-1);
+    color: var(--blue-2);
     border-radius: 8px;
     font-size: 0.88rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
+    letter-spacing: 0.03em;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-exportar:hover {
-    background: var(--blue-medio);
-    transform: translateY(-1px);
+    background-color: var(--yellow-dark);
+    transform: translateY(-2px);
 }
 
-/* ==================================================
-   BOTÃO VOLTAR — páginas de detalhe
-   ================================================== */
 
 .btn-voltar {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     text-decoration: none;
-    color: var(--blue-medio);
+    color: var(--yellow-1);
     font-size: 0.88rem;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
-.btn-voltar:hover { color: var(--blue-escuro); }
-
-/* ==================================================
-   DETALHE — card branco com borda
-   ================================================== */
-
-.detalhe-card {
-    background: var(--branco);
-    border: 1px solid var(--borda);
-    border-radius: 14px;
-    padding: 28px;
+.btn-voltar:hover {
+    color: white;
 }
 
-/* Título do card com ícone */
+/* detalhes */
+
+.detalhe-card {
+    background: rgba(0, 36, 59, 0.5);
+    border: 1px solid rgba(255, 214, 33, 0.2);
+    border-radius: 12px;
+    padding: 28px;
+    backdrop-filter: blur(12px);
+}
+
 .detalhe-card-titulo {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--blue-medio);
+    color: var(--yellow-1);
     margin-bottom: 20px;
     padding-bottom: 14px;
-    border-bottom: 1px solid var(--borda);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Grid de campos em duas colunas */
 .detalhe-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
-/* Um campo (rótulo + valor) */
 .detalhe-campo {
     display: flex;
     flex-direction: column;
@@ -540,67 +533,56 @@ tbody td {
 .detalhe-rotulo {
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--texto-suave);
+    color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .detalhe-valor {
     font-size: 0.9rem;
-    color: var(--texto);
-    font-weight: 500;
+    color: white;
+    font-weight: 400;
 }
 
-/* Caixa de texto longa (briefing, currículo, descrição) */
 .detalhe-bloco-texto {
-    background: var(--fundo);
-    border: 1px solid var(--borda);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 12px 16px;
     font-size: 0.88rem;
-    color: var(--texto);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin-top: 4px;
 }
 
-/* Linha final com badges (autoriza + status) */
 .detalhe-rodape-info {
     display: flex;
     gap: 32px;
     margin-top: 16px;
     padding-top: 16px;
-    border-top: 1px solid var(--borda);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     flex-wrap: wrap;
 }
-
-/* ==================================================
-   BOTÃO DOWNLOAD (baixar currículo)
-   ================================================== */
 
 .btn-download {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: var(--fundo);
-    border: 1.5px solid var(--borda);
+    background: rgba(255, 214, 33, 0.08);
+    border: 1px solid rgba(255, 214, 33, 0.25);
     border-radius: 8px;
-    color: var(--texto);
+    color: var(--yellow-1);
     font-size: 0.88rem;
     font-weight: 600;
     text-decoration: none;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-download:hover {
-    border-color: var(--blue-medio);
-    background: rgba(0, 83, 135, 0.04);
-    color: var(--blue-medio);
+    background: rgba(255, 214, 33, 0.15);
+    border-color: var(--yellow-1);
 }
-
-/* ==================================================
-   FORMULÁRIO DE ATUALIZAR STATUS
-   ================================================== */
 
 .form-status {
     display: flex;
@@ -618,52 +600,59 @@ tbody td {
 .form-rotulo {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--texto-suave);
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .form-select {
     padding: 10px 14px;
-    border: 1.5px solid var(--borda);
+    border: 1px solid rgba(255, 214, 33, 0.3);
     border-radius: 8px;
     font-size: 0.88rem;
-    font-family: 'Inter', sans-serif;
-    color: var(--texto);
-    background: var(--branco);
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    background: rgba(0, 36, 59, 0.6);
     outline: none;
     cursor: pointer;
     transition: border-color 0.2s ease;
     min-width: 180px;
 }
 
-.form-select:focus { border-color: var(--blue-medio); }
+.form-select:focus {
+    border-color: var(--yellow-1);
+}
+
+.form-select option {
+    background: var(--blue-2);
+    color: white;
+}
 
 .btn-atualizar {
     padding: 10px 24px;
-    background: var(--blue-escuro);
-    color: white;
+    background-color: var(--yellow-1);
+    color: var(--blue-2);
     border: none;
     border-radius: 8px;
     font-size: 0.88rem;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
     cursor: pointer;
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-atualizar:hover {
-    background: var(--blue-medio);
+    background-color: var(--yellow-dark);
     transform: translateY(-1px);
 }
 
-/* ==================================================
-   FOOTER
-   ================================================== */
+/* rodape */
 
 #rodape-admin {
     text-align: center;
     padding: 20px;
     font-size: 0.8rem;
-    color: var(--texto-suave);
-    border-top: 1px solid var(--borda);
+    color: rgba(255, 255, 255, 0.45);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     margin-top: 20px;
 }
