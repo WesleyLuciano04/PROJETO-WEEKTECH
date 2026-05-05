@@ -14,6 +14,17 @@ const botConfig =
     welcomeMessage: 'Olá, sou o Bot da Tech Week. Como posso te ajudar hoje?',
     options: ['Data, Horário ou Local do Evento.', 'Cronograma: Palestras ou Projetos.', 'Palestrantes.', 'Patrocinadores.'],
 
+    flows:
+    {
+        suporte:
+        [
+            { question: 'Claro, qual é seu nome?' , key: "nome"},
+            { question: 'Olá {nome}. Qual é a sua dúvida?', key: "duvida"},
+            { question: 'Anotado {nome}. Nossa equipe vai te retornar pelo whatsapp, pode me informar seu número?', key: 'telefone'},
+            { question: 'Obrigado(a)! Em breve entraremos em contato.', key: "fim", isFinal: true},
+        ],
+    },
+
     responses:
     [
         //data, horário ou local do evento
@@ -22,12 +33,12 @@ const botConfig =
         { pattern: /(endereco|local|endereço)/i, response: '📍Unicesumar Londrina<br>Av. Santa Mônica, 450.', action: 'scrollToLocal'},
 
         //cronograma: palestras os projetos
-        { pattern: /(palestrantes)/i, response: 'Confira na seção ao lado, os palestrantes registrados confirmados.', action: 'scrollToPalestrantes'},
+        { pattern: /(palestrantes|palestrante)/i, response: 'Confira na seção ao lado, os palestrantes registrados confirmados.', action: 'scrollToPalestrantes'},
         { pattern: /(quero palestrar|ser palestrante|enviar palestra)/i, response: 'Ficamos felizes com seu interesse! Você pode enviar sua proposta de palestra através <a href="inscricao-palestrante.html">deste formulário</a>.' },
         { pattern: /(projeto|trabalho|apresentar)/i, response: 'Para apresentar um projeto, no momento da inscrição o usuário deve fazer check-in no campo: "Quero apresentar um projeto"'},
 
         //patrocinadores
-        { pattern: /(patricinio|patrocinar)/i, response: 'Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a nossa coordenação pelo telefone/WhatsApp: (43) 99996-1905.'},
+        { pattern: /(patrocinio|patrocinar)/i, response: 'Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a nossa coordenação pelo telefone/WhatsApp: (43) 99996-1905.'},
         
         //sobre o que se trata a techWeek
         {pattern: /(sobre|tech|week)/i, response: 'A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia. O foco desta edição é Inteligência Artificial aplicada na prática.'},
@@ -43,6 +54,11 @@ const botConfig =
 
         //agradecimento
         { pattern: /(obrigado|obrigada)/i, response: 'Nós que agradecemos! Caso precise de mais informações é só me pedir! 🤗'},
+
+        //dúvidas de custo
+        { pattern: /(gratis|gratuito|pago|valor|preco|custo)/i, response: 'A participação no evento é gratuita! O único custo opcional é o Coffee Break, cobrado presencialmente.' },
+
+        { pattern: /(falar com alguem|suporte)/i, response: null, flow: 'suporte'}
     ]
 };
 
@@ -195,7 +211,7 @@ function bindQuestionParameter(question = '')
             valor = caps(valor);
         }
 
-        question = question.replace(`{${key}`, valor);
+        question = question.replace(`{${key}}`, valor);
     }
 
     return question;
