@@ -490,7 +490,6 @@ body {
     margin: 10px;
     min-width: 120px;
     max-width: 160px;
-    margin-width: 180px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -677,7 +676,6 @@ body {
     margin: 10px;
     min-width: 120px;
     max-width: 160px;
-    margin-width: 10px;
     display: flex;
     flex-direction: column;
     gap: 6px;
