@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhe do Participante — Admin · II Tech Week 2026</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+</head>
+
+<body>
+
+    <header class="admin-header" role="banner">
+        <div class="header-inner">
+            <div class="header-identidade">
+                <a th:href="@{/admin/dashboard}">
+                    <img th:src="@{/imgs/unicesumar-logo.png}" alt="Logotipo UniCesumar" />
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/admin/dashboard}">Dashboard</a></li>
+                    <li><a th:href="@{/admin/participantes}" class="ativo">Participantes</a></li>
+                    <li><a th:href="@{/admin/palestrantes}">Palestrantes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-admin">
+
+        <a th:href="@{/admin/participantes}" class="btn-voltar">← Voltar</a>
+
+        <div th:if="${sucesso}" class="alerta alerta-sucesso" role="alert" th:text="${sucesso}"></div>
+        <div th:if="${erro}" class="alerta alerta-erro" role="alert" th:text="${erro}"></div>
+
+
+        <section class="admin-page-header">
+            <h1>Detalhes do Participante</h1>
+            <p>Visualize e gerencie a inscrição.</p>
+        </section>
+
+        </div>
+
+        <section class="detalhe-card">
+            <h2 class="detalhe-card-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" width="18" height="18">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                </svg>
+                Informações do Participante
+            </h2>
+
+            <div class="detalhe-grid">
+
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Nome</span>
+                    <span class="detalhe-valor" th:text="${participante.nome}">—</span>
+                </div>
+
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">RA</span>
+                    <span class="detalhe-valor mono" th:text="${participante.ra}">—</span>
+                </div>
+
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Curso</span>
+                    <span class="detalhe-valor" th:text="${participante.cursoDescricao}">—</span>
+                </div>
+
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Semestre</span>
+                    <span class="detalhe-valor" th:text="${participante.serie + 'º Semestre'}">—</span>
+                </div>
+
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Coffee Break</span>
+                    <span th:if="${participante.coffeeBreak}" class="badge badge--sim">✓ Confirmado</span>
+                    <span th:unless="${participante.coffeeBreak}" class="badge badge--nao">✗ Não</span>
+                </div>
+
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Apresenta Projeto</span>
+                    <span th:if="${participante.temProjeto}" class="badge badge--sim">✓ Sim</span>
+                    <span th:unless="${participante.temProjeto}" class="badge badge--nao">✗ Não</span>
+                </div>
+
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Status</span>
+                    <span th:text="${participante.status}" th:class="${'badge ' +
+                        (participante.status?.name() == 'APROVADO'  ? 'badge-aprovado'  :
+                         participante.status?.name() == 'REPROVADO' ? 'badge-reprovado' :
+                         participante.status?.name() == 'CANCELADO' ? 'badge-cancelado' :
+                         'badge-pendente')}">
+                        PENDENTE
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detalhe-card" id="projeto-participante" th:if="${participante.temProjeto}">
+            <h2 class="detalhe-card-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" width="18" height="18">
+                    <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2z" />
+                    <path d="M14 2v6h6" />
+                </svg>
+                Projeto Inscrito
+            </h2>
+
+            <div class="projeto-campos">
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Nome do Projeto</span>
+                    <span class="detalhe-valor" th:text="${participante.nomeProjeto}">—</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Descrição</span>
+                    <div class="detalhe-bloco-texto" th:text="${participante.descricaoProjeto}">—</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detalhe-card" id="atualizar-status"
+            th:unless="${participante.status != null and participante.status.name() == 'SEMPROJETO'}">
+            <h2 class="detalhe-card-titulo">
+                Atualizar Status
+            </h2>
+
+            <form th:action="@{/admin/participantes/{id}/status(id=${participante.id})}"
+                th:object="${atualizarStatusDTO}" th:if="${atualizarStatusDTO != null}" method="post"
+                class="form-status">
+
+                <div class="form-grupo">
+                    <label for="status" class="form-rotulo">Novo status</label>
+                    <select id="status" th:field="*{status}" class="form-select" aria-required="true">
+                        <option value="" disabled>Selecione um status</option>
+                        <option th:each="opcao : ${statusOpcoes}" th:unless="${opcao.name() == 'SEMPROJETO'}"
+                            th:value="${opcao}" th:text="${opcao.descricao}">
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-atualizar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" width="14" height="14" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Salvar
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="rodape-admin" role="contentinfo">
+        <p>Painel administrativo — II Tech Week 2026 · UniCesumar Londrina</p>
+    </footer>
+
+</body>
+
+</html>

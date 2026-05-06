@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe do Palestrante — Admin</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="header-inner">
+            <div class="header-identidade">
+                <a href="https://www.unicesumar.edu.br/" target="_blank">
+                    <img th:src="@{/imgs/unicesumar-logo.png}" alt="Logo UniCesumar">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a th:href="@{/admin/dashboard}">Dashboard</a></li>
+                        <li><a th:href="@{/admin/participantes}">Participantes</a></li>
+                        <li><a th:href="@{/admin/palestrantes}" class="ativo">Palestrantes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-admin">
+
+        <a th:href="@{/admin/palestrantes}" class="btn-voltar">← Voltar</a>
+
+        <section class="admin-page-header">
+            <h1>Detalhes do Palestrante</h1>
+            <p>Visualize e gerencie a proposta de palestra.</p>
+        </section>
+
+        <div th:if="${sucesso}" class="alerta alerta-sucesso" th:text="${sucesso}"></div>
+        <div th:if="${erro}" class="alerta alerta-erro" th:text="${erro}"></div>
+
+        <section class="detalhe-card">
+            <h2 class="detalhe-card-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" width="18" height="18">
+                    <path d="M12 19v3" />
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                    <rect x="9" y="2" width="6" height="13" rx="3" />
+                </svg>
+                Informações
+            </h2>
+            <div class="detalhe-campo">
+                <span class="detalhe-rotulo">Nome</span>
+                <span class="detalhe-valor" th:text="${palestrante.nome}">João Silva</span>
+            </div>
+            <div class="detalhe-campo">
+                <span class="detalhe-rotulo">Email</span>
+                <span class="detalhe-valor" th:text="${palestrante.email}">joao@email.com</span>
+            </div>
+            <div class="detalhe-campo">
+                <span class="detalhe-rotulo">Telefone</span>
+                <span class="detalhe-valor" th:text="${palestrante.telefone}">(43) 99999-9999</span>
+            </div>
+            <div class="detalhe-campo">
+                <span class="detalhe-rotulo">Tema da Palestra</span>
+                <span class="detalhe-valor" th:text="${palestrante.temaPalestra}">Inteligência Artificial</span>
+            </div>
+            <div class="detalhe-campo">
+                <span class="detalhe-rotulo">Duração</span>
+                <span class="detalhe-valor" th:text="${palestrante.duracaoMinutos} + ' minutos'">60 minutos</span>
+            </div>
+            </div>
+
+            <div class="detalhe-campo" style="margin-top: 16px;">
+                <span class="detalhe-rotulo">Briefing</span>
+                <div class="detalhe-bloco-texto" th:text="${palestrante.briefing}">
+                    Apresentação sobre conceitos básicos de IA e aplicações práticas.
+                </div>
+            </div>
+
+            <div class="detalhe-campo" style="margin-top: 12px;">
+                <span class="detalhe-rotulo">Currículo</span>
+                <div class="detalhe-bloco-texto" th:text="${palestrante.curriculoResumo}">
+                    Desenvolvedor com experiência em IA e Machine Learning.
+                </div>
+            </div>
+
+            <div class="detalhe-rodape-info">
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Autoriza divulgação</span>
+                    <span th:if="${palestrante.autorizaDivulgacao}" class="badge badge--sim">✓ Sim</span>
+                    <span th:unless="${palestrante.autorizaDivulgacao}" class="badge badge--pendente">✗ Não</span>
+                </div>
+                <div class="detalhe-campo">
+                    <span class="detalhe-rotulo">Status Atual</span>
+                    <span th:text="${palestrante.status}" th:classappend="${palestrante.status.name() == 'APROVADO'  ? 'badge--sim'      :
+                                           palestrante.status.name() == 'REPROVADO' ? 'badge--reprovado' :
+                                                                                      'badge--pendente'}"
+                        class="badge">PENDENTE</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARD: Arquivo do currículo -->
+        <section class="detalhe-card" id="arquivo-curriculo">
+            <h2 class="detalhe-card-titulo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" width="18" height="18">
+                    <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2z" />
+                    <path d="M14 2v6h6" />
+                    <line x1="12" y1="11" x2="12" y2="17" />
+                    <polyline points="9 14 12 17 15 14" />
+                </svg>
+                Arquivo do Currículo
+            </h2>
+
+
+            <!-- Mensagem se não houver arquivo -->
+            <p th:unless="${palestrante.curriculoArquivoPath != null}" style="color:#8888a8; font-size:.875rem;">
+                Nenhum arquivo enviado.
+            </p>
+        </section>
+
+        <!-- CARD: Atualizar status -->
+        <section class="detalhe-card" id="atualizar-status">
+            <h2 class="detalhe-card-titulo">Atualizar Status</h2>
+
+            <form th:action="@{/admin/palestrantes/{id}/status(id=${palestrante.id})}" th:object="${atualizarStatusDTO}"
+                th:if="${atualizarStatusDTO != null}" method="post" class="form-status">
+
+                <div class="form-grupo">
+                    <label for="status" class="form-rotulo">Novo status</label>
+                    <select id="status" th:field="*{status}" class="form-select" aria-required="true">
+                        <option value="" disabled>Selecione um status</option>
+                        <option th:each="opcao : ${statusOpcoes}" th:value="${opcao}" th:text="${opcao.descricao}">
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-atualizar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" width="14" height="14" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Salvar
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="rodape-admin">
+        <p>Painel administrativo — II Tech Week 2026</p>
+    </footer>
+
+</body>
+
+</html>

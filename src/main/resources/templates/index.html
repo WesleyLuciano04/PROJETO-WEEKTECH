@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>II Tech Week 2026</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="header-identidade">
+                <a href="https://www.unicesumar.edu.br/" target="_blank">
+                    <img th:src="@{/imgs/unicesumar-logo.png}" alt="Logo UniCesumar">
+                </a>
+
+            </div>
+
+            <div>
+                <!-- Navegação -->
+                <nav class="navegacao">
+                    <a th:href="@{/}">Home</a>
+                    <a th:href="@{/inscricao-participante}">Participante</a>
+                    <a th:href="@{/inscricao-palestrante}">Palestrante</a>
+                    <a href="#programacao">Programação</a>
+                    <a href="#contato">Contato</a>
+                    <button onclick="modoEscuro()" class="btn-tema" id="btn-tema" aria-label="Alternar tema escuro">
+                        <svg id="icon-tema" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>                 
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+
+        <section id="sobre">
+
+            <canvas id="grid-canvas"></canvas>
+
+            <div class="capa-evento">
+                <h1 id="titulo-tech">II TECH</h1>
+                <h1 id="titulo-week">WEEK 2026</h1>
+                <h3 id="sub-titulo">Inteligência <span class="destaque1"> Artificial</span> em <span
+                        class="destaque2">Ação</span></h3>
+
+                <div class="evento-info">
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>DATAS</small>
+                            <span>01 a 03 / Jul / 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                                <circle cx="12" cy="9" r="2.5" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>LOCAL</small>
+                            <span>Unicesumar — Auditório </span>
+                        </div>
+                    </div>
+
+                    <div class="evento-info-item">
+                        <span class="evento-info-icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </span>
+                        <div>
+                            <small>FORMATO</small>
+                            <span>Presencial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a th:href="@{/inscricao-participante}">
+                    <button>Faça sua Inscrição</button>
+                </a>
+            </div>
+
+            <div class="apresentacaoTechWeek">
+                <a th:href="@{/}">
+                    <img id="tech" th:src="@{/imgs/logotw1.png}" alt="Logo do evento: Tech Week 2026">
+                </a>
+            </div>
+        </section>
+
+
+        <section id="sobre-evento">
+            <h2>Sobre o Evento</h2>
+            <p>A <strong>Tech Week</strong> reúne alunos, professores e profissionais para discutir inovação e
+                tecnologia. O foco desta edição é <strong>Inteligência Artificial aplicada na prática</strong>.</p>
+
+            <div class="sobre-cards">
+                <div class="sobre-card">
+                    <div class="sobre-card-icone">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 21h6" />
+                            <path
+                                d="M12 3a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V17a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-2.8C7.21 13.16 6 11.22 6 9a6 6 0 0 1 6-6z" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Inovação Tecnológica</h3>
+                    <p>Workshops, demos e palestras sobre as tecnologias que estão moldando o futuro do mercado.</p>
+                </div>
+
+                <div class="sobre-card">
+                    <div class="sobre-card-icone">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                            <path
+                                d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                            <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+                            <path d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+                            <path d="M19.938 10.5a4 4 0 0 1 .585.396" />
+                            <path d="M6 18a4 4 0 0 1-1.967-.516" />
+                            <path d="M19.967 17.484A4 4 0 0 1 18 18" />
+                        </svg>
+                    </div>
+                    <h3>IA Aplicada</h3>
+                    <p>Casos reais de Inteligência Artificial resolvendo problemas em saúde, educação e negócios.</p>
+                </div>
+
+                <div class="sobre-card">
+                    <div class="sobre-card-icone">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>Conecte-se com palestrantes, recrutadores e a comunidade tech da região de Londrina.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="programacao">
+            <h2>Programação</h2>
+
+            <div id="grade-semana">
+
+                <article class="dia-programacao">
+                    <button class="dia-toggle">
+                        <p id="dias">dia 1 abertura oficial</p>
+                        <h3>Segunda-feira</h3>
+                        <p>20/10</p>
+
+                        <div class="grade-dia">
+                            <ol>
+                                <li>
+                                    <article class="palestra-card">
+                                        <span class="palestra-tag">01 · SESSÃO</span>
+                                        <h4>Coffee Break de boas-vindas</h4>
+                                        <p>🕐 18h30 — 19h00</p>
+                                        <p id="sala">📍 Sala 1</p>
+                                    </article>
+                                </li>
+
+                                <li>
+                                    <article class="palestra-card">
+                                        <span class="palestra-tag">02 · SESSÃO</span>
+                                        <h4>Cerimônia de Abertura</h4>
+                                        <p>🕐 19h00 — 19h30</p>
+                                        <p id="sala">📍  Auditório</p>
+                                    </article>
+                                </li>
+                            </ol>
+                        </div>
+                    </button>
+
+                </article>
+
+
+                <article class="dia-programacao">
+                    <button class="dia-toggle">
+
+                        <p id="dias">dia 2</p>
+                        <h3>Terça-feira</h3>
+                        <p>21/10</p>
+
+                        <div class="grade-dia">
+                            <ol>
+                                <li>
+                                    <article class="palestra-card">
+                                        <span class="palestra-tag">01 · SESSÃO</span>
+                                        <h4>Coffee Break de boas-vindas</h4>
+                                        <p>🕐 18h30 — 19h00</p>
+                                        <p id="sala">📍 Sala 1</p>
+                                    </article>
+                                </li>
+
+                                <li>
+                                    <article class="palestra-card">
+                                        <span class="palestra-tag">02 · SESSÃO</span>
+                                        <h4>Cerimônia de Abertura</h4>
+                                        <p>🕐 19h00 — 19h30</p>
+                                        <p id="sala">📍  Auditório</p>
+                                    </article>
+                                </li>
+                            </ol>
+                        </div>
+                    </button>
+
+                </article>
+
+
+                <article class="dia-programacao">
+                    <button class="dia-toggle">
+
+                        <p id="dias">dia 3 abertura oficial</p>
+                        <h3>Quarta-feira</h3>
+                        <p>22/10</p>
+
+                        <div class="grade-dia">
+                            <ol>
+                                <li>
+                                    <article class="palestra-card">
+                                        <span class="palestra-tag">01 · SESSÃO</span>
+                                        <h4>Coffee Break de boas-vindas</h4>
+                                        <p>🕐 18h30 — 19h00</p>
+                                        <p id="sala">📍 Sala 1</p>
+                                    </article>
+                                </li>
+
+                                <li>
+                                    <article class="palestra-card">
+                                        <span class="palestra-tag">02 · SESSÃO</span>
+                                        <h4>Cerimônia de Abertura</h4>
+                                        <p>🕐 19h00 — 19h30</p>
+                                        <p id="sala">📍  Auditório</p>
+                                    </article>
+                                </li>
+                            </ol>
+                        </div>
+                    </button>
+
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PALESTRANTES -->
+        <section id="palestrantes">
+            <h2 id="titulo-palestrantes">Palestrantes</h2>
+            <div class="palestrantes-grid">
+                <div id="palestrantes-card">
+                    <article id="palestrante">
+                        <img th:src="@{/imgs/falen.webp}" alt="Foto de Nome do Palestrante">
+                        <dl class="palestrante-card">
+                            <h3>FALLEN</h3>
+                            <dt>Tema</dt>
+                            <dt>A definir</dt>
+                        </dl>
+                    </article>
+                </div>
+
+                <div id="palestrantes-card">
+                    <article id="palestrante">
+                        <img th:src="@{/imgs/falen.webp}" alt="Foto de Nome do Palestrante">
+                        <dl class="palestrante-card">
+                            <h3>Nome do Palestrante</h3>
+                            <dt>Tema</dt>
+                            <dt>A definir</dt>
+                        </dl>
+                    </article>
+                 </div>
+            </div>
+
+            <p>
+                Você é um profissional de tecnologia e quer compartilhar sua experiência?
+                <a th:href="@{/inscricao-palestrante}">Envie sua proposta de palestra aqui</a>.
+            </p>
+        </section>
+
+        <section id="localizacao">
+            <address class="uni">
+                <h2>Localização</h2>
+                <p><strong>UniCesumar — Londrina</strong></p>
+                <p>
+                    Av. Santa Mônica, 450<br />
+                    Londrina — PR<br />
+                    CEP: 86027-610
+                </p>
+            </address>
+
+            <section id="mapa-faculdade">
+                <h2>Mapa</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.3327064248447!2d-51.143334425498196!3d-23.303684452174586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb437a3d1d44af%3A0x9c9f46adfc62d1eb!2sUniCesumar%20-%20Londrina!5e0!3m2!1spt-BR!2sbr!4v1777407683775!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+        </section>
+
+        <!-- PATROCINADORES -->
+        <section id="patrocinadores">
+            <h2 id="titulo-patrocinadores">Conheça os Patrocinadores</h2>
+            <p>
+                A Tech Week conta com o apoio de empresas e instituições que incentivam a inovação,
+                a tecnologia e o desenvolvimento de profissionais preparados para o futuro digital.
+            </p>
+            <div id="patrocinadores-img">
+                <div id="card-patrocinio">
+                    <h3 id="titulo-patrocinio">Dentalclean</h3>
+                    <ul>
+                        <li>
+                            <a href="https://dentalclean.com/br/" target="_blank">
+                                <img th:src="@{/imgs/patrocinadores/dentalcleanLogo.jpg}"
+                                    alt="Logotipo do patrocinador: Nome da Empresa" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="card-patrocinio">
+                    <h3 id="titulo-patrocinio">Dentalclean</h3>
+                    <ul>
+                        <li>
+                            <a href="https://dentalclean.com/br/" target="_blank">
+                                <img th:src="@{/imgs/patrocinadores/dentalcleanLogo.jpg}"
+                                    alt="Logotipo do patrocinador: Nome da Empresa" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+            </div>
+        </section>
+
+        <!--SEÇÃO CHATBOT-->
+        <section>
+            <div id="chat">
+                <button id="btnChat" aria-label="Abrir chat">
+                    <img th:src="@{/imgs/icon-chat.png}" alt="">
+                </button>
+            </div>
+
+            <div id="window-chat" class="hidden">
+                <div class="header-chat">
+                    <span>Atendimento Virtual</span>
+                    <i style="cursor: pointer" onclick="closeChat('btnChat')">❌</i>
+                </div>
+                <div id="box-chat"></div>
+                <div class="input-chat">
+                    <input type="text" id="user-input" placeholder="Digite sua dúvida...">
+                    <button class="btnSendChat" onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FAQ com perguntas frequentes -->
+        <section id="faq">
+            <hr>        
+                <h2>FAQ - Perguntas Frequentes</h2>
+                <div id="faq-container">
+                    <details>
+                        <summary>Como posso patrocinar o evento?</summary>
+                        <p>Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a
+                            nossa coordenação pelo telefone/WhatsApp: (xx) x xxxx-xxxx.</p>
+                    </details>
+
+                    <details>
+                        <summary>Como confirmo minha presença nas atividades?</summary>
+                        <p>Ao final de cada palestra, será exibido um QR Code exclusivo para registro de presença.
+                            Certifique-se de escaneá-lo antes de sair da sala para garantir a validação da sua participação.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Como posso inscrever meu projeto para apresentação?</summary>
+                        <p>Você deve realizar o cadastro do seu projeto através do [link/portal de inscrições]. Após o
+                            envio, nossa equipe técnica realizará a análise e verificação dos requisitos para autorizar a
+                            apresentação.</p>
+                    </details>
+
+                    <details>
+                        <summary>Como participo do Coffee Break?</summary>
+                        <p>No momento da inscrição no evento, selecione a opção correspondente ao Coffee Break. Os
+                            participantes que optarem por este serviço receberão as instruções para o pagamento da taxa
+                            adicional de adesão.</p>
+                    </details>
+
+                    <details>
+                        <summary>Qual o prazo limite para realizar a inscrição?</summary>
+                        <p>As inscrições para cada palestra podem ser feitas até 1 hora antes do horário de início previsto.
+                            Após esse período, o sistema de inscrições será automaticamente bloqueado para aquela sessão.
+                        </p>
+                    </details>
+                </div>
+        </section>
+
+    </main>
+
+    <footer id="contato" role="contentinfo">
+        <address>
+            <div id="rodape-logo">
+                <a href="https://www.unicesumar.edu.br/" target="_blank">
+                    <img th:src="@{/imgs/unicesumar-logo.png}" alt="Logo UniCesumar">
+                </a>
+            </div>
+            
+            <div id="redes">
+                <p>
+                    <a href="https://api.whatsapp.com/send?phone=554491399006&amp;text=Ol%C3%A1!%20Acessei%20o%20site%20da%20UniCesumar%20e%20quero%20saber%20mais%20informa%C3%A7%C3%B5es.%20Voc%C3%AA%20pode%20ajudar?"
+                        target="_blank"> <img th:src="@{/imgs/iconWhats.png}" alt="Whatsapp"></a>
+                </p>
+                <p>
+                    <a href="https://www.instagram.com/unicesumarlondrina/" target="_blank"> <img th:src="@{/imgs/instagram-white-icon.webp}" alt=""></a>
+                </p>
+
+            </div>
+        </address>
+    </footer>
+
+    <script th:src="@{/js/canvas.js}"></script>
+    <script th:src="@{/js/chatbot.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

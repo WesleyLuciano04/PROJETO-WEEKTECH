@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Participante — Tech Week 2026</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="participante-tela">
+
+    <header class="cabecalho-participante">
+        <div class="header-inner">
+            <div class="header-identidade">
+                <a href="https://www.unicesumar.edu.br/" target="_blank">
+                    <img src="imgs/unicesumar-logo.png"  alt="Logo UniCesumar">
+                </a>
+            </div>
+            <nav class="navegacao">
+                <a th:href="@{/}">Home</a>
+                <a th:href="@{/inscricao-participante}">Participante</a>
+                <a th:href="@{/inscricao-palestrante}">Palestrante</a>
+                <button onclick="modoEscuro()" class="btn-tema" id="btn-tema" aria-label="Alternar tema escuro">
+                    <svg id="icon-tema" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-participante">
+
+        <div class="capa-participante">
+            <section id="introducao-participante">
+                <h2>Inscrição de Participantes</h2>
+                <p>Preencha o formulário para participar da Tech Week 2026.</p>
+            </section>
+            <a th:href="@{/}">
+                <img id="img-participante" th:src="@{/imgs/logotw1.png}" alt="Logo do evento: Tech Week 2026">
+            </a>
+        </div>
+
+        <section id="form-participante">
+            <h2>Formulário</h2>
+
+            <!-- Mensagens vindas do back-end -->
+            <div th:if="${sucesso}" class="alerta alerta-sucesso" th:text="${sucesso}"></div>
+            <div th:if="${erro}"    class="alerta alerta-erro"    th:text="${erro}"></div>
+
+            <form method="POST"
+                  th:action="@{/inscricao-participante/salvar}"
+                  th:object="${participanteDTO}"
+                  id="form-inscricao-participante">
+
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+
+                    <div class="campo">
+                        <label>Nome completo *</label>
+                        <input type="text"
+                               id="participante-nome"
+                               th:field="*{nome}"
+                               placeholder="Digite seu nome completo">
+                        <span class="mensagem-erro"
+                              th:if="${#fields.hasErrors('nome')}"
+                              th:errors="*{nome}"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label>RA *</label>
+                        <input type="text"
+                               id="participante-ra"
+                               th:field="*{ra}"
+                               placeholder="Ex: 00000000-2"
+                               maxlength="10">
+                        <span class="mensagem-erro"
+                              th:if="${#fields.hasErrors('ra')}"
+                              th:errors="*{ra}"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label>Curso *</label>
+                        <select id="participante-curso" th:field="*{curso}">
+                            <option value="">Selecione</option>
+                            <option th:each="c : ${T(com.faculdade.techweek.core.enums.Curso).values()}"
+                                    th:value="${c}"
+                                    th:text="${c.descricao}">
+                            </option>
+                        </select>
+                        <span class="mensagem-erro"
+                              th:if="${#fields.hasErrors('curso')}"
+                              th:errors="*{curso}"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label>Semestre *</label>
+                        <select id="participante-serie" th:field="*{serie}">
+                            <option value="">Selecione</option>
+                            <option th:each="s : ${#numbers.sequence(1,8)}"
+                                    th:value="${s}"
+                                    th:text="${s + '°'}">
+                            </option>
+                        </select>
+                        <span class="mensagem-erro"
+                              th:if="${#fields.hasErrors('serie')}"
+                              th:errors="*{serie}"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset id="secao-projeto">
+                    <legend>Projeto</legend>
+
+                    <div class="campo-checkbox">
+                        <input type="checkbox" id="tem-projeto" th:field="*{temProjeto}">
+                        <label class="label-checkbox">Quero apresentar um projeto</label>
+                    </div>
+
+                    <div id="dados-projeto"
+                         th:style="${participanteDTO.temProjeto} ? 'display:block' : 'display:none'">
+
+                        <div class="campo">
+                            <label>Nome do Projeto</label>
+                            <input type="text"
+                                   id="projeto-nome"
+                                   th:field="*{nomeProjeto}"
+                                   placeholder="Ex: IA na pratica">
+                            <span class="mensagem-erro"
+                                  th:if="${#fields.hasErrors('nomeProjeto')}"
+                                  th:errors="*{nomeProjeto}"></span>
+                        </div>
+
+                        <div class="campo">
+                            <label>Descrição</label>
+                            <textarea id="projeto-descricao"
+                                      th:field="*{descricaoProjeto}"
+                                      placeholder="Pequena descrição do projeto"></textarea>
+                            <span class="mensagem-erro"
+                                  th:if="${#fields.hasErrors('descricaoProjeto')}"
+                                  th:errors="*{descricaoProjeto}"></span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset id="secao-coffee-break">
+                    <legend>Coffee Break</legend>
+
+                    <div class="campo-checkbox">
+                        <input type="checkbox" id="coffee-break" th:field="*{coffeeBreak}">
+                        <label class="label-checkbox">Participar do coffee break</label>
+                    </div>
+
+                    <div id="info-coffee-break"></div>
+                </fieldset>
+
+                <div class="acoes-formulario">
+                    <button class="btnEnviar" type="submit">Enviar</button>
+                    <button class="btnLimpar" type="reset">Limpar</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="rodape-pp">
+        <div>
+            <a href="https://api.whatsapp.com/send?phone=554491399006&amp;text=Ol%C3%A1!%20Acessei%20o%20site%20da%20UniCesumar%20e%20quero%20saber%20mais%20informa%C3%A7%C3%B5es.%20Voc%C3%AA%20pode%20ajudar?"
+               target="_blank">
+                <img th:src="@{/imgs/iconWhats.png}" alt="">
+            </a>
+        </div>
+        <p>Organização: Comissão da Tech Week 2026</p>
+    </footer>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

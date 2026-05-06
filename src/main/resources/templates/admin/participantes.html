@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participantes — Admin II Tech Week 2026</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="header-inner">
+            <div class="header-identidade">
+                <a th:href="@{/admin/dashboard}">
+                    <img th:src="@{/imgs/unicesumar-logo.png}" alt="Logo UniCesumar">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a th:href="@{/admin/dashboard}">Dashboard</a></li>
+                        <li><a th:href="@{/admin/participantes}" class="ativo">Participantes</a></li>
+                        <li><a th:href="@{/admin/palestrantes}">Palestrantes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-admin">
+
+        <section class="admin-page-header">
+            <h1>Participantes</h1>
+            <p>Gerencie as inscrições dos participantes da Tech Week.</p>
+        </section>
+
+        <!-- FILTRO CARDS -->
+        <section class="filtro-cards" id="filtro-principal">
+
+            <div class="filtro-card ativo" data-filtro="todos">
+                <div class="stat-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="20" height="20">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </div>
+                <p class="filtro-number" th:text="${participantes.size()}">0</p>
+                <p class="filtro-label">Todos</p>
+            </div>
+
+            <div class="filtro-card" data-filtro="coffee">
+                <div class="stat-icon stat-icon--yellow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="20" height="20">
+                        <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                        <line x1="6" y1="2" x2="6" y2="4" />
+                        <line x1="10" y1="2" x2="10" y2="4" />
+                        <line x1="14" y1="2" x2="14" y2="4" />
+                    </svg>
+                </div>
+                <p class="filtro-number" th:text="${#lists.size(participantes.?[coffeeBreak == true])}">0</p>
+                <p class="filtro-label">Com Coffee</p>
+            </div>
+
+            <div class="filtro-card" data-filtro="projeto">
+                <div class="stat-icon stat-icon--green">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="20" height="20">
+                        <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2z" />
+                        <path d="M14 2v6h6" />
+                    </svg>
+                </div>
+                <p class="filtro-number" th:text="${#lists.size(participantes.?[temProjeto == true])}">0</p>
+                <p class="filtro-label">Com Projeto</p>
+            </div>
+
+            <div class="filtro-card" data-filtro="sem-projeto">
+                <div class="stat-icon stat-icon--red">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="20" height="20">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="15" y1="9" x2="9" y2="15" />
+                        <line x1="9" y1="9" x2="15" y2="15" />
+                    </svg>
+                </div>
+                <p class="filtro-number" th:text="${#lists.size(participantes.?[temProjeto == false])}">0</p>
+                <p class="filtro-label">Sem Projeto</p>
+            </div>
+
+        </section>
+
+        <!-- FILTRO STATUS -->
+        <section class="filtro-status-wrap hidden" id="filtro-status-wrap">
+            <p class="filtro-status-label">Filtrar por status:</p>
+            <div class="filtro-status-pills">
+                <button class="pill ativo" data-status="">Todos</button>
+                <button class="pill pill--pendente" data-status="PENDENTE">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="12" height="12">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6v6l4 2" />
+                    </svg>
+                    Pendente
+                </button>
+                <button class="pill pill--aprovado" data-status="APROVADO">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="12" height="12">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="m9 12 2 2 4-4" />
+                    </svg>
+                    Aprovado
+                </button>
+                <button class="pill pill--reprovado" data-status="REPROVADO">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="12" height="12">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="15" y1="9" x2="9" y2="15" />
+                        <line x1="9" y1="9" x2="15" y2="15" />
+                    </svg>
+                    Reprovado
+                </button>
+            </div>
+        </section>
+
+        <!-- BUSCA -->
+        <section>
+            <div class="busca-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" width="16" height="16">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input type="text" id="busca-input-participante" placeholder="Buscar por nome ou RA...">
+            </div>
+        </section>
+
+        <!-- TABELA -->
+        <section>
+            <div class="table-wrapper">
+                <table id="tabela-participantes">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>RA</th>
+                            <th>Curso</th>
+                            <th>Semestre</th>
+                            <th>Coffee</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p : ${participantes}" th:attr="data-coffee=${p.coffeeBreak ? 'sim' : 'nao'},
+                                     data-projeto=${p.temProjeto ? 'sim' : 'nao'},
+                                     data-status=${p.status != null ? p.status.name() : ''}">
+                            <td th:text="${p.nome}"></td>
+                            <td th:text="${p.ra}"></td>
+                            <td th:text="${p.cursoDescricao}"></td>
+                            <td th:text="${p.serie} + 'º'"></td>
+                            <td>
+                                <span th:if="${p.coffeeBreak}" class="badge badge--sim">Sim</span>
+                                <span th:unless="${p.coffeeBreak}" class="badge badge--nao">Não</span>
+                            </td>
+                            <td>
+                                <span th:if="${p.status != null}" class="badge" th:text="${p.status}"
+                                    th:classappend="${p.status.name() == 'PENDENTE'} ? 'badge--pendente' :
+                                                      (${p.status.name() == 'APROVADO'} ? 'badge--aprovado' : 'badge--reprovado')">
+                                </span>
+                                <span th:unless="${p.status != null}">—</span>
+                            </td>
+                            <td>
+                                <a th:href="@{/admin/participantes/{id}(id=${p.id})}" class="btn-ver">👁 Ver</a>
+                            </td>
+                        </tr>
+                        <tr th:if="${participantes.isEmpty()}">
+                            <td colspan="7" style="text-align:center;">Nenhum participante encontrado.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- EXPORTAR -->
+        <div class="exportar-wrap">
+            <a th:href="@{/admin/exportar/participantes}" class="btn-exportar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" width="16" height="16">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Exportar Participantes
+            </a>
+        </div>
+
+    </main>
+
+    <footer id="rodape-admin">
+        <p>Painel administrativo — II Tech Week 2026</p>
+    </footer>
+
+    <script th:src="@{/js/admin.js}"></script>
+</body>
+
+</html>

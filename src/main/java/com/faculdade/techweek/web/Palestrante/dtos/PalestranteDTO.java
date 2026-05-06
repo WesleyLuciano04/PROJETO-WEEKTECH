@@ -1,0 +1,61 @@
+package com.faculdade.techweek.web.Palestrante.dtos;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class PalestranteDTO {
+
+    @NotBlank(message = "Nome é obrigatório")
+    @Size(min = 3, max = 120, message = "Nome deve ter entre 3 e 120 caracteres")
+    private String nome;
+
+    @NotBlank(message = "Telefone é obrigatório")
+    @Pattern(regexp = "^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$", message = "Use o formato (43) 99999-9999")
+    private String telefone;
+
+    @NotBlank(message = "E-mail é obrigatório")
+    @Email(message = "E-mail inválido")
+    @Size(max = 150)
+    private String email;
+
+    @NotBlank(message = "Tema da palestra é obrigatório")
+    @Size(min = 3, max = 200)
+    private String temaPalestra;
+
+    @NotBlank(message = "Briefing é obrigatório")
+    @Size(max = 2000)
+    private String briefing;
+
+    @NotNull(message = "Duração é obrigatória")
+    @Min(value = 40, message = "Mínimo 40 minutos")
+    @Max(value = 60, message = "Máximo 60 minutos")
+    private Integer duracaoMinutos;
+
+    @NotBlank(message = "Mini currículo é obrigatório")
+    @Size(max = 1500)
+    private String curriculoResumo;
+
+    // Opcional — sem validação obrigatória
+    private MultipartFile curriculoArquivo;
+
+    @AssertTrue(message = "Você deve autorizar a divulgação para submeter a proposta")
+    private boolean autorizaDivulgacao;
+}

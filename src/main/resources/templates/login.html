@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Administrativo — II Tech Week 2026</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 14px;
+      border: 1px solid var(--borda);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .login-container img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .form-grupo {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      border: 1.5px solid var(--borda);
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background: var(--blue-escuro);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    h2{
+      color: rgb(92, 88, 88);
+    }
+    p{
+      color: rgb(92, 88, 88);
+    }
+    .alerta-erro{
+      color: rgb(187, 60, 60);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+
+    <img th:src="@{/imgs/unicesumar-logo.png}" alt="Logo UniCesumar" />
+
+    <h2>Acesso Restrito</h2>
+    <p>Área da Organização</p>
+
+    <div th:if="${param.erro}" class="alerta-erro">
+      Usuário ou senha incorretos.
+    </div>
+
+    <div th:if="${param.logout}" class="alerta-erro"
+      style="color:#6ef0c8;border-color:rgba(110,240,200,0.3);background:rgba(110,240,200,0.08);">
+      Você saiu com sucesso.
+    </div>
+
+    <form th:action="@{/login}" method="post">
+
+      <div class="form-grupo">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" name="username" class="form-input" placeholder="Digite seu usuário" required
+          autofocus />
+      </div>
+
+      <div class="form-grupo">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" class="form-input" placeholder="Digite sua senha"
+          required />
+      </div>
+
+      <button type="submit" class="btn-login">Entrar no Painel</button>
+
+    </form>
+  </div>
+
+</body>
+
+</html>
