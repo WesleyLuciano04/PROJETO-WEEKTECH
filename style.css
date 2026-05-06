@@ -510,11 +510,6 @@ body {
     color: #333;
 }
 
-#sala
-{
-    margin-left: 5px;
-}
-
 /* PALESTRANTES */
 
 #palestrantes
@@ -588,7 +583,7 @@ body {
 {
     font-size: 1rem;
     color: white;
-    margin: 0;
+    text-align: center;
     margin-top: 40px;
 }
 
@@ -601,43 +596,67 @@ body {
 
 /* MAPA */
 
-#localizacao 
-{
+#localizacao {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
 }
 
-#localizacao h2 
-{
-    display: column;
+#localizacao h2 {
     color: var(--yellow-1);
     font-size: 1.8rem;
     margin-bottom: 10px;
-    margin-left: 10px;
+    text-align: center;
 }
 
-.uni 
-{    display: column;
-    padding: 20px;
+.uni {
+    display: flex;
+    flex-direction: column;
     color: rgb(255, 255, 255);
-    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+    justify-content: center; 
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--yellow-1);
 }
 
-#mapa-faculdade
-{
-    display: column;
-    padding: 20px;
+.uni p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #fff;
+}
+
+.uni strong {
+    color: var(--yellow-1);
+    font-size: 1rem;
+}
+
+#mapa-faculdade {
+    display: flex;
+    flex-direction: column;
     color: rgb(255, 255, 255);
-    margin: 10px;
-    margin-left: 200px;
-}
-
-#mapa-faculdade iframe
-{
+    flex: 2;
+    min-width: 280px;
     width: 100%;
-    max-width: 400px;
+}
+
+#mapa-faculdade iframe {
+    margin: auto;
+    width: 100%;
     height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--yellow-1) !important;
 }
 
 /* PATROCINADORES */
@@ -721,7 +740,7 @@ body {
 {
     width: 40px;
     border: none;
-    border-top: 2px solid #1a1a1a;
+    border-top: 2px solid #e5e5e5;
     margin: 0 0 40px 0;
 }
 
@@ -792,7 +811,7 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
-    color: #888;
+    color: #e5e5e5;
     transition: transform 200ms ease, color 200ms ease, content 200ms ease;
     line-height: 1;
 
@@ -801,7 +820,7 @@ body {
 #faq details[open]>summary::after {
 
     content: '−';
-    color: #1a1a1a;
+    color: #e5e5e5;
 
 }
 
@@ -811,7 +830,7 @@ body {
 
 }
 
-#faq details>p {
+#faq details > p {
 
     font-family: 'DM Sans', sans-serif;
     font-size: 0.88rem;
