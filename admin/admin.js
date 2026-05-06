@@ -1,4 +1,3 @@
-
 // FILTRO PARTICIPANTES
 const participantes = () => {
     const cards = document.querySelectorAll('#filtro-principal .filtro-card');
@@ -96,14 +95,41 @@ const palestrantes = () => {
 };
 
 
-// INICIAR
-
+// INICIAR TUDO
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inicia filtros de participantes se a tabela existir
     if (document.querySelector('#tabela-participantes')) {
         participantes();
     }
 
+    // 2. Inicia filtros de palestrantes se a tabela existir
     if (document.querySelector('#tabela-palestrantes')) {
         palestrantes();
     }
+
+    // 3. Carrega os dados do Dashboard se os campos de resumo existirem
+    if (document.getElementById('dash-total-inscritos')) {
+        carregarDadosDashboard();
+    }
 });
+
+// Função para buscar dados do Spring Boot (API)
+async function carregarDadosDashboard() {
+    try {
+        console.log("Chamando dados do dashboard..."); // Para você ver no F12 se funcionou
+        
+        // Simulação de dados (Trocaremos pela URL do Java depois)
+        const dadosSimulados = {
+            total: 150,
+            coffee: 110,
+            projeto: 55
+        };
+
+        document.getElementById('dash-total-inscritos').innerText = dadosSimulados.total;
+        document.getElementById('dash-total-coffee').innerText = dadosSimulados.coffee;
+        document.getElementById('dash-total-projeto').innerText = dadosSimulados.projeto;
+
+    } catch (erro) {
+        console.error("Erro ao buscar dados do banco:", erro);
+    }
+}
