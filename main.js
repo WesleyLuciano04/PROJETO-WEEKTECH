@@ -170,7 +170,7 @@ function modoEscuro()
     const sobreCards = document.querySelectorAll('.sobre-card');
     sobreCards.forEach(card => {
         card.classList.toggle("modo-escuro");
-    });sse nos cards
+    });
 
     const btn = document.querySelector('.navegacao button');
     if (document.body.classList.contains("modo-escuro")) 
