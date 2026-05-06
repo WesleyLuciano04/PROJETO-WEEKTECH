@@ -63,15 +63,22 @@
 
 ## 📸 Demonstração da Página
 <div align="center">
-  <img src="" height="450" controls> <br> <br>
+  <img src="imgs/demonstração/demonstracao-home.gif" height="450" controls> <br> <br>
+  <p>Página Home</p>
+</div>
+
+
+<div align="center">
+  <img src="imgs/demonstração/demonstracao-inscricao.gif" height="450" controls> <br> <br>
+  <p>Página Inscrição Participante</p>
 </div>
 
 
 ## 🔗 Deploy
 
 <p align="center">
-    <a href="">
-        
+    <a href="https://wesleyluciano04.github.io/PROJETO-WEEKTECH/">
+        <img src="https://img.shields.io/badge/O%20PROJETO-%23005387?style=for-the-badge&label=ACESSE&labelColor=%23FFD621" />
     </a>
 </p>
 
