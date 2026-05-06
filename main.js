@@ -1,6 +1,9 @@
 // Validação do Formulário de Inscrição de Participante
 document.addEventListener ('DOMContentLoaded', function() 
 {
+    const windowChat = document.getElementById('window-chat');
+    if (windowChat) windowChat.classList.add("modo-escuro");
+
     // Verifica se o modo escuro estava ativado na última visita
     const modoEscuroSalvo = localStorage.getItem('modoEscuro');
     if (modoEscuroSalvo === 'true') {
@@ -184,4 +187,7 @@ function modoEscuro()
     
     const isDark = document.body.classList.contains("modo-escuro");
     localStorage.setItem('modoEscuro', isDark ? 'true' : 'false');
+
+    const windowChat = document.getElementById('window-chat');
+    if (windowChat) windowChat.classList.toggle("modo-escuro");
 }
