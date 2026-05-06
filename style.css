@@ -659,9 +659,10 @@ body {
 
 #patrocinadores
 {
-    padding: 2rem;
+    padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #titulo-patrocinadores
@@ -676,46 +677,67 @@ body {
 {
     display: flex;
     flex-direction: row;
-    margin-left: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1.5rem;
 }
 
 #card-patrocinio
 {
-    border: 1px solid var(--blue-2);
+    background-color: rgba(255, 255, 255, 0.15);;
     border-radius: 8px;
-    padding: 10px 14px;
-    margin: 10px;
+    padding: 16px;
     min-width: 120px;
     max-width: 160px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 #card-patrocinio:hover
 {
     border: 2px solid var(--yellow-1);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#card-patrocinio ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#card-patrocinio li
+{
+    display: flex;
+    justify-content: center;
 }
 
 #patrocinadores p
 {
     font-size: 1rem;
     text-align: center;
-    gap: 2rem;
+    max-width: 700px;
 }
 
 #titulo-patrocinio
 {
     color: var(--yellow-1);
     font-size: 1.2rem;
-    
+    text-align: center;
 }
 
 #patrocinadores img
 {
-    width: 150px;
+    width: 100%;
     height: auto;
-    margin-left: -45px;
+    display: block;
+    border-radius: 4px;
 }
 
 /* CHATBOT AQUI */
