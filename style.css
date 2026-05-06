@@ -33,6 +33,7 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .navegacao a {
@@ -56,7 +57,27 @@ body {
 .header-identidade img {
     width: 180px;
     height: auto;
-    filter: drop-shadow(1px 1.5px 0.55rem #92caed);
+}
+
+button.btn-tema 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: 1.5px solid var(--yellow-1);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--yellow-1);
+  transition: background 0.15s, color 0.15s;
+}
+
+button.btn-tema:hover 
+{
+  background: var(--yellow-1);
+  color: var(--blue-2);
 }
 
 @media (max-width: 600px) 
