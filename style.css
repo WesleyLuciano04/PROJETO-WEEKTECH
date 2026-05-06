@@ -35,13 +35,6 @@ body {
     justify-content: center;
 }
 
-/* MODO ESCURO */
-#body.modoEscuro
-{
-    background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
-    background-attachment: fixed;
-}
-
 .navegacao a {
     text-decoration: none;
     color: white;
@@ -568,7 +561,7 @@ body {
     margin: 0;
 }
 
-#palestrante-card 
+.palestrante-card 
 {
   display: flex;
   flex-direction:column;
@@ -577,7 +570,7 @@ body {
   
 }
 
-#palestrante-card h3
+.palestrante-card h3
 {
     font-size: 1rem;
     color: var(--blue-1);
@@ -864,9 +857,9 @@ body {
     height: auto;
 }
 
+
 #contato a
 {
-    text-decoration: none;
     color: var(--yellow-1);
 }
 
@@ -875,6 +868,17 @@ body {
     display: flex;
     gap: 15px;
     font-size: 1.2rem;
+}
+
+#redes img
+{
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    filter: drop-shadow(0 0 0.15rem #fff);
+    transition: filter 0.3s ease;
 }
 
 /* -------------------- TELA PARTICIPANTE ---------------------- */
@@ -1214,4 +1218,176 @@ body {
     {
         font-size: 1.1rem;
     }
+}
+
+/* MODO ESCURO */
+.modoEscuro
+{
+    background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
+    background-attachment: fixed;
+}
+
+/* Dark mode - tema escuro completo */
+body.modo-escuro 
+{
+    background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
+    background-attachment: fixed;
+    color: #e0e0e0;
+}
+
+body.modo-escuro .navegacao button 
+{
+    background: var(--blue-2);
+    color: var(--yellow-1);
+    border: 1px solid var(--yellow-1);
+}
+
+body.modo-escuro .navegacao a 
+{
+    color: #e0e0e0;
+}
+
+body.modo-escuro #sobre, body.modo-escuro #sobre-evento 
+{
+    background: radial-gradient(circle at center, #0a2342 0%, #050c17 100%);
+    background-attachment: fixed;
+    color: #e0e0e0;
+}
+
+body.modo-escuro .sobre-card 
+{
+    background: var(--blue-2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+body.modo-escuro .sobre-card h3 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro .sobre-card p 
+{
+    color: #b0b0b0;
+}
+
+body.modo-escuro .sobre-card .sobre-card-icone 
+{
+    background: rgba(255, 214, 33, 0.15);
+    color: var(--yellow-1);
+}
+
+body.modo-escuro #grade-semana .dia-programacao 
+{
+    background-color: var(--blue-2);
+    border: 1px solid var(--yellow-1);
+    color: #e0e0e0;
+}
+
+body.modo-escuro .dia-toggle 
+{
+    color: #e0e0e0;
+    background-color: var(--blue-2);
+}
+
+body.modo-escuro .grade-dia 
+{
+    background-color: var(--blue-2);
+    color: #e0e0e0;
+}
+
+body.modo-escuro .palestra-card 
+{
+    background-color: var(--blue-1);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 214, 33, 0.3);
+}
+
+body.modo-escuro .palestra-card h4 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro #palestrantes-card, body.modo-escuro .palestrantes-grid article 
+{
+    background: var(--blue-2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.modo-escuro .palestrante-card h3 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro .palestrante-card dt 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro #programacao h2, body.modo-escuro #sobre-evento h2 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro #palestrantes h2, body.modo-escuro #titulo-palestrantes 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro #programacao p 
+{
+    color: #a0a0a0;
+}
+
+body.modo-escuro #unicesumar-logo 
+{
+    filter: drop-shadow(1px 1.5px 0.55rem #4a6a8a);
+}
+
+body.modo-escuro footer 
+{
+    background: var(--blue-2);
+    color: #e0e0e0;
+}
+
+body.modo-escuro #contato a 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro footer address 
+{
+    color: #e0e0e0;
+
+}
+
+body.modo-escuro #faq 
+{
+    background: var(--blue-2);
+    color: #e0e0e0;
+}
+
+body.modo-escuro #faq h2 
+{
+    color: var(--yellow-1);
+}
+
+body.modo-escuro #faq details 
+{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.modo-escuro #faq summary 
+{
+    color: #e0e0e0;
+}
+
+body.modo-escuro #faq details:first-child 
+{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.modo-escuro #faq > hr 
+{
+    border-top: 2px solid var(--yellow-1);
 }

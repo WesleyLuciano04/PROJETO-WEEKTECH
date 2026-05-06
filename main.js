@@ -1,6 +1,20 @@
 // Validação do Formulário de Inscrição de Participante
 document.addEventListener ('DOMContentLoaded', function() 
 {
+    // Verifica se o modo escuro estava ativado na última visita
+    const modoEscuroSalvo = localStorage.getItem('modoEscuro');
+    if (modoEscuroSalvo === 'true') {
+        // Aplica o modo escuro
+        document.body.classList.add("modo-escuro");
+        const footer = document.querySelector('footer');
+        if (footer) footer.classList.add("modo-escuro");
+        const sobreCards = document.querySelectorAll('.sobre-card');
+        sobreCards.forEach(card => card.classList.add("modo-escuro"));
+        
+        const btn = document.querySelector('.navegacao button');
+        if (btn) btn.textContent = "Claro";
+    }
+
     const formulario = document.getElementById('form-inscricao-participante');
     const temProjetoCheckbox = document.getElementById('tem-projeto');
     const dadosProjeto = document.getElementById('dados-projeto');
@@ -140,18 +154,34 @@ function limparErros() {
     }
 }
 
-//Função para modo escuro
-function modoEscuro() {
-    const elementos = document.querySelectorAll('body, #sobre, #sobre-evento, #programacao, #palestrantes, #localizacao, #patrocinadores, #faq, footer');
+// Função para modo escuro
+function modoEscuro() 
+{
+    // Alterna a classe modo-escuro no body (abordagem mais limpa)
+    document.body.classList.toggle("modo-escuro");
     
-    elementos.forEach(function(el) {
-        el.classList.toggle("modoEscuro");
-    });
+    // Alterna a classe no footer
+    const footer = document.querySelector('footer');
+    if (footer) {
+        footer.classList.toggle("modo-escuro");
+    }
+    
+    // Alterna a cla de sobre evento
+    const sobreCards = document.querySelectorAll('.sobre-card');
+    sobreCards.forEach(card => {
+        card.classList.toggle("modo-escuro");
+    });sse nos cards
 
     const btn = document.querySelector('.navegacao button');
-    if (document.body.classList.contains("modoEscuro")) {
+    if (document.body.classList.contains("modo-escuro")) 
+    {
         btn.textContent = "Claro";
-    } else {
+    } 
+    else 
+    {
         btn.textContent = "Escuro";
     }
+    
+    const isDark = document.body.classList.contains("modo-escuro");
+    localStorage.setItem('modoEscuro', isDark ? 'true' : 'false');
 }
