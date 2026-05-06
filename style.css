@@ -1299,10 +1299,11 @@ body.modo-escuro .sobre-card h3
 {
     color: var(--yellow-1);
 }
-
+ 
 body.modo-escuro .sobre-card p 
 {
     color: #b0b0b0;
+    
 }
 
 body.modo-escuro .sobre-card .sobre-card-icone 
