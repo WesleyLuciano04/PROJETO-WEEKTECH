@@ -94,7 +94,7 @@
 
 
 <div align="center">
-  <img src="imgs/demonstração/demonstracao-inscricao.gif" height="450" controls> <br> <br>
+  <img src="imgs/demonstração/demonstracao-inscricao.gif" height="350" controls> <br> <br>
   <p>Página Inscrição Participante</p>
 </div>
 
