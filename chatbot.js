@@ -40,9 +40,10 @@ const botConfig =
 
         //patrocinadores
         { pattern: /(patrocinio|patrocinar)/i, response: 'Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a nossa coordenação pelo telefone/WhatsApp: (43) 99996-1905.'},
+        { pattern: /(patrocinadores)/i, response: 'Confira nessa seção, os nossos patrocinadores.', action: 'scrollToPatrocinadores'},
         
         //sobre o que se trata a techWeek
-        {pattern: /(sobre|tech|week)/i, response: 'A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia. O foco desta edição é Inteligência Artificial aplicada na prática.'},
+        { pattern: /(sobre|tech|week)/i, response: 'A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia. O foco desta edição é Inteligência Artificial aplicada na prática.'},
 
         //como fazer a inscrição
         { pattern: /(inscricao|inscrever|cadastro|participar)/i, response: 'Você pode realizar sua inscrição clicando no botão "Faça sua Inscrição" no topo da página ou <a href="inscricao-participante.html">clicando aqui</a>.' },
@@ -159,6 +160,11 @@ function getBotResponse(input)
             if (response.action === 'scrollToProgramacao')
             {
                 scrollToElement('programacao');
+            }
+
+            if (response.action === 'scrollToPatrocinadores')
+            {
+                scrollToElement('patrocinadores');
             }
 
             if (response.action === 'scrollToPalestrantes')
