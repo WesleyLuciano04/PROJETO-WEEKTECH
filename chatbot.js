@@ -34,6 +34,7 @@ const botConfig =
 
         //cronograma: palestras os projetos
         { pattern: /(palestrantes|palestrante)/i, response: 'Confira na seção ao lado, os palestrantes registrados confirmados.', action: 'scrollToPalestrantes'},
+        { pattern: /(cronograma|palestras)/i, response: 'Ao lado está toda a programação do evento.', action: 'scrollToProgramacao'},
         { pattern: /(quero palestrar|ser palestrante|enviar palestra)/i, response: 'Ficamos felizes com seu interesse! Você pode enviar sua proposta de palestra através <a href="inscricao-palestrante.html">deste formulário</a>.' },
         { pattern: /(projeto|trabalho|apresentar)/i, response: 'Para apresentar um projeto, no momento da inscrição o usuário deve fazer check-in no campo: "Quero apresentar um projeto"'},
 
