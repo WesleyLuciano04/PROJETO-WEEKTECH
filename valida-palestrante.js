@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const briefing = document
       .getElementById("palestrante-briefing")
       .value.trim();
-    const duracao = document.getElementById("palestrante-duracao").value;
     const curriculo = document
       .getElementById("palestrante-curriculo-resumo")
       .value.trim();
@@ -51,28 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!curriculo) return erro("Preencha o mini currículo!", e);
 
-    // VALIDAÇÃO DURAÇÃO
-    if (duracao === "Selecione") {
-      return erro("Selecione a duração da palestra!", e);
-    }
-
-    const minutos = parseInt(duracao);
-
-    if (isNaN(minutos)) return erro("Duração inválida!", e);
-
-    if (minutos < 40)
-      return erro("A palestra deve ter no mínimo 40 minutos!", e);
-
-    if (minutos > 60)
-      return erro("A palestra não pode ultrapassar 60 minutos!", e);
-
-    // CHECKBOX
-    if (!autorizacao) {
-      return erro("Você precisa autorizar a divulgação dos dados!", e);
-    }
-
     // SUCESSO
     alert("Inscrição validada com sucesso!");
   });
 });
-\

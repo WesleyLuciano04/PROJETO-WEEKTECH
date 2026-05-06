@@ -134,13 +134,13 @@ button.btn-tema:hover
 
 /*  TÍTULO*/
 #titulo-tech {
-    font-size: 7rem;
+    font-size: clamp(3rem, 15vw, 7rem);
     color: white;
 
 }
 
 #titulo-week {
-    font-size: 7rem;
+    font-size: clamp(3rem, 15vw, 7rem);
     color: var(--yellow-1);
     margin-top: -55px;
     margin-bottom: 40px;
@@ -148,7 +148,7 @@ button.btn-tema:hover
 
 #sub-titulo {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: clamp(1.1rem, 4vw, 2rem);
     color: white;
     margin-top: -35px;
 }
@@ -1206,8 +1206,8 @@ body.modo-escuro .input-chat
 .campo select
 {
     box-sizing: border-box;
-    width: 45rem;
-    height: 2rem;
+    width: 40rem;
+    height: 2.2rem;
     border-radius: 5px;
     border: 2px;
     border-style: outset;
@@ -1245,7 +1245,7 @@ body.modo-escuro .input-chat
 #palestrante-curriculo-resumo
 {
     box-sizing: border-box;
-    width: 45rem;
+    width: 40rem;
     height: 6rem;
     border-radius: 5px;
     border: 2px;
@@ -1323,7 +1323,7 @@ body.modo-escuro .input-chat
 #palestrante-curriculo-arquivo
 {
     display: block;
-    width: 45rem;
+    width: 42rem;
     height: 3rem;
     box-sizing: border-box;
     margin-top: 10px;
@@ -1477,6 +1477,35 @@ body.modo-escuro .input-chat
         box-sizing: border-box;
         font-size: 0.8rem;
         min-width: 0;
+    }
+
+    .apresentacaoTechWeek #tech 
+    {
+        height: 160px;
+        margin-right: 0;
+    }
+
+    #tech 
+    {
+        margin-right: 0;
+    }
+
+    #sobre 
+    {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 1rem;
+    }
+
+    .capa-evento 
+    {
+        order: 1;
+    }
+
+    .apresentacaoTechWeek 
+    {
+        order: 2;
     }
 }
 
