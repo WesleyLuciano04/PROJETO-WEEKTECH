@@ -2,28 +2,72 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Administrativo | II Tech Week</title>
     <link rel="stylesheet" href="admin.css">
     <style>
+        :root {
+            --blue-escuro: #005387;
+            --borda: #d1d5db;
+            --texto-suave: #6b7280;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--blue-escuro);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
         .login-container {
             max-width: 400px;
-            margin: 100px auto;
+            width: 90%;
             padding: 40px;
             background: white;
             border-radius: 14px;
-            border: 1px solid var(--borda);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             text-align: center;
         }
-        .login-container img { width: 150px; margin-bottom: 20px; }
-        .form-grupo { text-align: left; margin-bottom: 20px; }
+
+        .login-container img { 
+            width: 180px; 
+            margin-bottom: 20px; 
+        }
+
+        h2 { 
+            margin: 0; 
+            color: #333; 
+        }
+
+        .form-grupo { 
+            text-align: left; 
+            margin-bottom: 20px; 
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
         .form-input {
             width: 100%;
             padding: 12px;
             border: 1.5px solid var(--borda);
             border-radius: 8px;
-            margin-top: 5px;
+            box-sizing: border-box; /* Garante que o padding não aumente o tamanho do input */
+            outline: none;
+            transition: border-color 0.3s;
         }
+
+        .form-input:focus {
+            border-color: var(--blue-escuro);
+        }
+
         .btn-login {
             width: 100%;
             padding: 12px;
@@ -32,42 +76,88 @@
             border: none;
             border-radius: 8px;
             font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #003d63;
+        }
+
+        .btn-login:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
         }
     </style>
 </head>
-<body style="background: var(--blue-escuro);">
+<body>
+
     <div class="login-container">
-        <img src="../imgs/unicesumar-logo.png" alt="Logo">
-        <h2>Acesso Restrito</h2>
-        <p style="color: var(--texto-suave); margin-bottom: 20px;">Área da Organização (Cris)</p>
+        <img src="../imgs/unicesumar-logo.png" alt="Logo UniCesumar">
+        
+        <h2>Acesso Administrativo</h2>
+        <p style="color: var(--texto-suave); margin-bottom: 25px;">II Tech Week 2026</p>
         
         <form id="form-login">
             <div class="form-grupo">
-                <label>Usuário ou E-mail</label>
-                <input type="text" id="username" class="form-input" required>
+                <label for="username">Usuário ou E-mail</label>
+                <input type="text" id="username" class="form-input" placeholder="Digite seu usuário" required>
             </div>
             <div class="form-grupo">
-                <label>Senha</label>
-                <input type="password" id="senha" class="form-input" required>
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" class="form-input" placeholder="••••••••" required>
             </div>
-            <button type="submit" class="btn-login">Entrar no Painel</button>
+            <button type="submit" id="btn-submit" class="btn-login">Entrar no Painel</button>
         </form>
     </div>
 
     <script>
-        document.getElementById('form-login').addEventListener('submit', (e) => {
+        document.getElementById('form-login').addEventListener('submit', async (e) => {
             e.preventDefault();
-            // Por enquanto, um login fake para teste:
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('senha').value;
 
-            if(user === 'admin' && pass === '123') {
-                window.location.href = 'dashboard.html';
-            } else {
-                alert('Usuário ou senha incorretos!');
+            const btn = document.getElementById('btn-submit');
+            const username = document.getElementById('username').value;
+            const senha = document.getElementById('senha').value;
+
+            // Feedback visual de carregamento
+            btn.innerText = "Autenticando...";
+            btn.disabled = true;
+
+            try {
+                // COMUNICAÇÃO COM O BACKEND (SPRING BOOT)
+                const resposta = await fetch('http://localhost:8080/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        username: username, 
+                        senha: senha 
+                    })
+                });
+
+                if (resposta.ok) {
+                    // Opcional: Se o backend retornar um token, você salva aqui
+                    // const dados = await resposta.json();
+                    localStorage.setItem('admin_logado', 'true');
+                    
+                    // Redireciona para o Dashboard que já está conectado ao banco
+                    window.location.href = 'dashboard.html';
+                } else {
+                    alert('Usuário ou senha inválidos!');
+                    btn.innerText = "Entrar no Painel";
+                    btn.disabled = false;
+                }
+
+            } catch (erro) {
+                console.error("Erro na conexão com a API:", erro);
+                alert('Erro ao conectar com o servidor. Verifique se o backend está rodando!');
+                btn.innerText = "Entrar no Painel";
+                btn.disabled = false;
             }
         });
     </script>
+
 </body>
 </html>
