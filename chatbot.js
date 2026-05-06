@@ -33,16 +33,17 @@ const botConfig =
         { pattern: /(endereco|local|endereço)/i, response: '📍Unicesumar Londrina<br>Av. Santa Mônica, 450.', action: 'scrollToLocal'},
 
         //cronograma: palestras os projetos
-        { pattern: /(palestrantes|palestrante)/i, response: 'Confira na seção ao lado, os palestrantes registrados confirmados.', action: 'scrollToPalestrantes'},
-        { pattern: /(cronograma|palestras)/i, response: 'Ao lado está toda a programação do evento.', action: 'scrollToProgramacao'},
+        { pattern: /(palestrantes|palestrante)/i, response: 'Confira nessa seção, os palestrantes já confirmados.', action: 'scrollToPalestrantes'},
+        { pattern: /(cronograma|palestras)/i, response: 'Nessa seção, você pode conferir toda a programação do evento.', action: 'scrollToProgramacao'},
         { pattern: /(quero palestrar|ser palestrante|enviar palestra)/i, response: 'Ficamos felizes com seu interesse! Você pode enviar sua proposta de palestra através <a href="inscricao-palestrante.html">deste formulário</a>.' },
         { pattern: /(projeto|trabalho|apresentar)/i, response: 'Para apresentar um projeto, no momento da inscrição o usuário deve fazer check-in no campo: "Quero apresentar um projeto"'},
 
         //patrocinadores
         { pattern: /(patrocinio|patrocinar)/i, response: 'Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a nossa coordenação pelo telefone/WhatsApp: (43) 99996-1905.'},
+        { pattern: /(patrocinadores)/i, response: 'Confira nessa seção, os nossos patrocinadores.', action: 'scrollToPatrocinadores'},
         
         //sobre o que se trata a techWeek
-        {pattern: /(sobre|tech|week)/i, response: 'A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia. O foco desta edição é Inteligência Artificial aplicada na prática.'},
+        { pattern: /(sobre|tech|week)/i, response: 'A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia. O foco desta edição é Inteligência Artificial aplicada na prática.'},
 
         //como fazer a inscrição
         { pattern: /(inscricao|inscrever|cadastro|participar)/i, response: 'Você pode realizar sua inscrição clicando no botão "Faça sua Inscrição" no topo da página ou <a href="inscricao-participante.html">clicando aqui</a>.' },
@@ -159,6 +160,11 @@ function getBotResponse(input)
             if (response.action === 'scrollToProgramacao')
             {
                 scrollToElement('programacao');
+            }
+
+            if (response.action === 'scrollToPatrocinadores')
+            {
+                scrollToElement('patrocinadores');
             }
 
             if (response.action === 'scrollToPalestrantes')
