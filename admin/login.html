@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Administrativo | II Tech Week</title>
+    <link rel="stylesheet" href="admin.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid var(--borda);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .login-container img { width: 150px; margin-bottom: 20px; }
+        .form-grupo { text-align: left; margin-bottom: 20px; }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid var(--borda);
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: var(--blue-escuro);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background: var(--blue-escuro);">
+    <div class="login-container">
+        <img src="../imgs/unicesumar-logo.png" alt="Logo">
+        <h2>Acesso Restrito</h2>
+        <p style="color: var(--texto-suave); margin-bottom: 20px;">Área da Organização (Cris)</p>
+        
+        <form id="form-login">
+            <div class="form-grupo">
+                <label>Usuário ou E-mail</label>
+                <input type="text" id="username" class="form-input" required>
+            </div>
+            <div class="form-grupo">
+                <label>Senha</label>
+                <input type="password" id="senha" class="form-input" required>
+            </div>
+            <button type="submit" class="btn-login">Entrar no Painel</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('form-login').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Por enquanto, um login fake para teste:
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('senha').value;
+
+            if(user === 'admin' && pass === '123') {
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Usuário ou senha incorretos!');
+            }
+        });
+    </script>
+</body>
+</html>
