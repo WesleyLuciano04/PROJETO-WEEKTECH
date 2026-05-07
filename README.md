@@ -102,7 +102,7 @@
 ## 🔗 Deploy
 
 <p align="center">
-    <a href="https://wesleyluciano04.github.io/PROJETO-WEEKTECH/">
+    <a href="https://niveasofia.github.io/projeto-tech-deploy/">
         <img src="https://img.shields.io/badge/O%20PROJETO-%23005387?style=for-the-badge&label=ACESSE&labelColor=%23FFD621" />
     </a>
 </p>
