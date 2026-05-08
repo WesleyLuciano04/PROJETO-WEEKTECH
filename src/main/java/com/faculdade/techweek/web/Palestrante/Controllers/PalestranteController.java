@@ -33,7 +33,7 @@ public class PalestranteController {
         return mav;
     }
 
-    @PostMapping("/salvar")
+    @PostMapping
     public ModelAndView salvar(
             @Valid @ModelAttribute("palestranteDTO") PalestranteDTO dto,
             BindingResult bindingResult,

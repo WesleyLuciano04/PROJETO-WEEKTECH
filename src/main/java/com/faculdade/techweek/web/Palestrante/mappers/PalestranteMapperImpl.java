@@ -17,7 +17,6 @@ public class PalestranteMapperImpl implements PalestranteMapper {
                 .email(dto.getEmail().trim().toLowerCase())
                 .temaPalestra(dto.getTemaPalestra().trim())
                 .briefing(dto.getBriefing().trim())
-                .duracaoMinutos(dto.getDuracaoMinutos())
                 .curriculoResumo(dto.getCurriculoResumo().trim())
                 .autorizaDivulgacao(dto.isAutorizaDivulgacao())
                 .build();
@@ -31,7 +30,6 @@ public class PalestranteMapperImpl implements PalestranteMapper {
                 .email(p.getEmail())
                 .temaPalestra(p.getTemaPalestra())
                 .briefing(p.getBriefing())
-                .duracaoMinutos(p.getDuracaoMinutos())
                 .curriculoResumo(p.getCurriculoResumo())
                 .curriculoArquivoPath(p.getCurriculoArquivoPath())
                 .autorizaDivulgacao(p.isAutorizaDivulgacao())

@@ -53,7 +53,7 @@
             <div th:if="${erro}"    class="alerta alerta-erro"    th:text="${erro}"></div>
 
             <form method="POST"
-                  th:action="@{/inscricao-participante/salvar}"
+                  th:action="@{/inscricao-participante}"
                   th:object="${participanteDTO}"
                   id="form-inscricao-participante">
 

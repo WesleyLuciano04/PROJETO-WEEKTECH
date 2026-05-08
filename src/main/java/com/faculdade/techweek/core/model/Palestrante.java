@@ -48,9 +48,6 @@ public class Palestrante {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String briefing;
 
-    @Column(name = "duracao_minutos", nullable = false)
-    private Integer duracaoMinutos;
-
     @Column(name = "curriculo_resumo", nullable = false, columnDefinition = "TEXT")
     private String curriculoResumo;
 

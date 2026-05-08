@@ -53,7 +53,7 @@
             <div th:if="${erro}"    class="alerta alerta-erro"    th:text="${erro}"></div>
 
             <form method="POST"
-                  th:action="@{/inscricao-palestrante/salvar}"
+                  th:action="@{/inscricao-palestrante}"
                   th:object="${palestranteDTO}"
                   enctype="multipart/form-data"
                   id="form-inscricao-palestrante">
@@ -117,20 +117,6 @@
                         <span class="mensagem-erro"
                               th:if="${#fields.hasErrors('briefing')}"
                               th:errors="*{briefing}"></span>
-                    </div>
-
-                    <div class="campo">
-                        <label>Duração *</label>
-                        <select id="palestrante-duracao" th:field="*{duracaoMinutos}">
-                            <option value="" disabled th:selected="${palestranteDTO.duracaoMinutos == null}">Selecione</option>
-                            <option th:each="d : ${#numbers.sequence(40, 60, 5)}"
-                                    th:value="${d}"
-                                    th:text="${d + ' minutos'}">
-                            </option>
-                        </select>
-                        <span class="mensagem-erro"
-                              th:if="${#fields.hasErrors('duracaoMinutos')}"
-                              th:errors="*{duracaoMinutos}"></span>
                     </div>
                 </fieldset>
 

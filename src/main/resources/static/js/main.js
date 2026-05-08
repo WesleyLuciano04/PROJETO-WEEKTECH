@@ -178,7 +178,6 @@ function validarFormularioPalestrante() {
     const email      = document.getElementById('palestrante-email')?.value.trim();
     const tema       = document.getElementById('palestrante-tema')?.value.trim();
     const briefing   = document.getElementById('palestrante-briefing')?.value.trim();
-    const duracao    = document.getElementById('palestrante-duracao')?.value;
     const curriculo  = document.getElementById('palestrante-curriculo-resumo')?.value.trim();
     const autorizacao = document.getElementById('palestrante-autoriza-divulgacao')?.checked;
 
@@ -202,15 +201,6 @@ function validarFormularioPalestrante() {
     if (!tema)      erros.push('Tema da palestra é obrigatório.');
     if (!briefing)  erros.push('Briefing da palestra é obrigatório.');
     if (!curriculo) erros.push('Mini currículo é obrigatório.');
-
-    if (!duracao || duracao === '' || duracao === 'Selecione') {
-        erros.push('Selecione a duração da palestra.');
-    } else {
-        const minutos = parseInt(duracao);
-        if (isNaN(minutos))   erros.push('Duração inválida.');
-        else if (minutos < 40) erros.push('A palestra deve ter no mínimo 40 minutos.');
-        else if (minutos > 60) erros.push('A palestra não pode ultrapassar 60 minutos.');
-    }
 
     if (!autorizacao) erros.push('Você precisa autorizar a divulgação dos dados.');
 

@@ -112,7 +112,6 @@
                             <th>Nome</th>
                             <th>Email</th>
                             <th>Tema</th>
-                            <th>Duração</th>
                             <th>Status</th>
                             <th>Ações</th>
                         </tr>
@@ -123,7 +122,6 @@
                             <td th:text="${p.nome}"></td>
                             <td th:text="${p.email}"></td>
                             <td th:text="${p.temaPalestra}"></td>
-                            <td th:text="${p.duracaoMinutos} + ' min'"></td>
                             <td>
                                 <span class="badge" th:text="${p.status}" th:classappend="${p.status.name() == 'PENDENTE'} ? 'badge--pendente' :
                                   (${p.status.name() == 'APROVADO'} ? 'badge--aprovado' : 'badge--reprovado')">

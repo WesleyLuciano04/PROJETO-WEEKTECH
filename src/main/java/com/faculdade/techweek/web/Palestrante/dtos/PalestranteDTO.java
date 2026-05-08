@@ -4,10 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -28,7 +25,7 @@ public class PalestranteDTO {
     private String nome;
 
     @NotBlank(message = "Telefone é obrigatório")
-    @Pattern(regexp = "^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}\\-[0-9]{4}$", message = "Use o formato (43) 99999-9999")
+    @Pattern(regexp = "^\\([1-9][0-9]\\) (?:9[0-9]{4}|[2-8][0-9]{3})\\-[0-9]{4}$", message = "Use o formato (43) 99999-9999")
     private String telefone;
 
     @NotBlank(message = "E-mail é obrigatório")
@@ -44,16 +41,10 @@ public class PalestranteDTO {
     @Size(max = 2000)
     private String briefing;
 
-    @NotNull(message = "Duração é obrigatória")
-    @Min(value = 40, message = "Mínimo 40 minutos")
-    @Max(value = 60, message = "Máximo 60 minutos")
-    private Integer duracaoMinutos;
-
     @NotBlank(message = "Mini currículo é obrigatório")
     @Size(max = 1500)
     private String curriculoResumo;
 
-    // Opcional — sem validação obrigatória
     private MultipartFile curriculoArquivo;
 
     @AssertTrue(message = "Você deve autorizar a divulgação para submeter a proposta")
