@@ -35,7 +35,7 @@ const botConfig =
         //cronograma: palestras os projetos
         { pattern: /(palestrantes|palestrante)/i, response: 'Confira nessa seção, os palestrantes já confirmados.', action: 'scrollToPalestrantes'},
         { pattern: /(cronograma|palestras)/i, response: 'Nessa seção, você pode conferir toda a programação do evento.', action: 'scrollToProgramacao'},
-        { pattern: /(quero palestrar|ser palestrante|enviar palestra)/i, response: 'Ficamos felizes com seu interesse! Você pode enviar sua proposta de palestra através <a href="inscricao-palestrante.html">deste formulário</a>.' },
+        { pattern: /(quero palestrar|ser palestrante|enviar palestra)/i, response: 'Ficamos felizes com seu interesse! Você pode enviar sua proposta de palestra através <a href="/inscricao-palestrante">deste formulário</a>.' },
         { pattern: /(projeto|trabalho|apresentar)/i, response: 'Para apresentar um projeto, no momento da inscrição o usuário deve fazer check-in no campo: "Quero apresentar um projeto"'},
 
         //patrocinadores
@@ -46,7 +46,7 @@ const botConfig =
         { pattern: /(sobre|tech|week)/i, response: 'A Tech Week reúne alunos, professores e profissionais para discutir inovação e tecnologia. O foco desta edição é Inteligência Artificial aplicada na prática.'},
 
         //como fazer a inscrição
-        { pattern: /(inscricao|inscrever|cadastro|participar)/i, response: 'Você pode realizar sua inscrição clicando no botão "Faça sua Inscrição" no topo da página ou <a href="inscricao-participante.html">clicando aqui</a>.' },
+        { pattern: /(inscricao|inscrever|cadastro|participar)/i, response: 'Você pode realizar sua inscrição clicando no botão "Faça sua Inscrição" no topo da página ou <a href="/inscricao-participante">clicando aqui</a>.' },
         //confirmação de presença
         { pattern: /(certificado|horas|presenca|checkin)/i, response: 'A presença será registrada via QR Code ao final de cada palestra. O usuário deve ler o qr code através da página do evento, na aba de login.'},
         //coffee break
@@ -113,7 +113,20 @@ function sendMessage()
 function appendMessage(sender, message)
 {
     const msg = document.createElement('div');
-    msg.innerHTML = `<strong>${sender}</strong>${message}`;
+    msg.classList.add('msg-balao');
+
+    const isUser = sender.startsWith('Você');
+    msg.classList.add(isUser ? 'msg-usuario' : 'msg-bot');
+
+    if (!isUser)
+    {
+        msg.innerHTML = `<span class="msg-remetente">${sender}</span>${message}`;
+    }
+    else
+    {
+        msg.innerHTML = message;
+    }
+    
     boxChat.appendChild(msg);
     boxChat.scrollTop = boxChat.scrollHeight;
 }

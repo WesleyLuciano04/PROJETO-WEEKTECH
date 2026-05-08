@@ -850,12 +850,62 @@ button.btn-tema:hover
 #box-chat
 {
     flex: 1; /* Ocupa todo o espaço disponível no meio */
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     overflow-y: auto; /* Scroll apenas aqui se houver muita mensagem */
     display: flex;
     flex-direction: column;
     gap: 10px;
     color: #000;
+    background-color: #e5ddd5;
+}
+
+/* Balão base */
+#box-chat .msg-balao
+{
+    max-width: 78%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    word-break: break-word;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    animation: fadeUp 0.2s ease;
+}
+
+/* Balão do BOT — esquerda, azul claro do projeto */
+#box-chat .msg-bot
+{
+    align-self: flex-start;
+    background-color: var(--blue-1);
+    color: #ffffff;
+    border-top-left-radius: 2px;
+}
+
+/* Balão do USUÁRIO — direita, amarelo do projeto */
+#box-chat .msg-usuario
+{
+    align-self: flex-end;
+    background-color: var(--yellow-1);
+    color: var(--blue-2);
+    border-top-right-radius: 2px;
+}
+
+/* Nome "TW:" em destaque no balão do bot */
+#box-chat .msg-bot .msg-remetente
+{
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--yellow-1);
+    margin-bottom: 2px;
+}
+
+/* Links dentro dos balões */
+#box-chat .msg-balao a
+{
+    color: var(--yellow-1);
+    text-decoration: underline;
 }
 
 .input-chat
@@ -908,6 +958,19 @@ body.modo-escuro #window-chat
 body.modo-escuro #box-chat
 {
     color: #ffffff;
+    background-color: #050c17;
+}
+
+body.modo-escuro #box-chat .msg-bot
+{
+    background-color: var(--blue-2);
+    color: #e0e0e0;
+}
+
+body.modo-escuro #box-chat .msg-usuario
+{
+    background-color: var(--yellow-dark);
+    color: var(--blue-2);
 }
 
 body.modo-escuro .input-chat
