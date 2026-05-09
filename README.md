@@ -102,10 +102,16 @@
 ## 🔗 Deploy
 
 <p align="center">
-    <a href="https://niveasofia.github.io/projeto-tech-deploy/">
+    <a href="https://projeto-weektech.onrender.com">
         <img src="https://img.shields.io/badge/O%20PROJETO-%23005387?style=for-the-badge&label=ACESSE&labelColor=%23FFD621" />
     </a>
 </p>
+
+> ⚠️ **Aviso sobre o tempo de resposta inicial**
+>
+> O back-end da aplicação está hospedado no **Render** com o plano gratuito. Por conta disso, o serviço entra em **modo de hibernação** após um período de inatividade 
+>
+> Ao acessar o projeto, é possível que o carregamento inicial demore **até 1 minuto** para o servidor "acordar" novamente. Isso é um comportamento esperado da plataforma e não indica nenhum erro no sistema. Basta aguardar e, em seguida, a aplicação funcionará normalmente.
 
 ## 🚀 Como executar o projeto
 
