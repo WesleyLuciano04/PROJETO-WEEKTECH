@@ -702,27 +702,29 @@ button.btn-tema:hover
     margin-top: 1.5rem;
 }
 
-#card-patrocinio
-{
-    background-color: rgba(255, 255, 255, 0.15);;
+.card-patrocinio {
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     padding: 16px;
-    min-width: 120px;
-    max-width: 160px;
+    width: 160px;
+    height: 250px;          /* aumentado para caber título + imagem */
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-#card-patrocinio:hover
+.card-patrocinio:hover
 {
     border: 2px solid var(--yellow-1);
     background-color: rgba(255, 255, 255, 0.08);
 }
 
-#card-patrocinio ul
+.card-patrocinio ul
 {
     list-style: none;
     padding: 0;
@@ -730,10 +732,19 @@ button.btn-tema:hover
     width: 100%;
 }
 
-#card-patrocinio li
+.card-patrocinio li
 {
     display: flex;
     justify-content: center;
+}
+
+.card-patrocinio img 
+{
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
 }
 
 #patrocinadores p
@@ -743,7 +754,7 @@ button.btn-tema:hover
     max-width: 700px;
 }
 
-#titulo-patrocinio
+.titulo-patrocinio
 {
     color: var(--yellow-1);
     font-size: 1.2rem;
