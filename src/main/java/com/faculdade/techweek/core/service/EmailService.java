@@ -1,23 +1,30 @@
 package com.faculdade.techweek.core.service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
 public class EmailService {
 
-    private final JavaMailSender mailSender;
+    @Value("${brevo.api.key}")
+    private String apiKey;
 
     @Value("${app.mail.remetente}")
     private String remetente;
+
+    private final RestTemplate restTemplate = new RestTemplate();
 
     @Async
     public void enviarConfirmacaoProposta(String destinatario, String nome, String tema) {
@@ -61,13 +68,19 @@ public class EmailService {
 
     private void enviar(String destinatario, String assunto, String corpo) {
         try {
-            SimpleMailMessage mensagem = new SimpleMailMessage();
-            mensagem.setFrom(remetente);
-            mensagem.setTo(destinatario);
-            mensagem.setSubject(assunto);
-            mensagem.setText(corpo);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("api-key", apiKey);
 
-            mailSender.send(mensagem);
+            Map<String, Object> body = new HashMap<>();
+            body.put("sender", Map.of("email", remetente, "name", "II Tech Week 2026"));
+            body.put("to", List.of(Map.of("email", destinatario)));
+            body.put("subject", assunto);
+            body.put("textContent", corpo);
+
+            HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
+
+            restTemplate.postForEntity("https://api.brevo.com/v3/smtp/email", request, String.class);
             log.info("E-mail enviado para: {}", destinatario);
 
         } catch (Exception ex) {
