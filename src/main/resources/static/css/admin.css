@@ -27,9 +27,6 @@ body {
 
 .admin-header {
     background: transparent;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .header-inner {
