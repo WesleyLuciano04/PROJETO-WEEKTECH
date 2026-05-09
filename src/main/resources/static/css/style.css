@@ -1556,6 +1556,30 @@ body.modo-escuro .input-chat
         font-size: 0.8rem;
         min-width: 0;
     }
+
+    .apresentacaoTechWeek
+    {
+        margin-top: 32px;
+    }
+
+    .apresentacaoTechWeek #tech
+    {
+        width: 220px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .evento-titulo,
+    .evento-subtitulo
+    {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    #tech
+    {
+        margin-right: 0;
+    }
 }
 
 /* MODO ESCURO */
