@@ -654,3 +654,125 @@ tbody td {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     margin-top: 20px;
 }
+
+/* 404 */
+
+.error-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: calc(100vh - 140px);
+}
+
+.error-card {
+    background: rgba(0, 36, 59, 0.55);
+    border: 1px solid rgba(255, 214, 33, 0.25);
+    border-radius: 16px;
+    padding: 56px 48px;
+    backdrop-filter: blur(14px);
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 214, 33, 0.04);
+    pointer-events: none;
+}
+
+.error-card::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+}
+
+.error-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 214, 33, 0.1);
+    border: 1px solid rgba(255, 214, 33, 0.25);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    color: var(--yellow-1);
+}
+
+.error-number {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--yellow-1);
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -2px;
+}
+
+.error-divider {
+    width: 48px;
+    height: 3px;
+    background: var(--yellow-1);
+    border-radius: 2px;
+    margin: 0 auto 20px;
+}
+
+.error-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.error-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    background-color: var(--yellow-1);
+    color: var(--blue-2);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'DM Sans', Arial, sans-serif;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-home:hover {
+    background-color: var(--yellow-dark);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .error-card {
+        padding: 40px 24px;
+    }
+
+    .error-number {
+        font-size: 4.5rem;
+    }
+}
