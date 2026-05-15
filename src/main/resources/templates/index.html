@@ -29,12 +29,12 @@
                     <a href="#programacao">Programação</a>
                     <a href="#contato">Contato</a>
                     <button onclick="modoEscuro()" class="btn-tema" id="btn-tema" aria-label="Alternar tema escuro">
-                        <svg id="icon-tema" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            aria-hidden="true">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        <svg id="icon-tema" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                         </svg>
-                    </button>                 
+                    </button>
                 </nav>
             </div>
         </div>
@@ -194,7 +194,7 @@
                                         <span class="palestra-tag">02 · SESSÃO</span>
                                         <h4>Cerimônia de Abertura</h4>
                                         <p>🕐 19h00 — 19h30</p>
-                                        <p id="sala">📍  Auditório</p>
+                                        <p id="sala">📍 Auditório</p>
                                     </article>
                                 </li>
                             </ol>
@@ -227,7 +227,7 @@
                                         <span class="palestra-tag">02 · SESSÃO</span>
                                         <h4>Cerimônia de Abertura</h4>
                                         <p>🕐 19h00 — 19h30</p>
-                                        <p id="sala">📍  Auditório</p>
+                                        <p id="sala">📍 Auditório</p>
                                     </article>
                                 </li>
                             </ol>
@@ -260,7 +260,7 @@
                                         <span class="palestra-tag">02 · SESSÃO</span>
                                         <h4>Cerimônia de Abertura</h4>
                                         <p>🕐 19h00 — 19h30</p>
-                                        <p id="sala">📍  Auditório</p>
+                                        <p id="sala">📍 Auditório</p>
                                     </article>
                                 </li>
                             </ol>
@@ -278,25 +278,58 @@
             <div class="palestrantes-grid">
                 <div id="palestrantes-card">
                     <article id="palestrante">
-                        <img th:src="@{/imgs/falen.webp}" alt="Foto de Nome do Palestrante">
+                        <img th:src="@{/imgs/palestrantes/gustavo_sem_fundo.png}" alt="Foto de Nome do Palestrante">
                         <dl class="palestrante-card">
-                            <h3>FALLEN</h3>
-                            <dt>Tema</dt>
-                            <dt>A definir</dt>
+                            <h3>Gustavo Melles</h3>
+                            <h4>Pense com IA: A Revolução da Inteligência Ampliada</h4>
+                            <h5> Publicitário formado pela Mackenzie, empreendedor e educador nas áreas de IA e inovação.</h5>
                         </dl>
                     </article>
                 </div>
 
                 <div id="palestrantes-card">
                     <article id="palestrante">
-                        <img th:src="@{/imgs/falen.webp}" alt="Foto de Nome do Palestrante">
+                        <img th:src="@{/imgs/palestrantes/Jessy_sem_fundo.png}" alt="Foto de Nome do Palestrante">
                         <dl class="palestrante-card">
-                            <h3>Nome do Palestrante</h3>
-                            <dt>Tema</dt>
-                            <dt>A definir</dt>
+                            <h3>Jessy Borges Ferracioli</h3>
+                            <h4>Os data taggers e o trabalho invisível por trás da Inteligência Artificial</h4>
+                            <h5>Pós graduada em Direito Civil e Processo Civil pelo IDCC. Pesquisadora de direito e inteligência artificial na Lawgorithm.</h5>
                         </dl>
                     </article>
-                 </div>
+                </div>
+
+                <div id="palestrantes-card">
+                    <article id="palestrante">
+                        <img th:src="@{/imgs/palestrantes/luiz_sem_fundo.png}" alt="Foto de Nome do Palestrante">
+                        <dl class="palestrante-card">
+                            <h3>Luiz Fernando Pereira Nunes</h3>
+                            <h4>Inteligência Artificial e Proteção de Dados: Desafios, Ética e Segurança na Era Digital</h4>
+                            <h5>Graduado em Ciência da Computação, MBA em Gestão de Projetos, Estratégia Empresarial e Gestão Comercial.</h5>
+                        </dl>
+                    </article>
+                </div>
+
+                <div id="palestrantes-card">
+                    <article id="palestrante">
+                        <img th:src="@{/imgs/palestrantes/michel_sem_fundo.png}" alt="Foto de Nome do Palestrante">
+                        <dl class="palestrante-card">
+                            <h3>Michel Cesar Leme Banagouro</h3>
+                            <h4>O programador morreu. Vida longa ao programador</h4>
+                            <h5>Arquiteto de Software e CTO na Leanwork Group, Formado em Análise e Desenvolvimento de Sistemas.</h5>
+                        </dl>
+                    </article>
+                </div>
+
+                <div id="palestrantes-card">
+                    <article id="palestrante">
+                        <img th:src="@{/imgs/palestrantes/soler_sem_fundo.png}" alt="Foto de Nome do Palestrante">
+                        <dl class="palestrante-card">
+                            <h3>Luciano Soler</h3>
+                            <h4>Construção e Orquestração de Agentes de IA</h4>
+                            <h5>Engenheiro da Computação, Especialista em Engenharia de Software e Mestre em Ciências da Computação.</h5>
+                        </dl>
+                    </article>
+                </div>
             </div>
 
             <p>
@@ -374,7 +407,8 @@
                     <h3 class="titulo-patrocinio">ZONA COUNTRY</h3>
                     <ul>
                         <li>
-                            <a href="https://www.zonacountry.com.br/?gad_source=1&gad_campaignid=23444748680&gbraid=0AAAAADRfHL9U9mvz6GUIJClr69lREtjjs&gclid=CjwKCAjw5ZXQBhBdEiwAI5XVWZwiGKWhUqnHkRsh53KEARABVqTUBeJUHrvf9shE4WValRqJHZvW5RoC2P8QAvD_BwE" target="_blank">
+                            <a href="https://www.zonacountry.com.br/?gad_source=1&gad_campaignid=23444748680&gbraid=0AAAAADRfHL9U9mvz6GUIJClr69lREtjjs&gclid=CjwKCAjw5ZXQBhBdEiwAI5XVWZwiGKWhUqnHkRsh53KEARABVqTUBeJUHrvf9shE4WValRqJHZvW5RoC2P8QAvD_BwE"
+                                target="_blank">
                                 <img th:src="@{/imgs/patrocinadores/country.jpeg}"
                                     alt="Logotipo do patrocinador: ZONA COUNTRY" />
                             </a>
@@ -501,7 +535,7 @@
                         </li>
                     </ul>
                 </div>
-    
+
             </div>
         </section>
 
@@ -529,43 +563,43 @@
 
         <!-- FAQ com perguntas frequentes -->
         <section id="faq">
-            <hr>        
-                <h2>FAQ - Perguntas Frequentes</h2>
-                <div id="faq-container">
-                    <details>
-                        <summary>Como posso patrocinar o evento?</summary>
-                        <p>Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a
-                            nossa coordenação pelo telefone/WhatsApp: (xx) x xxxx-xxxx.</p>
-                    </details>
+            <hr>
+            <h2>FAQ - Perguntas Frequentes</h2>
+            <div id="faq-container">
+                <details>
+                    <summary>Como posso patrocinar o evento?</summary>
+                    <p>Para formalizar o patrocínio e conhecer as cotas disponíveis, entre em contato diretamente com a
+                        nossa coordenação pelo telefone/WhatsApp: (xx) x xxxx-xxxx.</p>
+                </details>
 
-                    <details>
-                        <summary>Como confirmo minha presença nas atividades?</summary>
-                        <p>Ao final de cada palestra, será exibido um QR Code exclusivo para registro de presença.
-                            Certifique-se de escaneá-lo antes de sair da sala para garantir a validação da sua participação.
-                        </p>
-                    </details>
+                <details>
+                    <summary>Como confirmo minha presença nas atividades?</summary>
+                    <p>Ao final de cada palestra, será exibido um QR Code exclusivo para registro de presença.
+                        Certifique-se de escaneá-lo antes de sair da sala para garantir a validação da sua participação.
+                    </p>
+                </details>
 
-                    <details>
-                        <summary>Como posso inscrever meu projeto para apresentação?</summary>
-                        <p>Você deve realizar o cadastro do seu projeto através do [link/portal de inscrições]. Após o
-                            envio, nossa equipe técnica realizará a análise e verificação dos requisitos para autorizar a
-                            apresentação.</p>
-                    </details>
+                <details>
+                    <summary>Como posso inscrever meu projeto para apresentação?</summary>
+                    <p>Você deve realizar o cadastro do seu projeto através do [link/portal de inscrições]. Após o
+                        envio, nossa equipe técnica realizará a análise e verificação dos requisitos para autorizar a
+                        apresentação.</p>
+                </details>
 
-                    <details>
-                        <summary>Como participo do Coffee Break?</summary>
-                        <p>No momento da inscrição no evento, selecione a opção correspondente ao Coffee Break. Os
-                            participantes que optarem por este serviço receberão as instruções para o pagamento da taxa
-                            adicional de adesão.</p>
-                    </details>
+                <details>
+                    <summary>Como participo do Coffee Break?</summary>
+                    <p>No momento da inscrição no evento, selecione a opção correspondente ao Coffee Break. Os
+                        participantes que optarem por este serviço receberão as instruções para o pagamento da taxa
+                        adicional de adesão.</p>
+                </details>
 
-                    <details>
-                        <summary>Qual o prazo limite para realizar a inscrição?</summary>
-                        <p>As inscrições para cada palestra podem ser feitas até 1 hora antes do horário de início previsto.
-                            Após esse período, o sistema de inscrições será automaticamente bloqueado para aquela sessão.
-                        </p>
-                    </details>
-                </div>
+                <details>
+                    <summary>Qual o prazo limite para realizar a inscrição?</summary>
+                    <p>As inscrições para cada palestra podem ser feitas até 1 hora antes do horário de início previsto.
+                        Após esse período, o sistema de inscrições será automaticamente bloqueado para aquela sessão.
+                    </p>
+                </details>
+            </div>
         </section>
 
     </main>
@@ -577,14 +611,15 @@
                     <img th:src="@{/imgs/unicesumar-logo.png}" alt="Logo UniCesumar">
                 </a>
             </div>
-            
+
             <div id="redes">
                 <p>
                     <a href="https://api.whatsapp.com/send?phone=554491399006&amp;text=Ol%C3%A1!%20Acessei%20o%20site%20da%20UniCesumar%20e%20quero%20saber%20mais%20informa%C3%A7%C3%B5es.%20Voc%C3%AA%20pode%20ajudar?"
                         target="_blank"> <img th:src="@{/imgs/iconWhats.png}" alt="Whatsapp"></a>
                 </p>
                 <p>
-                    <a href="https://www.instagram.com/unicesumarlondrina/" target="_blank"> <img th:src="@{/imgs/icon-insta.png}" alt=""></a>
+                    <a href="https://www.instagram.com/unicesumarlondrina/" target="_blank"> <img
+                            th:src="@{/imgs/icon-insta.png}" alt=""></a>
                 </p>
 
             </div>

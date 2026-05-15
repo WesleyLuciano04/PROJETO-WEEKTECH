@@ -555,6 +555,14 @@ button.btn-tema:hover
     font-size: 2rem;
 }
 
+#palestrante {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 #palestrante img
 {
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
@@ -572,16 +580,22 @@ button.btn-tema:hover
 
 #palestrante h3
 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--blue-1);
     margin: 0;
 }
 
-#palestrante dt
+#palestrante h4
 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: rgb(255, 255, 255);
     margin: 0;
+}
+
+#palestrante h5 
+{
+    font-size: 0.7rem;
+    font-weight: 500;
 }
 
 .palestrante-card 
@@ -589,6 +603,9 @@ button.btn-tema:hover
   display: flex;
   flex-direction:column;
   align-items: center;
+  word-wrap: break-word;
+  max-width: 220px;
+  text-align: center;
   gap: 10px;
   
 }
