@@ -1091,6 +1091,37 @@ body.modo-escuro #box-chat .msg-bot video
     background-color: #050c17;
 }
 
+#box-chat.matrix-mode
+{
+    background-color: #000 !important;
+    font-family: 'Courier New', monospace;
+    color: #00ff41;
+}
+
+#box-chat.matrix-mode .msg-bot
+{
+    background-color: #001a00;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+}
+
+#box-chat.matrix-mode .msg-usuario
+{
+    background-color: #003300;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+}
+
+#box-chat.matrix-mode .msg-remetente
+{
+    color: #00ff41 !important;
+}
+
+#box-chat.matrix-mode .msg-bot a
+{
+    color: #00ff41;
+}
+
 /* FIM DO CHATBOT */
 
 /* FAQ COMEÇA AQUI */

@@ -63,6 +63,8 @@ const botConfig =
         { pattern: /(falar com alguem|suporte)/i, response: null, flow: 'suporte'},
 
         { pattern: /(tchau|ate logo|até logo|sair)/i, response: null, video: 'https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/video/tchau_chatBot.mp4' },
+
+        { pattern: /(root|sudo|cyberpunk|matrix)/i, response: null, action: 'activateMatrix' },
     ]
 };
 
@@ -207,6 +209,12 @@ function getBotResponse(input)
                 return 'Foi um prazer te ajudar! Até logo! 👋';
             }
 
+            if (response.action === 'activateMatrix')
+            {
+                activateMatrixMode();
+                return '> Acesso concedido. Bem-vindo ao terminal. 🟢';
+            }
+
             return response.response;
         }
     };
@@ -283,4 +291,9 @@ function appendVideo(src)
     `;
     boxChat.appendChild(msg);
     boxChat.scrollTop = boxChat.scrollHeight;
+}
+
+function activateMatrixMode()
+{
+    boxChat.classList.toggle('matrix-mode');
 }
