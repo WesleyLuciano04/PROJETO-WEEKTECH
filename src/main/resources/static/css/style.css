@@ -555,66 +555,76 @@ button.btn-tema:hover
     font-size: 2rem;
 }
 
-#palestrante {
+#palestrantes-card
+{
+    width: 220px;
+    min-height: 380px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1.25rem 1rem 1rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
 
+#palestrantes-card:hover
+{
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.13);
+}
+
+#palestrante
+{
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-}
-
-#palestrante img
-{
-    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-    object-fit: cover;
-    width: 200px;
-    height: 220px;
+    gap: 0.75rem;
 }
 
 /* Borda hexagonal */
 #palestrante img
 {
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-    background: #cde8f5; 
+    object-fit: cover;
+    background: #cde8f5;
+    width: 200px;
+    height: 220px;
 }
 
-#palestrante h3
+.palestrante-card
 {
-    font-size: 1rem;
-    color: var(--blue-1);
-    margin: 0;
-}
-
-#palestrante h4
-{
-    font-size: 0.8rem;
-    color: rgb(255, 255, 255);
-    margin: 0;
-}
-
-#palestrante h5 
-{
-    font-size: 0.7rem;
-    font-weight: 500;
-}
-
-.palestrante-card 
-{
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  word-wrap: break-word;
-  max-width: 220px;
-  text-align: center;
-  gap: 10px;
-  
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 10px;
 }
 
 .palestrante-card h3
 {
     font-size: 1rem;
+    color: rgb(255, 255, 255);
+    margin: 0;
+}
+
+.palestrante-card h4
+{
+    font-size: 0.8rem;
     color: var(--blue-1);
     margin: 0;
+}
+
+.palestrante-card h5
+{
+    font-size: 0.7rem;
+    font-weight: 500;
+    overflow: hidden;
 }
 
 #palestrantes p
@@ -632,6 +642,38 @@ button.btn-tema:hover
     font-size: 1.1rem;
 }
 
+/* RESPONSIVIDADE CARDS PALESTRANTES */
+@media (max-width: 768px)
+{
+    #palestrantes
+    {
+        padding: 1.5rem 1rem;
+    }
+
+    .palestrantes-grid
+    {
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 480px)
+{
+    #palestrantes-card
+    {
+        width: min(88vw, 260px);
+        min-height: unset;
+        padding: 1rem 0.875rem;
+    }
+
+    #palestrante img
+    {
+        width: 160px;
+        height: 176px;
+    }
+
+    #palestrante h4 { font-size: 0.85rem; }
+    #palestrante h5 { font-size: 0.8rem; }
+}
 /* MAPA */
 
 #localizacao {
