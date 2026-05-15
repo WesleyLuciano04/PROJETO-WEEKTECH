@@ -32,6 +32,14 @@ body {
     gap: 15px;
 }
 
+@media (max-width: 853px) {
+
+    .header-inner {
+        justify-content: center;
+    }
+    
+}
+
 .navegacao {
     display: flex;
     gap: 20px;
@@ -138,23 +146,23 @@ button.btn-tema:hover
 
 /*  TÍTULO*/
 #titulo-tech {
-    font-size: 7rem;
+    font-size: clamp(2.8rem, 14vw, 7rem);
     color: white;
 
 }
 
 #titulo-week {
-    font-size: 7rem;
+    font-size: clamp(2.8rem, 14vw, 7rem);
     color: var(--yellow-1);
-    margin-top: -55px;
+    margin-top: clamp(-28px, -3.5vw, -55px);
     margin-bottom: 40px;
 }
 
 #sub-titulo {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: clamp(1.1rem, 3.5vw, 2rem);
     color: white;
-    margin-top: -35px;
+    margin-top: clamp(-18px, -2.5vw, -35px);
 }
 
 .destaque1 {
@@ -295,7 +303,7 @@ button.btn-tema:hover
 }
 
 #sobre-evento {
-    padding: 60px 80px;
+    padding: clamp(30px, 6vw, 60px) clamp(16px, 8vw, 80px);
     text-align: center;
 }
 
@@ -935,6 +943,7 @@ button.btn-tema:hover
     border-radius: 5px;
     padding: 8px;
     outline: none;
+    font-size: 16px;
 }
 
 #user-input::placeholder
@@ -1139,9 +1148,22 @@ body.modo-escuro .input-chat
 /* FAQ TERMINA AQUI */
 
 /* RODAPÉ */
+@media (min-width: 720px) {
+    
+    #contato address {
+    
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    
+    }
+
+}
 
 #rodape-logo img
 {
+    margin-left: 10px;
     width: 140px;
     height: auto;
 }
