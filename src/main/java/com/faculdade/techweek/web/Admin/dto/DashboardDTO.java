@@ -18,6 +18,9 @@ public class DashboardDTO {
     private long participantesAprovados;
     private long participantesComCoffeeBreak;
     private long participantesComProjeto;
+    private Long dia_1;
+    private Long dia_2;
+    private Long dia_3;
 
     private long totalPalestrantes;
     private long palestrantesPendentes;

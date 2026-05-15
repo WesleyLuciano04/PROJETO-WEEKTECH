@@ -40,12 +40,14 @@ public class PalestranteController {
             RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            return new ModelAndView("inscricao-palestrante");
+            ModelAndView mav = new ModelAndView("inscricao-palestrante");
+            mav.addObject("palestranteDTO", dto);
+            return mav;
         }
 
         try {
             palestranteService.submeterProposta(dto);
-            
+
             redirectAttributes.addFlashAttribute("sucesso",
                     "Proposta enviada! Retornaremos em até 7 dias úteis pelo e-mail informado.");
             return new ModelAndView("redirect:/inscricao-palestrante");

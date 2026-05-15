@@ -37,7 +37,9 @@ public class ExcelService {
             cabecalho.createCell(2).setCellValue("Curso");
             cabecalho.createCell(3).setCellValue("Série");
             cabecalho.createCell(4).setCellValue("Coffee Break");
-            cabecalho.createCell(5).setCellValue("Presença na 1º palestra");
+            cabecalho.createCell(5).setCellValue("Presença na 1º Dia");
+            cabecalho.createCell(6).setCellValue("Presença na 2º Dia");
+            cabecalho.createCell(7).setCellValue("Presença na 3º Dia");
 
             for (int i = 0; i < participantes.size(); i++) {
                 Participante p = participantes.get(i);
@@ -48,7 +50,9 @@ public class ExcelService {
                 row.createCell(2).setCellValue(p.getCurso().getDescricao());
                 row.createCell(3).setCellValue(p.getSerie() + "º Semestre");
                 row.createCell(4).setCellValue(p.isCoffeeBreak() ? "Sim" : "Não");
-                row.createCell(5).setCellValue(p.isPresenca() ? "Sim" : "Não");
+                row.createCell(5).setCellValue(p.isPresencaDia1() ? "Sim" : "Não");
+                row.createCell(6).setCellValue(p.isPresencaDia2() ? "Sim" : "Não");
+                row.createCell(7).setCellValue(p.isPresencaDia3() ? "Sim" : "Não");
             }
 
             workbook.write(out);

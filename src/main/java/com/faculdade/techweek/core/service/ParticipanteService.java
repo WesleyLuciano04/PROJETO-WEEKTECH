@@ -69,25 +69,6 @@ public class ParticipanteService {
         participanteRepository.save(participante);
     }
 
-    @Transactional
-    public String registrarPresenca(String ra) {
-        String raNormalizado = ra.trim();
-
-        Participante participante = participanteRepository.findByRa(raNormalizado)
-                .orElseThrow(() -> new IllegalArgumentException(
-                        "R.A. não encontrado: " + raNormalizado + ". Verifique e tente novamente."));
-
-        if (participante.isPresenca()) {
-            throw new IllegalStateException(
-                    "Presença já registrada para o R.A.: " + raNormalizado);
-        }
-
-        participante.setPresenca(true);
-        participanteRepository.save(participante);
-
-        return "Presença confirmada com sucesso! Bem-vindo(a), " + participante.getNome() + "!";
-    }
-
     public long contarTotal() {
         return participanteRepository.count();
     }
@@ -102,5 +83,17 @@ public class ParticipanteService {
 
     public long contarComProjeto() {
         return participanteRepository.findAllComProjeto().size();
+    }
+
+    public Long contarPresecaDia1(){
+        return participanteRepository.countByPresencaDia1True();
+    }
+
+    public Long contarPresecaDia2(){
+        return participanteRepository.countByPresencaDia2True();
+    }
+
+    public Long contarPresecaDia3(){
+        return participanteRepository.countByPresencaDia3True();
     }
 }

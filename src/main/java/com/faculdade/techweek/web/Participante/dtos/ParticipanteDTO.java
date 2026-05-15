@@ -24,7 +24,7 @@ public class ParticipanteDTO {
     @NotNull
     @Size(min = 10, max = 10)
     private String ra;
-    
+
     @NotNull
     private Curso curso;
 

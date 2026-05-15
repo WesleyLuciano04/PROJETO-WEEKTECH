@@ -1,17 +1,10 @@
 package com.faculdade.techweek.core.service;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.List;
-import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.faculdade.techweek.core.enums.StatusInscricao;
 import com.faculdade.techweek.core.model.Palestrante;
@@ -32,9 +25,7 @@ public class PalestranteService {
     private final PalestranteRepository palestranteRepository;
     private final PalestranteMapper palestranteMapper;
     private final EmailService emailService;
-
-    @Value("${app.upload.dir}")
-    private String uploadDir;
+    private final SupabaseStorageService supabaseStorageService;
 
     @Transactional
     public void submeterProposta(PalestranteDTO dto) throws IOException {
@@ -47,7 +38,7 @@ public class PalestranteService {
         Palestrante palestrante = palestranteMapper.toEntity(dto);
 
         if (dto.getCurriculoArquivo() != null && !dto.getCurriculoArquivo().isEmpty()) {
-            palestrante.setCurriculoArquivoPath(salvarArquivo(dto.getCurriculoArquivo()));
+            palestrante.setCurriculoArquivoPath(supabaseStorageService.uploadCurriculo(dto.getCurriculoArquivo()));
         }
 
         Palestrante salvo = palestranteRepository.save(palestrante);
@@ -95,16 +86,5 @@ public class PalestranteService {
 
     public long contarPorStatus(StatusInscricao s) {
         return palestranteRepository.countByStatus(s);
-    }
-
-    private String salvarArquivo(MultipartFile arquivo) throws IOException {
-
-        String nomeUnico = UUID.randomUUID() + "_" + arquivo.getOriginalFilename();
-        Path destino = Paths.get(uploadDir).resolve(nomeUnico);
-
-        Files.createDirectories(destino.getParent());
-        Files.copy(arquivo.getInputStream(), destino, StandardCopyOption.REPLACE_EXISTING);
-
-        return destino.toString();
     }
 }

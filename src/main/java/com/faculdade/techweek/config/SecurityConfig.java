@@ -24,14 +24,10 @@ public class SecurityConfig {
                     "/",
                     "/index",
                     "/login",
-                    "/faq",
                     "/inscricao-participante",
-                    "/inscricao-participante/salvar",
                     "/inscricao-palestrante",
-                    "/inscricao-palestrante/salvar",
-                    "/inscricao-participante/presenca",
-                    "/inscricao-participante/registrar",
-                    "/api/chatbot/**"   
+                    "/presenca",
+                    "/api/chatbot/**"    
                 ).permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()

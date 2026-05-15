@@ -134,6 +134,12 @@ nav ul li a.ativo {
 }
 
 /* Cards coloridos — Participantes */
+
+.participantes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .participantes-grid .stat-card {
     flex: 1;
     min-width: 200px;
@@ -152,6 +158,9 @@ nav ul li a.ativo {
 .participantes-grid .stat-card:nth-child(1) { background: rgba(0, 36, 59, 0.6); backdrop-filter: blur(10px); }
 .participantes-grid .stat-card:nth-child(2) { background: rgba(179, 150, 23, 0.5); backdrop-filter: blur(10px); }
 .participantes-grid .stat-card:nth-child(3) { background: rgba(26, 122, 67, 0.5); backdrop-filter: blur(10px); }
+.participantes-grid .stat-card:nth-child(4) { background: rgba(90, 50, 150, 0.5); backdrop-filter: blur(10px); }
+.participantes-grid .stat-card:nth-child(5) { background: rgba(140, 30, 50, 0.5); backdrop-filter: blur(10px); }
+.participantes-grid .stat-card:nth-child(6) { background: rgba(20, 110, 130, 0.5); backdrop-filter: blur(10px); }
 
 .participantes-grid .stat-card::after {
     content: '';

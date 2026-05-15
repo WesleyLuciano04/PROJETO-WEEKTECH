@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/uni.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/uni.ico"
+        type="image/x-icon">
     <title>Confirmar Presença</title>
     <style>
         * {
@@ -97,23 +99,18 @@
             bottom: 1.5rem;
             right: 1.5rem;
             font-size: 1.4rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
+
 <body>
 
     <div class="card">
         <label>Digite seu RA para confirmarmos a sua presença:</label>
 
-        <form th:action="@{/inscricao-participante/registrar}" method="post">
-            <input
-                type="text"
-                name="ra"
-                placeholder="Ex: 12345678"
-                required
-                autofocus
-            />
+        <form th:action="@{/presenca}" method="post">
+            <input type="text" name="ra" placeholder="Ex: 12345678" required autofocus />
             <button type="submit">CONFIRMAR PRESENÇA</button>
         </form>
 
@@ -122,5 +119,32 @@
         <div class="mensagem erro" th:if="${erro}" th:text="${erro}"></div>
     </div>
 
+    <script>
+    const input = document.querySelector('input[name="ra"]');
+
+    input.addEventListener('input', function () {
+        // remove tudo que não for número
+        let valor = this.value.replace(/\D/g, '');
+
+        // limita a 9 dígitos (8 + o 2 final)
+        if (valor.length > 9) {
+            valor = valor.slice(0, 9);
+        }
+
+        // a partir do 9º dígito força o último a ser 2
+        if (valor.length === 9) {
+            valor = valor.slice(0, 8) + '2';
+        }
+
+        // aplica a máscara: 00000000-2
+        if (valor.length > 8) {
+            valor = valor.slice(0, 8) + '-' + valor.slice(8);
+        }
+
+        this.value = valor;
+    });
+</script>
+
 </body>
+
 </html>

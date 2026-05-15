@@ -28,6 +28,9 @@ public class DashboardMapperImpl implements DashboardMapper{
                 .palestrantesPendentes(palestranteService.contarPorStatus(StatusInscricao.PENDENTE))
                 .palestrantesAprovados(palestranteService.contarPorStatus(StatusInscricao.APROVADO))
                 .palestrantesReprovados(palestranteService.contarPorStatus(StatusInscricao.REPROVADO))
+                .dia_1(participanteService.contarPresecaDia1())
+                .dia_2(participanteService.contarPresecaDia2())
+                .dia_3(participanteService.contarPresecaDia3())
                 .build();
     }
 }

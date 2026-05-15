@@ -25,7 +25,7 @@ public class PalestranteDTO {
     private String nome;
 
     @NotBlank(message = "Telefone é obrigatório")
-    @Pattern(regexp = "^\\([1-9][0-9]\\) (?:9[0-9]{4}|[2-8][0-9]{3})\\-[0-9]{4}$", message = "Use o formato (43) 99999-9999")
+    @Pattern(regexp = "^\\(\\d{2}\\) \\d{4,5}-\\d{4}$", message = "Use o formato (43) 99999-9999")
     private String telefone;
 
     @NotBlank(message = "E-mail é obrigatório")

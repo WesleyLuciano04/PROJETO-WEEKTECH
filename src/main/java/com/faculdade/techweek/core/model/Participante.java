@@ -26,7 +26,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "participantes")
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -53,8 +54,7 @@ public class Participante {
     @Builder.Default
     private boolean coffeeBreak = false;
 
-    @OneToOne(mappedBy = "participante", cascade = CascadeType.ALL,
-              fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToOne(mappedBy = "participante", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private ProjetoParticipante projeto;
 
     @Enumerated(EnumType.STRING)
@@ -66,6 +66,24 @@ public class Participante {
     @Column(name = "criado_em", nullable = false, updatable = false)
     private LocalDateTime criadoEm;
 
-    @Column(nullable = false)
-    private boolean presenca;
+    @Column(name = "presenca_dia_1", nullable = false)
+    private boolean presencaDia1;
+
+    @Column(name = "presenca_dia_2", nullable = false)
+    private boolean presencaDia2;
+
+    @Column(name = "presenca_dia_3", nullable = false)
+    private boolean presencaDia3;
+
+    public boolean getPreseca_dia_1() {
+        return presencaDia1;
+    }
+
+    public boolean getPreseca_dia_2() {
+        return presencaDia2;
+    }
+
+    public boolean getPreseca_dia_3() {
+        return presencaDia3;
+    }
 }

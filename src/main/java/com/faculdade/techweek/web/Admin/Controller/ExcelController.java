@@ -28,18 +28,11 @@ public class ExcelController {
 
     private final ExcelService excelService;
 
-    /**
-     * GET /admin/exportar/participantes
-     *
-     * Gera e retorna a planilha Excel como download direto no navegador.
-     * O nome do arquivo inclui a data/hora da geração.
-     */
     @GetMapping("/participantes")
     public ResponseEntity<byte[]> exportarParticipantes() {
         try {
             byte[] planilha = excelService.gerarPlanilhaParticipantes();
 
-            // Nome do arquivo com timestamp — ex: participantes_2026-10-20_19h30.xlsx
             String timestamp = LocalDateTime.now()
                     .format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH'h'mm"));
             String nomeArquivo = "participantes_" + timestamp + ".xlsx";

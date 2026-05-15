@@ -1,6 +1,5 @@
 package com.faculdade.techweek.web.Palestrante.mappers;
 
-
 import org.springframework.stereotype.Component;
 
 import com.faculdade.techweek.core.model.Palestrante;

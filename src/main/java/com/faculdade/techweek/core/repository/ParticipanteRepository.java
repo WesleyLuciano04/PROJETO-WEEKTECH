@@ -23,6 +23,12 @@ public interface ParticipanteRepository extends JpaRepository<Participante, Long
     long countByStatus(StatusInscricao status);
 
     long countByCoffeeBreakTrue();
+
+    Long countByPresencaDia1True();
+
+    Long countByPresencaDia2True();
+
+    Long countByPresencaDia3True();
     
     @Query("SELECT p FROM Participante p WHERE p.projeto IS NOT NULL ORDER BY p.nome")
     List<Participante> findAllComProjeto();

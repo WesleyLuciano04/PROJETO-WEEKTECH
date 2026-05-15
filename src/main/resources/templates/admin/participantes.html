@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/uni.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/uni.ico"
+        type="image/x-icon">
     <title>Participantes — Admin II Tech Week 2026</title>
     <link rel="stylesheet" th:href="@{/css/admin.css}">
 </head>
@@ -15,7 +16,8 @@
         <div class="header-inner">
             <div class="header-identidade">
                 <a th:href="@{/admin/dashboard}">
-                    <img src="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/unicesumar-logo.png" alt="Logo UniCesumar">
+                    <img src="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/unicesumar-logo.png"
+                        alt="Logo UniCesumar">
                 </a>
             </div>
             <div>
@@ -81,17 +83,18 @@
                 <p class="filtro-label">Com Projeto</p>
             </div>
 
-            <div class="filtro-card" data-filtro="sem-projeto">
-                <div class="stat-icon stat-icon--red">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <div class="filtro-card" data-filtro="presenca">
+                <div class="stat-icon stat-icon--blue">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3b82f6"
                         stroke-width="2" width="20" height="20">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="15" y1="9" x2="9" y2="15" />
-                        <line x1="9" y1="9" x2="15" y2="15" />
+                        <path d="M9 11l3 3L22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                     </svg>
                 </div>
-                <p class="filtro-number" th:text="${#lists.size(participantes.?[temProjeto == false])}">0</p>
-                <p class="filtro-label">Sem Projeto</p>
+                <p class="filtro-number"
+                    th:text="${#lists.size(participantes.?[presencia_1 == true or presencia_2 == true or presencia_3 == true])}">
+                    0</p>
+                <p class="filtro-label">Presença</p>
             </div>
 
         </section>
@@ -129,6 +132,44 @@
             </div>
         </section>
 
+        <!-- FILTRO DIA (aparece ao clicar em "Presença") -->
+        <section class="filtro-status-wrap hidden" id="filtro-dia-wrap">
+            <p class="filtro-status-label">Filtrar por dia:</p>
+            <div class="filtro-status-pills">
+                <button class="pill ativo" data-dia="">Todos</button>
+                <button class="pill pill--pendente" data-dia="1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="12" height="12">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    1º Dia
+                </button>
+                <button class="pill pill--pendente" data-dia="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="12" height="12">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    2º Dia
+                </button>
+                <button class="pill pill--pendente" data-dia="3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" width="12" height="12">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    3º Dia
+                </button>
+            </div>
+        </section>
+
         <!-- BUSCA -->
         <section>
             <div class="busca-wrapper">
@@ -152,6 +193,9 @@
                             <th>Curso</th>
                             <th>Semestre</th>
                             <th>Coffee</th>
+                            <th>1º Dia</th>
+                            <th>2º Dia</th>
+                            <th>3º Dia</th>
                             <th>Status</th>
                             <th>Ações</th>
                         </tr>
@@ -159,14 +203,29 @@
                     <tbody>
                         <tr th:each="p : ${participantes}" th:attr="data-coffee=${p.coffeeBreak ? 'sim' : 'nao'},
                                      data-projeto=${p.temProjeto ? 'sim' : 'nao'},
-                                     data-status=${p.status != null ? p.status.name() : ''}">
+                                     data-status=${p.status != null ? p.status.name() : ''},
+                                     data-presenca1=${p.presencia_1 ? 'sim' : 'nao'},
+                                     data-presenca2=${p.presencia_2 ? 'sim' : 'nao'},
+                                     data-presenca3=${p.presencia_3 ? 'sim' : 'nao'}">
                             <td th:text="${p.nome}"></td>
                             <td th:text="${p.ra}"></td>
-                            <td th:text="${p.cursoDescricao}"></td>
+                            <td th:text="${p.getCurso}"></td>
                             <td th:text="${p.serie} + 'º'"></td>
                             <td>
                                 <span th:if="${p.coffeeBreak}" class="badge badge--sim">Sim</span>
                                 <span th:unless="${p.coffeeBreak}" class="badge badge--nao">Não</span>
+                            </td>
+                            <td>
+                                <span th:if="${p.presencia_1}" class="badge badge--sim">Sim</span>
+                                <span th:unless="${p.presencia_1}" class="badge badge--nao">Não</span>
+                            </td>
+                            <td>
+                                <span th:if="${p.presencia_2}" class="badge badge--sim">Sim</span>
+                                <span th:unless="${p.presencia_2}" class="badge badge--nao">Não</span>
+                            </td>
+                            <td>
+                                <span th:if="${p.presencia_3}" class="badge badge--sim">Sim</span>
+                                <span th:unless="${p.presencia_3}" class="badge badge--nao">Não</span>
                             </td>
                             <td>
                                 <span th:if="${p.status != null}" class="badge" th:text="${p.status}"
@@ -180,7 +239,7 @@
                             </td>
                         </tr>
                         <tr th:if="${participantes.isEmpty()}">
-                            <td colspan="7" style="text-align:center;">Nenhum participante encontrado.</td>
+                            <td colspan="10" style="text-align:center;">Nenhum participante encontrado.</td>
                         </tr>
                     </tbody>
                 </table>
