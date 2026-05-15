@@ -12,7 +12,7 @@ let flowHistory = [];         //salvar as informações do usuário
 const botConfig =
 {
     welcomeMessage: 'Olá, sou o Bot da Tech Week. Como posso te ajudar hoje?',
-    options: ['Data, Horário ou Local do Evento.', 'Cronograma: Palestras ou Projetos.', 'Palestrantes.', 'Patrocinadores.'],
+    options: ['Data, Horário ou Local do Evento.', 'Cronograma.', 'Palestrantes.', 'Patrocinadores.'],
 
     flows:
     {
