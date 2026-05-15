@@ -60,7 +60,9 @@ const botConfig =
         //dúvidas de custo
         { pattern: /(gratis|gratuito|pago|valor|preco|custo)/i, response: 'A participação no evento é gratuita! O único custo opcional é o Coffee Break, cobrado presencialmente.' },
 
-        { pattern: /(falar com alguem|suporte)/i, response: null, flow: 'suporte'}
+        { pattern: /(falar com alguem|suporte)/i, response: null, flow: 'suporte'},
+
+        { pattern: /(tchau|ate logo|até logo|sair)/i, response: null, video: 'https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/video/tchau_chatBot.mp4' },
     ]
 };
 
@@ -199,6 +201,12 @@ function getBotResponse(input)
                 return botConfig.flows[currentFlow][flowIndex].question ?? '';
             }
 
+            if (response.video)
+            {
+                setTimeout(() => appendVideo(response.video), 600);
+                return 'Foi um prazer te ajudar! Até logo! 👋';
+            }
+
             return response.response;
         }
     };
@@ -261,4 +269,18 @@ function scrollToElement(id)
     {
         element.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
+}
+
+function appendVideo(src)
+{
+    const msg = document.createElement('div');
+    msg.classList.add('msg-balao', 'msg-bot');
+    msg.innerHTML = `
+        <span class="msg-remetente">TW: </span>
+        <video autoplay loop muted playsinline style="width:100%; border-radius:8px; margin-top:6px;">
+            <source src="${src}" type="video/mp4">
+        </video>
+    `;
+    boxChat.appendChild(msg);
+    boxChat.scrollTop = boxChat.scrollHeight;
 }

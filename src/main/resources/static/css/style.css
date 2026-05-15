@@ -1080,6 +1080,17 @@ body.modo-escuro .input-chat
     background: var(--blue-2);
 }
 
+#box-chat .msg-bot video
+{
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+body.modo-escuro #box-chat .msg-bot video
+{
+    background-color: #050c17;
+}
+
 /* FIM DO CHATBOT */
 
 /* FAQ COMEÇA AQUI */
