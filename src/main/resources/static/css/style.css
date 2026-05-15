@@ -1112,33 +1112,38 @@ body.modo-escuro #box-chat .msg-bot video
     background-color: #050c17;
 }
 
-#box-chat.matrix-mode
+#box-chat.matrix-mode,
+body.modo-escuro #box-chat.matrix-mode
 {
     background-color: #000 !important;
     font-family: 'Courier New', monospace;
     color: #00ff41;
 }
 
-#box-chat.matrix-mode .msg-bot
+#box-chat.matrix-mode .msg-bot,
+body.modo-escuro #box-chat.matrix-mode .msg-bot
 {
     background-color: #001a00;
     color: #00ff41;
     border: 1px solid #00ff41;
 }
 
-#box-chat.matrix-mode .msg-usuario
+#box-chat.matrix-mode .msg-usuario,
+body.modo-escuro #box-chat.matrix-mode .msg-usuario
 {
     background-color: #003300;
     color: #00ff41;
     border: 1px solid #00ff41;
 }
 
-#box-chat.matrix-mode .msg-remetente
+#box-chat.matrix-mode .msg-remetente,
+body.modo-escuro #box-chat.matrix-mode .msg-remetente
 {
     color: #00ff41 !important;
 }
 
-#box-chat.matrix-mode .msg-bot a
+#box-chat.matrix-mode .msg-bot a,
+body.modo-escuro #box-chat.matrix-mode .msg-bot a
 {
     color: #00ff41;
 }
