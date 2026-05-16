@@ -147,8 +147,8 @@
 
                 <div class="form-grupo">
                     <label for="status" class="form-rotulo">Novo status</label>
-                    <select id="status" th:field="*{status}" class="form-select" aria-required="true">
-                        <option value="" disabled selected>Selecione um status</option>
+                    <select id="status" name="status" class="form-select" aria-required="true" required>
+                        <option value="" selected>Selecione um status</option>
                         <option th:each="opcao : ${statusOpcoes}"
                             th:unless="${opcao.name() == 'SEMPROJETO' or opcao.name() == 'PENDENTE'}"
                             th:value="${opcao}" th:text="${opcao.descricao}">

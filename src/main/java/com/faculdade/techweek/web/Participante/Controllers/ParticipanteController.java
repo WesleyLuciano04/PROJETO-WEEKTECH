@@ -30,22 +30,25 @@ public class ParticipanteController {
 
         return mav;
     }
-    
+
     @PostMapping
     public ModelAndView salvar(
             @ModelAttribute("participanteDTO") @Valid ParticipanteDTO dto,
             BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return new ModelAndView("inscricao-participante");
+            ModelAndView mav = new ModelAndView("inscricao-participante");
+            mav.addObject("participanteDTO", dto);
+            return mav;
         }
 
         ModelAndView mav = new ModelAndView("inscricao-participante");
         try {
             participanteService.inscrever(dto);
+            mav.addObject("participanteDTO", new ParticipanteDTO()); 
             mav.addObject("sucesso", "Inscrição realizada com sucesso!");
         } catch (IllegalArgumentException | IllegalStateException e) {
-            mav.addObject("participanteDTO", dto);
+            mav.addObject("participanteDTO", dto); 
             mav.addObject("erro", e.getMessage());
         }
         return mav;

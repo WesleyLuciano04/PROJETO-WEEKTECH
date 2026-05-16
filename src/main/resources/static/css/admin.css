@@ -790,7 +790,7 @@ tbody td {
 
 @media (max-width: 900px) {
     .participantes-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -805,23 +805,59 @@ tbody td {
 
     .participantes-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .participantes-grid .stat-card {
-        min-height: 100px;
-        padding: 16px;
+        min-width: unset;
+        min-height: 90px;
+        padding: 14px;
     }
 
     .participantes-grid .stat-card .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .stats-grid.palestrantes-grid {
-        flex-direction: column;
+    .participantes-grid .stat-card .stat-label {
+        font-size: 0.68rem;
+    }
+
+    .palestrantes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .palestrantes-grid .stat-card {
         min-width: unset;
         width: 100%;
+        padding: 14px;
+    }
+
+    .palestrantes-grid .stat-card .stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .header-identidade img {
+        width: 140px;
+    }
+
+    nav ul {
+        gap: 6px;
+        justify-content: center;
+        flex-wrap: nowrap; /* ← impede quebra de linha */
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 6px 8px; /* ← reduz o padding para caber */
     }
 }
