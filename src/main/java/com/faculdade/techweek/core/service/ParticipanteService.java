@@ -23,7 +23,7 @@ public class ParticipanteService {
     private final ParticipanteMapper participanteMapper;
 
     @Transactional
-    public ParticipanteResponseDTO inscrever(ParticipanteDTO dto) {
+    public void inscrever(ParticipanteDTO dto) {
         if (participanteRepository.existsByRa(dto.getRa())) {
             throw new IllegalArgumentException(
                     "O RA " + dto.getRa() + " já possui uma inscrição cadastrada.");
@@ -39,9 +39,9 @@ public class ParticipanteService {
         if (!dto.isTemProjeto()) {
             participante.setStatus(StatusInscricao.SEMPROJETO);
         }
-        Participante salvo = participanteRepository.save(participante);
+        
+        participanteRepository.save(participante);
 
-        return participanteMapper.toResponseDTO(salvo);
     }
 
     @Transactional(readOnly = true)
@@ -85,15 +85,15 @@ public class ParticipanteService {
         return participanteRepository.findAllComProjeto().size();
     }
 
-    public Long contarPresecaDia1(){
+    public Long contarPresecaDia1() {
         return participanteRepository.countByPresencaDia1True();
     }
 
-    public Long contarPresecaDia2(){
+    public Long contarPresecaDia2() {
         return participanteRepository.countByPresencaDia2True();
     }
 
-    public Long contarPresecaDia3(){
+    public Long contarPresecaDia3() {
         return participanteRepository.countByPresencaDia3True();
     }
 }

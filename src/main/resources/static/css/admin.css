@@ -785,3 +785,43 @@ tbody td {
         font-size: 4.5rem;
     }
 }
+
+/* Responsividade Dashboard */
+
+@media (max-width: 900px) {
+    .participantes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #conteudo-admin {
+        padding: 24px 1rem;
+    }
+
+    .admin-page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .participantes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .participantes-grid .stat-card {
+        min-height: 100px;
+        padding: 16px;
+    }
+
+    .participantes-grid .stat-card .stat-number {
+        font-size: 2rem;
+    }
+
+    .stats-grid.palestrantes-grid {
+        flex-direction: column;
+    }
+
+    .palestrantes-grid .stat-card {
+        min-width: unset;
+        width: 100%;
+    }
+}

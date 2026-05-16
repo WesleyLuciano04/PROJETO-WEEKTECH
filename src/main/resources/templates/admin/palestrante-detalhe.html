@@ -148,14 +148,15 @@
                 <div class="form-grupo">
                     <label for="status" class="form-rotulo">Novo status</label>
                     <select id="status" th:field="*{status}" class="form-select" aria-required="true">
-                        <option value="" disabled>Selecione um status</option>
-                        <option th:each="opcao : ${statusOpcoes}" th:unless="${opcao.name() == 'SEMPROJETO'}"
+                        <option value="" disabled selected>Selecione um status</option>
+                        <option th:each="opcao : ${statusOpcoes}"
+                            th:unless="${opcao.name() == 'SEMPROJETO' or opcao.name() == 'PENDENTE'}"
                             th:value="${opcao}" th:text="${opcao.descricao}">
                         </option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn-atualizar">
+                <button type="submit" class="btn-atualizar" class="blockClick">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5" width="14" height="14" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12" />
@@ -171,6 +172,7 @@
         <p>Painel administrativo — II Tech Week 2026</p>
     </footer>
 
+    <script th:src="@{/js/blockClick.js}"></script>
 </body>
 
 </html>

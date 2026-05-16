@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/uni.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/uni.ico"
+        type="image/x-icon">
     <title>Detalhe do Participante — Admin · II Tech Week 2026</title>
     <link rel="stylesheet" th:href="@{/css/admin.css}" />
 </head>
@@ -15,7 +16,8 @@
         <div class="header-inner">
             <div class="header-identidade">
                 <a th:href="@{/admin/dashboard}">
-                    <img src="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/unicesumar-logo.png" alt="Logotipo UniCesumar" />
+                    <img src="https://goqkmgbttahcutdhgqmv.supabase.co/storage/v1/object/public/imagens/unicesumar-logo.png"
+                        alt="Logotipo UniCesumar" />
                 </a>
             </div>
             <nav>
@@ -135,14 +137,15 @@
                 <div class="form-grupo">
                     <label for="status" class="form-rotulo">Novo status</label>
                     <select id="status" th:field="*{status}" class="form-select" aria-required="true">
-                        <option value="" disabled>Selecione um status</option>
-                        <option th:each="opcao : ${statusOpcoes}" th:unless="${opcao.name() == 'SEMPROJETO'}"
+                        <option value="" disabled selected>Selecione um status</option>
+                        <option th:each="opcao : ${statusOpcoes}"
+                            th:unless="${opcao.name() == 'SEMPROJETO' or opcao.name() == 'PENDENTE'}"
                             th:value="${opcao}" th:text="${opcao.descricao}">
                         </option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn-atualizar">
+                <button type="submit" class="btn-atualizar" class="blockClick">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5" width="14" height="14" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12" />
@@ -158,6 +161,7 @@
         <p>Painel administrativo — II Tech Week 2026 · UniCesumar Londrina</p>
     </footer>
 
+    <script th:src="@{/js/blockClick.js}"></script>
 </body>
 
 </html>
