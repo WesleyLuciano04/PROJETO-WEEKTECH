@@ -1,5 +1,7 @@
 
-    const canvas = document.getElementById('grid-canvas');
+const canvas = document.getElementById('grid-canvas');
+
+if (canvas) {
     const ctx = canvas.getContext('2d');
     let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
     const stars = [];
@@ -56,3 +58,4 @@
 
     window.addEventListener('resize', () => { resize(); init(); });
     resize(); init(); draw();
+}

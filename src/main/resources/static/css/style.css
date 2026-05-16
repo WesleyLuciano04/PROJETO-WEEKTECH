@@ -802,15 +802,13 @@ button.btn-tema:hover
     text-align: center;
 }  
 
-#patrocinadores-img
-{
+#patrocinadores-img {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    gap: 16px;
     margin-top: 1.5rem;
+    width: 100%;
 }
 
 .card-patrocinio {
@@ -818,7 +816,7 @@ button.btn-tema:hover
     border-radius: 8px;
     padding: 16px;
     width: 160px;
-    height: 250px;          /* aumentado para caber título + imagem */
+    height: 250px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -827,6 +825,20 @@ button.btn-tema:hover
     gap: 10px;
     overflow: hidden;
     box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    #patrocinadores-img {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .card-patrocinio {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+    }
 }
 
 .card-patrocinio:hover
@@ -931,29 +943,28 @@ button.btn-tema:hover
     background: var(--blue-1);
     color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
-#window-chat
-{
+#window-chat {
     position: fixed;
-    bottom: 90px; /* Fica acima do botão que está a 2rem (~32px) da base */
-    right: 2rem;
-    width: 320px;
-    height: 450px;
+    bottom: 90px;
+    right: 1rem;
+    width: min(320px, calc(100vw - 2rem)); /* ← respeita a tela */
+    height: min(450px, calc(100vh - 120px));
     background-color: white;
     border: 1px solid rgba(19, 52, 72, 0.6);
     border-radius: 1rem;
     box-shadow: 0 10px 40px rgba(19, 52, 72, 0.6);
     z-index: 1000;
-
-    /*Layout interno*/
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Garante que os cantos arredondados cortem o conteúdo */
+    overflow: hidden;
 }
 
 .header-chat
@@ -1036,6 +1047,7 @@ button.btn-tema:hover
     background: white;
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
 .input-chat input

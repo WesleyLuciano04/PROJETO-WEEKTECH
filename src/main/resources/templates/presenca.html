@@ -111,7 +111,7 @@
 
         <form th:action="@{/presenca}" method="post">
             <input type="text" name="ra" placeholder="Ex: 12345678" required autofocus />
-            <button type="submit" class="blockClick">CONFIRMAR PRESENÇA</button>
+            <button type="submit" class="blockClick" data-texto="Enviar">CONFIRMAR PRESENÇA</button>
         </form>
 
         <div class="mensagem sucesso" th:if="${sucesso}" th:text="${sucesso}"></div>
