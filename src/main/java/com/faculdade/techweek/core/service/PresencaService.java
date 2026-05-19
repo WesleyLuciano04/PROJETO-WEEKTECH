@@ -17,12 +17,12 @@ public class PresencaService {
 
     private final ParticipanteRepository participanteRepository;
 
-    private static final LocalDate DIA_1 = LocalDate.of(2026, 05, 15);
-    private static final LocalDate DIA_2 = LocalDate.of(2026, 05, 16);
-    private static final LocalDate DIA_3 = LocalDate.of(2026, 05, 17);
+    private static final LocalDate DIA_1 = LocalDate.of(2026, 05, 19);
+    private static final LocalDate DIA_2 = LocalDate.of(2026, 05, 20);
+    private static final LocalDate DIA_3 = LocalDate.of(2026, 05, 21);
 
-    //private static final LocalTime INICIO = LocalTime.of(19, 0);
-    // private static final LocalTime FIM    = LocalTime.of(23, 59);
+    private static final LocalTime INICIO = LocalTime.of(16, 0);
+    private static final LocalTime FIM    = LocalTime.of(23, 59);
 
     @Transactional
     public String registrarPresenca(String ra) {
@@ -35,12 +35,12 @@ public class PresencaService {
         LocalDate hoje = LocalDate.now();
         LocalTime agora = LocalTime.now();
 
-        /*boolean dentroDoHorario = !agora.isBefore(INICIO) && !agora.isAfter(FIM);
+        boolean dentroDoHorario = !agora.isBefore(INICIO) && !agora.isAfter(FIM);
 
         if (!dentroDoHorario) {
             return "Registro de presença disponível apenas das 19h00 às 23h59.";
         }
-                    */
+                    
 
         if (hoje.equals(DIA_1)) {
             if (participante.isPresencaDia1()) {
